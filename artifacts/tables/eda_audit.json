@@ -1,0 +1,17 @@
+{
+  "raw_rows": 346860,
+  "raw_students": 4217,
+  "raw_problems": 26688,
+  "missing_skill_rows": 63755,
+  "rows_after_missing_skill_filter": 283105,
+  "single_skill_rows": 236068,
+  "multi_skill_rows": 47037,
+  "unrecognized_skill_rows": 0,
+  "single_skill_retained_rate": 0.680585827134867,
+  "invalid_target_rows": 0,
+  "missing_identity_rows": 0,
+  "duplicate_semantic_rows": 0,
+  "duplicate_order_ids": 0,
+  "duplicate_student_order_rows": 0,
+  "repeated_student_problem_rows": 4779
+}

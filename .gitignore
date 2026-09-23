@@ -1,0 +1,10 @@
+.venv/
+data/
+*.csv
+*.parquet
+artifacts/models/
+artifacts/logs/
+.ipynb_checkpoints/
+__pycache__/
+.env
+setup-install.log
