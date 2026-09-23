@@ -1,0 +1,53 @@
+{
+  "status": "data_prepared_not_trained",
+  "raw_sha256": "162ef8d2d28bcbfea6591a282994062bd8d5eaa00636544292a0d268dca6e5da",
+  "split_manifest_sha256": "7b7a5e10f9c8b6dcd8ef4efa3965c3ef738ff32d23907e91e0f2050622afd27d",
+  "raw_rows": 346860,
+  "clean_rows": 236068,
+  "warmup": 5,
+  "oof_folds": 5,
+  "smoothing_alpha": 10.0,
+  "config_version": "rq1-a-v1",
+  "config_sha256": "60001cd0375c8e10ee4a09464a6dd9892935cf6d89790de74bd313c1e7e20a01",
+  "label_dependent_test_statistics_reported": false,
+  "partitions": {
+    "train": {
+      "rows": 168431,
+      "students": 2802,
+      "scored_rows": 155418,
+      "students_without_scored_rows": 492,
+      "sha256": "4168f4c556b4eb94d4838847861bada648522874af3da383d058d53dfe62acaf"
+    },
+    "validation": {
+      "rows": 35135,
+      "students": 600,
+      "scored_rows": 32382,
+      "students_without_scored_rows": 119,
+      "sha256": "ae0ba35895e959157afcdd7931b9e96e15f62a49bc7f19eccf472b179399bd87"
+    },
+    "test": {
+      "rows": 32502,
+      "students": 601,
+      "scored_rows": 29751,
+      "students_without_scored_rows": 118,
+      "sha256": "37727e6baad48d4fdf5e34f489f7f1a15602745f07faa9a9f2df659beda89fc9"
+    }
+  },
+  "feature_columns": [
+    "source_row",
+    "user_id",
+    "order_id",
+    "problem_id",
+    "skill_id",
+    "correct",
+    "split",
+    "prior_skill_success",
+    "prior_skill_failure",
+    "prior_skill_count",
+    "prior_skill_accuracy",
+    "prior_overall_accuracy",
+    "history_length",
+    "scored",
+    "problem_difficulty"
+  ]
+}

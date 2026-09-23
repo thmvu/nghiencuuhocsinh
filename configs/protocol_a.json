@@ -1,0 +1,113 @@
+{
+  "version": "rq1-a-v1",
+  "lock_date": "2026-09-23",
+  "stage": "A",
+  "split": {
+    "seed": 42,
+    "ratios": [0.7, 0.15, 0.15],
+    "manifest": "data/processed/student_split.json",
+    "manifest_sha256": "7b7a5e10f9c8b6dcd8ef4efa3965c3ef738ff32d23907e91e0f2050622afd27d",
+    "raw_sha256": "162ef8d2d28bcbfea6591a282994062bd8d5eaa00636544292a0d268dca6e5da",
+    "reuse_manifest": true,
+    "unit": "user_id"
+  },
+  "cleaning": {
+    "single_skill_only": true,
+    "multiskill_separator": "_",
+    "drop_missing_skill": true,
+    "keep_repeated_student_problem": true,
+    "reject_duplicate_student_order": true,
+    "minimum_skill_support_filter": null,
+    "preserve_source_row": true,
+    "sort_columns": ["user_id", "order_id", "source_row"],
+    "target": "correct: first-attempt success without requested help"
+  },
+  "evaluation": {
+    "warmup": 5,
+    "mask": "history_length >= warmup, computed after cleaning",
+    "retain_short_students_in_train": true,
+    "return_warmup_rows": true,
+    "report_unscored_student_count": true,
+    "global_parameters_frozen": true,
+    "predict_before_update": true,
+    "reset_each_student": true,
+    "primary_metric": "brier_score",
+    "secondary_metrics": ["roc_auc", "log_loss"],
+    "selection": "minimum interaction-weighted validation Brier on identical scored rows; exact ties choose first candidate in declared order",
+    "roc_auc_one_class": "report undefined; do not substitute zero",
+    "log_loss_clip_epsilon": 1e-15,
+    "calibrator": "none"
+  },
+  "problem_difficulty": {
+    "n_splits": 5,
+    "group": "user_id",
+    "fold_method": "GroupKFold without shuffle",
+    "alpha": 10.0,
+    "alpha_candidates": [10.0],
+    "train": "out-of-fold fit-partition statistics only",
+    "validation_test": "full train statistics only",
+    "unseen_fallback": "fit-partition global mean"
+  },
+  "baselines": {
+    "global": "full train label mean",
+    "problem": "full train smoothed problem mean alpha10; unseen=train global mean"
+  },
+  "pfa": {
+    "form": "skill-specific intercept, success and failure coefficients",
+    "features": ["skill_one_hot", "skill_one_hot * prior_skill_success", "skill_one_hot * prior_skill_failure"],
+    "penalty": "L2",
+    "C_candidates": [0.01, 0.1, 1.0, 10.0],
+    "solver": "lbfgs",
+    "fit_intercept": true,
+    "max_iter": 2000,
+    "tol": 1e-6,
+    "seed": 42,
+    "maximum_fits": 4,
+    "unseen_skill": "all skill blocks zero, learned global intercept",
+    "nonconvergence": "candidate invalid; log failure, no budget extension"
+  },
+  "bkt": {
+    "strategy": "per-skill when train interactions >=100 and both labels observed; otherwise pooled parameters",
+    "minimum_train_interactions": 100,
+    "require_both_labels": true,
+    "pooled_sequences": "separate user_id/skill_id sequences; common parameters, no cross-skill state transitions",
+    "unseen_skill": "pooled parameters with a new student-skill state",
+    "forgetting": 0.0,
+    "bounds": {"L0": [0.001, 0.999], "T": [0.001, 0.5], "G": [0.001, 0.3], "S": [0.001, 0.3]},
+    "initializations_L0_T_G_S": [[0.2, 0.1, 0.2, 0.1], [0.5, 0.05, 0.1, 0.2], [0.8, 0.2, 0.25, 0.05]],
+    "fit_method": "bounded scipy L-BFGS-B minimize negative train sequence log likelihood; select best converged train objective per fit group",
+    "maxiter": 500,
+    "ftol": 1e-9,
+    "maxfun": 10000,
+    "seed": 42,
+    "starts_per_fit_group": 3,
+    "maximum_fit_groups": 106,
+    "maximum_optimizer_runs": 318,
+    "failed_skill_fit": "pooled parameters; record failure",
+    "failed_pooled_fit": "stop development; report failure",
+    "validation_candidates": 1
+  },
+  "xgboost": {
+    "features": ["prior_skill_success", "prior_skill_failure", "prior_skill_accuracy", "prior_overall_accuracy", "history_length", "problem_difficulty", "skill_one_hot"],
+    "skill_encoding": "train-only one-hot, unknown=all zeros",
+    "problem_id_encoding": "omitted",
+    "excluded_numeric_ids": ["user_id", "order_id", "problem_id", "skill_id", "source_row"],
+    "objective": "binary:logistic",
+    "tree_method": "hist",
+    "n_jobs": 1,
+    "seed": 42,
+    "grid_order": ["max_depth", "learning_rate", "n_estimators"],
+    "grid": {"max_depth": [2, 4], "learning_rate": [0.05, 0.1], "n_estimators": [100, 300]},
+    "fixed": {"min_child_weight": 5, "subsample": 1.0, "colsample_bytree": 1.0, "reg_lambda": 1.0, "reg_alpha": 0.0, "gamma": 0.0},
+    "maximum_fits": 8,
+    "early_stopping": false
+  },
+  "history": {"cold_start_accuracy": 0.5, "shifted": true},
+  "development": {
+    "train_short_students": "keep all cleaned interactions including students with <=5 interactions",
+    "test_access": "preprocessing, structural audits and causal per-student histories allowed; model scoring, tuning and test outcome inspection forbidden until Lock B and Gate B",
+    "fit_in_gate_a_implementation": false,
+    "final_fitting_policy": "retain train-fitted models; no train+validation refit",
+    "lock_b_pending": ["selected PFA C", "BKT fitted parameters/checkpoint", "selected XGBoost candidate", "bootstrap iterations, seed and CI protocol", "final artifact hashes and pre-test checklist"]
+  }
+}

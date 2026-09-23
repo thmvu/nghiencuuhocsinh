@@ -28,7 +28,19 @@ Không chia lại student trong các notebook sau. Không public raw data hoặc
 
 ## Trạng thái
 
-Đang thực hiện mốc EDA. Chưa train và chưa mở test để đánh giá mô hình.
-Gate A cần preprocessing, leakage/cross-fit/sequential tests và cấu hình A hoàn chỉnh.
+EDA và Gate A đã hoàn thành. Chưa train và chưa mở test để đánh giá mô hình.
+Xem `reports/gate_a_report.md` và `configs/protocol_a.json`.
 Các thư mục model/recommender/app là cấu trúc chuẩn bị, chưa phải tính năng đã triển khai.
 Ollama chưa có trong PATH hoặc vị trí cài mặc định; LLM smoke test còn pending.
+
+## Preprocessing / Gate A
+
+```powershell
+.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+.\.venv\Scripts\python.exe scripts/run_preprocessing.py
+```
+
+Notebook `notebooks/02_preprocessing.ipynb` chạy test trước khi chuẩn bị dữ liệu.
+Có thể chạy riêng `scripts/prepare_data.py` để tái tạo parquet; lệnh đó không thay thế gate kiểm thử.
+Artifacts local: `data/processed/train.parquet`, `validation.parquet`, `test.parquet`.
+Không dùng test parquet để tuning hoặc báo cáo model metrics trước Gate B.
