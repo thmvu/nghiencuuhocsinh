@@ -30,3 +30,12 @@ Phạm vi khởi động: môi trường local, bảo toàn CSV, notebook EDA ch
 - Fix RED→GREEN: reject unknown skill encoding and missing/duplicate source identity.
 - Ruling: BKT future fitter uses bounded SciPy likelihood rather than pyBKT; cost is additional hand-derived sequence verification before fit.
 - Gate B/C pending; no models trained, no heldout model metrics inspected. See reports/gate_a_report.md.
+
+## Global/Problem baseline + PFA
+
+- User preference: all new commit messages in Vietnamese without diacritics.
+- Two model implementation agents + one independent tester; root owns experiment runner, integration and report.
+- Train/validation only, four predeclared PFA C candidates; no test scoring or expanded search.
+
+- Global/Problem/PFA train and validation complete on 32,382 scored rows/481 students; PFA selected C=0.1 by Brier. C=1,10 invalid nonconvergence within locked budget. No TEST scoring.
+- Independent review found and verified fixes for Problem model serialization and parameter snapshot mutation. See reports/models_review.md.

@@ -1,0 +1,88 @@
+{
+  "stage": "validation_development_not_final_test",
+  "config_sha256": "60001cd0375c8e10ee4a09464a6dd9892935cf6d89790de74bd313c1e7e20a01",
+  "python": "3.10.11",
+  "test_opened": false,
+  "input_hashes": {
+    "train": "4168f4c556b4eb94d4838847861bada648522874af3da383d058d53dfe62acaf",
+    "validation": "ae0ba35895e959157afcdd7931b9e96e15f62a49bc7f19eccf472b179399bd87"
+  },
+  "selection_metric": "validation_brier_score",
+  "pfa_selected_C": 0.1,
+  "results": [
+    {
+      "model": "Global",
+      "n_rows": 32382,
+      "n_students": 481,
+      "brier_score": 0.2222582573480767,
+      "roc_auc": 0.5,
+      "log_loss": 0.6366008182133757,
+      "fit_evaluate_seconds": 0.10174349999942933
+    },
+    {
+      "model": "Problem",
+      "n_rows": 32382,
+      "n_students": 481,
+      "brier_score": 0.20299613347349776,
+      "roc_auc": 0.6780580096771502,
+      "log_loss": 0.5922889423466232,
+      "fit_evaluate_seconds": 0.1790051999996649
+    },
+    {
+      "model": "PFA",
+      "selected_C": 0.1,
+      "n_rows": 32382,
+      "n_students": 481,
+      "brier_score": 0.19753391569542741,
+      "roc_auc": 0.7003111585624855,
+      "log_loss": 0.5824406622416697
+    }
+  ],
+  "pfa_candidates": [
+    {
+      "C": 0.01,
+      "status": "valid",
+      "n_rows": 32382,
+      "n_students": 481,
+      "brier_score": 0.19829341115608118,
+      "roc_auc": 0.7002871047561294,
+      "log_loss": 0.5839045526338785,
+      "fit_evaluate_seconds": 4.929398399999627
+    },
+    {
+      "C": 0.1,
+      "status": "valid",
+      "n_rows": 32382,
+      "n_students": 481,
+      "brier_score": 0.19753391569542741,
+      "roc_auc": 0.7003111585624855,
+      "log_loss": 0.5824406622416697,
+      "fit_evaluate_seconds": 11.921032700000069
+    },
+    {
+      "C": 1.0,
+      "status": "invalid",
+      "reason": "PFA candidate did not converge within configured budget",
+      "fit_evaluate_seconds": 15.165249399999084
+    },
+    {
+      "C": 10.0,
+      "status": "invalid",
+      "reason": "PFA candidate did not converge within configured budget",
+      "fit_evaluate_seconds": 15.020523099999991
+    }
+  ],
+  "model_sha256": {
+    "Global": "ea58a24c04cd34b77b3fc9774d9c73f2c57fb28f26f6150db8e82201b3eceed4",
+    "Problem": "de7b9f6217b6a1df9993a8496caf2d633fcc1eb7e3c103fdfe38ac0c7880b301",
+    "PFA": "e6091a9552132f921a1a7f158e3b8d51c7e9ff5abeee46a32d3db390f0d37555"
+  },
+  "code_sha256": {
+    "scripts/train_baselines_pfa.py": "c7ebf0683bc17c7f64fee267f752887ae69e8a4b9998959f18ec19c53fd4cdc4",
+    "src/models/pfa.py": "0b7c510bd639a95b7cc34df29b373f497c60fc5c97fc89b5b8caf291c9406029",
+    "src/models/baselines.py": "3be9bb62d56a36b5d4b5a4cd86c6776da939f310aa948a2f0a779a5ddc60cafa",
+    "src/evaluation/metrics.py": "a3e2f4592d751c6dd47347a4bc966d551b134faede1ae80f0aefa28148b04d25",
+    "src/evaluation/sequential.py": "e26a0338250b188ed6f8e27691f90ec2a80220651267abe3e7cceaf92a60877c"
+  },
+  "requirements_sha256": "5c5f8602d09e3573bea12c3ff8139021380bbbdb80057067e5ee58e62a4ba556"
+}

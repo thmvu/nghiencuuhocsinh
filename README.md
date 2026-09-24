@@ -44,3 +44,14 @@ Notebook `notebooks/02_preprocessing.ipynb` chạy test trước khi chuẩn b�
 Có thể chạy riêng `scripts/prepare_data.py` để tái tạo parquet; lệnh đó không thay thế gate kiểm thử.
 Artifacts local: `data/processed/train.parquet`, `validation.parquet`, `test.parquet`.
 Không dùng test parquet để tuning hoặc báo cáo model metrics trước Gate B.
+
+## Global/Problem baseline và PFA (TRAIN/VALIDATION)
+
+```powershell
+.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+.\.venv\Scripts\python.exe scripts/train_baselines_pfa.py
+```
+
+Kết quả phát triển: `reports/baselines_pfa_validation.md` và
+`notebooks/03_baselines_pfa.ipynb`. Script chỉ đọc train/validation;
+checkpoint và dự đoán từng dòng được giữ cục bộ. TEST chỉ dùng sau Lock B/Gate B.
