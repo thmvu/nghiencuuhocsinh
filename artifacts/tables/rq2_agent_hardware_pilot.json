@@ -1,0 +1,12 @@
+{
+  "stage": "synthetic_hardware_feasibility_not_rq2_results",
+  "model": "gemma3:1b",
+  "n_synthetic_probes": 5,
+  "schema_valid_count": 5,
+  "candidate_valid_count": 5,
+  "latency_seconds_mean_successful": 17.247695400000158,
+  "latency_seconds_max_successful": 84.01104780000014,
+  "ollama_process_rss_peak_observed_bytes": 240615424,
+  "memory_measurement_note": "process RSS sampled between probes; not a GPU VRAM or true peak measurement",
+  "errors": []
+}

@@ -1,0 +1,57 @@
+{
+  "skills": [
+    "311",
+    "47",
+    "277",
+    "280",
+    "79",
+    "312",
+    "279",
+    "27",
+    "18",
+    "77",
+    "50",
+    "325",
+    "67",
+    "49",
+    "310",
+    "46",
+    "278",
+    "70",
+    "61",
+    "17"
+  ],
+  "edges": [
+    {
+      "prerequisite": "277",
+      "target": "279",
+      "basis": "prototype_assumption",
+      "rationale": "Addition/Subtraction Integers -> Multiplication/Division Integers"
+    },
+    {
+      "prerequisite": "311",
+      "target": "312",
+      "basis": "prototype_assumption",
+      "rationale": "Equation Solving Two or Fewer Steps -> More Than Two Steps"
+    },
+    {
+      "prerequisite": "47",
+      "target": "77",
+      "basis": "prototype_assumption",
+      "rationale": "Conversion Fraction Decimals Percents -> Finding Percents"
+    },
+    {
+      "prerequisite": "47",
+      "target": "79",
+      "basis": "prototype_assumption",
+      "rationale": "Conversion Fraction Decimals Percents -> Proportion"
+    },
+    {
+      "prerequisite": "18",
+      "target": "17",
+      "basis": "prototype_assumption",
+      "rationale": "Probability Single Event -> Two Distinct Events"
+    }
+  ],
+  "status": "prototype_assumptions_pending_curriculum_review"
+}

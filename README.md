@@ -28,10 +28,10 @@ Không chia lại student trong các notebook sau. Không public raw data hoặc
 
 ## Trạng thái
 
-EDA và Gate A đã hoàn thành. Chưa train và chưa mở test để đánh giá mô hình.
-Xem `reports/gate_a_report.md` và `configs/protocol_a.json`.
-Các thư mục model/recommender/app là cấu trúc chuẩn bị, chưa phải tính năng đã triển khai.
-Ollama chưa có trong PATH hoặc vị trí cài mặc định; LLM smoke test còn pending.
+EDA, Gate A và RQ1 đã hoàn thành. Kết quả TEST RQ1 đã được đánh giá một lần sau Lock B;
+xem `reports/rq1_test_results.md` và `configs/protocol_b.json`.
+RQ2 đang phát triển trên VALIDATION: BKT state, Knowledge Graph prototype, candidate generator,
+B+ và Local Agent đã có; chưa Lock C và chưa đánh giá TEST RQ2.
 
 ## Preprocessing / Gate A
 
@@ -55,3 +55,26 @@ Không dùng test parquet để tuning hoặc báo cáo model metrics trước G
 Kết quả phát triển: `reports/baselines_pfa_validation.md` và
 `notebooks/03_baselines_pfa.ipynb`. Script chỉ đọc train/validation;
 checkpoint và dự đoán từng dòng được giữ cục bộ. TEST chỉ dùng sau Lock B/Gate B.
+
+## RQ2 — phát triển trên VALIDATION
+
+Các script dưới đây chỉ dùng TRAIN và VALIDATION. Graph có 5 cạnh tiên quyết giả định,
+chưa được xác nhận bằng học liệu hoặc giáo viên. Scenario và kết quả từng sinh viên
+được lưu trong `data/processed/rq2_validation_scenarios/` và bị Git bỏ qua.
+
+```powershell
+.\.venv\Scripts\python.exe -m unittest discover -s tests -q
+.\.venv\Scripts\python.exe scripts/prepare_rq2_validation.py
+```
+
+Agent dùng Ollama cục bộ và Pydantic. Sau khi cài [Ollama trên Windows](https://ollama.com/download/windows)
+và tải `gemma3:1b`, chạy pilot giả lập rồi chạy một lượt VALIDATION:
+
+```powershell
+ollama pull gemma3:1b
+.\.venv\Scripts\python.exe scripts/smoke_rq2_agent.py
+.\.venv\Scripts\python.exe scripts/run_rq2_validation_agent.py
+```
+
+Số liệu tổng hợp tại `reports/rq2_validation_progress.md`; pilot giả lập không phải
+kết quả nghiên cứu. Không tạo hay xem RQ2 TEST scenarios trước Lock C/Gate C.

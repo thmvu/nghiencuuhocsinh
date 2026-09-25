@@ -1,0 +1,12 @@
+{
+  "stage": "validation_development_not_lock_c",
+  "state_source": "train_fitted_BKT_checkpoint_from_lock_b",
+  "graph_skills": 20,
+  "graph_edges": "prototype_assumptions_pending_curriculum_review",
+  "candidate_min_train_support": 5,
+  "candidates_per_scenario": 8,
+  "validation_scenarios": 50,
+  "snapshot_min_history": 5,
+  "seed": 42,
+  "test_access": "forbidden_until_lock_c_and_gate_c"
+}

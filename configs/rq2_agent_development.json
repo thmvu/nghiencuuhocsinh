@@ -1,0 +1,10 @@
+{
+  "stage": "validation_development_not_lock_c",
+  "model": "gemma3:1b",
+  "temperature": 0,
+  "num_ctx": 2048,
+  "timeout_seconds": 90,
+  "repair_attempts": 0,
+  "runs_per_scenario": 1,
+  "test_access": "forbidden_until_lock_c_and_gate_c"
+}

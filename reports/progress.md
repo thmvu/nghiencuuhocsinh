@@ -39,3 +39,10 @@ Phạm vi khởi động: môi trường local, bảo toàn CSV, notebook EDA ch
 
 - Global/Problem/PFA train and validation complete on 32,382 scored rows/481 students; PFA selected C=0.1 by Brier. C=1,10 invalid nonconvergence within locked budget. No TEST scoring.
 - Independent review found and verified fixes for Problem model serialization and parameter snapshot mutation. See reports/models_review.md.
+
+## RQ1 hoàn tất và RQ2 validation development
+
+- RQ1 Lock B hoàn tất; đánh giá TEST cuối trên cùng 29.751 lượt tương tác của 483 sinh viên. XGBoost có Brier 0,17347, thấp nhất trong năm mô hình đã khóa. Chi tiết và bootstrap theo sinh viên ở `reports/rq1_test_results.md`.
+- RQ2 đã có BKT latent-mastery snapshots, graph prototype 20 kỹ năng/5 cạnh giả định, TRAIN-only candidate pool, B+ deterministic policy và Agent contract cho Ollama.
+- 50 validation scenarios từ 50 sinh viên riêng; Agent `gemma3:1b` đạt 49/50 output đúng schema, 48/50 candidate hợp lệ trong một lượt phát triển. Đây chưa phải kết quả TEST RQ2; xem `reports/rq2_validation_progress.md`.
+- Reviewer độc lập xác nhận sửa lỗi trùng mã kỹ năng, chặn dữ liệu held-out vào graph/pool và kiểm tra lại B+ từ shared inputs. Lock C, rubric và RQ2 TEST còn chờ.

@@ -1,0 +1,38 @@
+{
+  "stage": "rq2_validation_development",
+  "test_opened": false,
+  "n_scenarios": 50,
+  "n_students": 50,
+  "n_graph_skills": 20,
+  "n_prototype_edges": 5,
+  "graph_status": "prototype_assumptions_pending_curriculum_review",
+  "n_train_pool_items": 5328,
+  "candidate_count_min": 8,
+  "candidate_count_max": 8,
+  "distinct_target_skills_min": 8,
+  "distinct_target_skills_mean": 8.0,
+  "difficulty_span_min": 0.45,
+  "difficulty_span_mean": 0.5448937950937949,
+  "bplus_selected_skill_counts": {
+    "17": 3,
+    "18": 18,
+    "277": 2,
+    "278": 1,
+    "279": 2,
+    "280": 1,
+    "310": 1,
+    "311": 1,
+    "312": 15,
+    "47": 1,
+    "49": 4,
+    "50": 1
+  },
+  "lock_b_sha256": "0a5800e6a2c1688cd50df028aec2970a4645ac5f10c44914e02ea70b73f04c4d",
+  "development_config_sha256": "e417df7bbd9a3481ed995a8fe001ba8c01594fa738a0548140d58d603dfc6361",
+  "bkt_checkpoint_sha256": "6e01e4eebd9abccfb976533cda76eb5b2dbec785b244bdb1a8357d14d95772b1",
+  "input_sha256": {
+    "train": "4168f4c556b4eb94d4838847861bada648522874af3da383d058d53dfe62acaf",
+    "validation": "ae0ba35895e959157afcdd7931b9e96e15f62a49bc7f19eccf472b179399bd87"
+  },
+  "validation_scenarios_sha256": "a07942c8b395c5cd4cb7a1096a16e04f1860e17b1facdddaff7269aa3acf873f"
+}
