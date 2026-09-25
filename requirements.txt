@@ -6,3 +6,4 @@ nbclient
 ipykernel
 scikit-learn
 pyarrow
+xgboost

@@ -1,0 +1,94 @@
+{
+  "version": "rq1-b-v1",
+  "lock_date": "2026-09-25",
+  "stage": "B",
+  "gate_b": "RQ1 PRE-TEST CHECKLIST PASS",
+  "test_opened": false,
+  "protocol_a_sha256": "60001cd0375c8e10ee4a09464a6dd9892935cf6d89790de74bd313c1e7e20a01",
+  "split_manifest_sha256": "7b7a5e10f9c8b6dcd8ef4efa3965c3ef738ff32d23907e91e0f2050622afd27d",
+  "raw_sha256": "162ef8d2d28bcbfea6591a282994062bd8d5eaa00636544292a0d268dca6e5da",
+  "input_sha256": {
+    "train": "4168f4c556b4eb94d4838847861bada648522874af3da383d058d53dfe62acaf",
+    "validation": "ae0ba35895e959157afcdd7931b9e96e15f62a49bc7f19eccf472b179399bd87",
+    "test": "37727e6baad48d4fdf5e34f489f7f1a15602745f07faa9a9f2df659beda89fc9"
+  },
+  "models": {
+    "Global": {
+      "path": "artifacts/models/baselines_pfa/Global.joblib",
+      "sha256": "ea58a24c04cd34b77b3fc9774d9c73f2c57fb28f26f6150db8e82201b3eceed4"
+    },
+    "Problem": {
+      "path": "artifacts/models/baselines_pfa/Problem.joblib",
+      "sha256": "de7b9f6217b6a1df9993a8496caf2d633fcc1eb7e3c103fdfe38ac0c7880b301"
+    },
+    "PFA": {
+      "path": "artifacts/models/baselines_pfa/PFA.joblib",
+      "sha256": "e6091a9552132f921a1a7f158e3b8d51c7e9ff5abeee46a32d3db390f0d37555"
+    },
+    "BKT": {
+      "path": "artifacts/models/rq1_development/BKT.joblib",
+      "sha256": "6e01e4eebd9abccfb976533cda76eb5b2dbec785b244bdb1a8357d14d95772b1"
+    },
+    "XGBoost": {
+      "path": "artifacts/models/rq1_development/XGBoost.joblib",
+      "sha256": "82bf997c8e0f24f6f94f9a20a9b60f28ed2f67e3032068b40057c802f19d20a5"
+    }
+  },
+  "selection": {
+    "pfa_C": 0.1,
+    "xgboost": {
+      "max_depth": 4,
+      "learning_rate": 0.1,
+      "n_estimators": 300
+    },
+    "calibrator": "none",
+    "final_fitting": "retain_train_fitted_checkpoints_no_refit",
+    "primary_metric": "interaction_weighted_validation_brier",
+    "selected_validation_model": "XGBoost"
+  },
+  "evaluation": {
+    "warmup": 5,
+    "scored_only": true,
+    "same_row_identity": true,
+    "predict_before_update": true,
+    "reset_each_student": true,
+    "bootstrap": {
+      "unit": "student",
+      "iterations": 1000,
+      "seed": 42,
+      "ci_quantiles": [
+        0.025,
+        0.975
+      ],
+      "metric": "brier_score",
+      "pairing": "same_scored_rows",
+      "difference": "model_minus_XGBoost",
+      "aggregation": "interaction_weighted"
+    }
+  },
+  "validation_artifact_sha256": {
+    "artifacts/tables/baselines_pfa_validation.json": "d42302cad9e38109e3d1310c5ebbaa0a1c80d85e47bdf562d5170c52cadacf72",
+    "artifacts/tables/bkt_validation.json": "846cb19d302375c656afc45e29f4d799701eb69b2f3cd2bc17b67ab6166b31bd",
+    "artifacts/tables/xgboost_validation.json": "b817302e155d8dd10f570427010331be5704f8e03bc2f4b9146e39a92019d2e8"
+  },
+  "preprocessing_summary_sha256": "531402f70d783f9e32224499d80199e8d3571c669d01116a23045b7fe9a1bf01",
+  "code_sha256": {
+    "scripts/train_baselines_pfa.py": "c7ebf0683bc17c7f64fee267f752887ae69e8a4b9998959f18ec19c53fd4cdc4",
+    "scripts/train_bkt.py": "59d631afc581810499cf0e3e8fe9648a39df6312e63995ef5341a11014f08ce1",
+    "scripts/train_xgboost.py": "67e67976b3998b11b748611bf75ae960b8a78dbbc7de5b87a73047466b7e9464",
+    "src/evaluation/bootstrap.py": "7af177e11d462145001347070af401b159de1e5c5bde175aeaddbcd3a1628fc7",
+    "src/evaluation/metrics.py": "a3e2f4592d751c6dd47347a4bc966d551b134faede1ae80f0aefa28148b04d25",
+    "src/evaluation/sequential.py": "e26a0338250b188ed6f8e27691f90ec2a80220651267abe3e7cceaf92a60877c",
+    "src/models/baselines.py": "3be9bb62d56a36b5d4b5a4cd86c6776da939f310aa948a2f0a779a5ddc60cafa",
+    "src/models/bkt.py": "25835a925bc75944f9116823bc206b13a5c4a38eadee60485eae25a1c26dc7ef",
+    "src/models/pfa.py": "0b7c510bd639a95b7cc34df29b373f497c60fc5c97fc89b5b8caf291c9406029",
+    "src/models/xgboost_model.py": "b6cf48c4b407be680428d108c16108c3d5e21d6f3eca0595a488dbb76b6bd570"
+  },
+  "bkt_fit": {
+    "fit_groups": 84,
+    "optimizer_runs": 252,
+    "pooled_converged": true,
+    "parameters": "frozen_in_BKT_checkpoint"
+  },
+  "test_policy": "one_final_evaluation_after_preflight; no model, prompt, feature, threshold or calibration tuning using TEST"
+}

@@ -1,0 +1,73 @@
+{
+  "stage": "final_test",
+  "lock_b_sha256": "0a5800e6a2c1688cd50df028aec2970a4645ac5f10c44914e02ea70b73f04c4d",
+  "test_sha256": "37727e6baad48d4fdf5e34f489f7f1a15602745f07faa9a9f2df659beda89fc9",
+  "metrics": {
+    "Global": {
+      "n_rows": 29751,
+      "n_students": 483,
+      "brier_score": 0.22173434440439366,
+      "roc_auc": 0.5,
+      "log_loss": 0.6355158626238834
+    },
+    "Problem": {
+      "n_rows": 29751,
+      "n_students": 483,
+      "brier_score": 0.20138301406880849,
+      "roc_auc": 0.68193628092396,
+      "log_loss": 0.5887906822199909
+    },
+    "PFA": {
+      "n_rows": 29751,
+      "n_students": 483,
+      "brier_score": 0.195864283737841,
+      "roc_auc": 0.7029468218875414,
+      "log_loss": 0.5795441465564294
+    },
+    "BKT": {
+      "n_rows": 29751,
+      "n_students": 483,
+      "brier_score": 0.19228427580316562,
+      "roc_auc": 0.7064546785852639,
+      "log_loss": 0.5691430674172949
+    },
+    "XGBoost": {
+      "n_rows": 29751,
+      "n_students": 483,
+      "brier_score": 0.17346999548456155,
+      "roc_auc": 0.7725013749623736,
+      "log_loss": 0.5203850922537504
+    }
+  },
+  "paired_student_brier_bootstrap": {
+    "Global": {
+      "difference": 0.04826434891983213,
+      "ci_low": 0.042699484721591345,
+      "ci_high": 0.05488599773925072,
+      "n_students": 483,
+      "iterations": 1000
+    },
+    "Problem": {
+      "difference": 0.02791301858424697,
+      "ci_low": 0.022449417089054877,
+      "ci_high": 0.034663556331031235,
+      "n_students": 483,
+      "iterations": 1000
+    },
+    "PFA": {
+      "difference": 0.022394288253279496,
+      "ci_low": 0.0196943250585702,
+      "ci_high": 0.025158822183564637,
+      "n_students": 483,
+      "iterations": 1000
+    },
+    "BKT": {
+      "difference": 0.018814280318604083,
+      "ci_low": 0.016664362476923895,
+      "ci_high": 0.02099228999826554,
+      "n_students": 483,
+      "iterations": 1000
+    }
+  },
+  "calibration": "10 fixed-width bins; no calibrator fitted"
+}

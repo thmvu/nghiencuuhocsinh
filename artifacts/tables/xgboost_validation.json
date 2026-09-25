@@ -1,0 +1,130 @@
+{
+  "stage": "validation_development_not_final_test",
+  "test_opened": false,
+  "protocol_a_sha256": "60001cd0375c8e10ee4a09464a6dd9892935cf6d89790de74bd313c1e7e20a01",
+  "input_sha256": {
+    "train": "4168f4c556b4eb94d4838847861bada648522874af3da383d058d53dfe62acaf",
+    "validation": "ae0ba35895e959157afcdd7931b9e96e15f62a49bc7f19eccf472b179399bd87"
+  },
+  "python": "3.10.11",
+  "selection_metric": "validation_brier_score",
+  "results": [
+    {
+      "model": "XGBoost",
+      "max_depth": 4,
+      "learning_rate": 0.1,
+      "n_estimators": 300,
+      "n_rows": 32382,
+      "n_students": 481,
+      "brier_score": 0.1738479764377164,
+      "roc_auc": 0.7766501022758918,
+      "log_loss": 0.520763750386574,
+      "fit_evaluate_seconds": 12.872466599999996
+    }
+  ],
+  "xgboost_candidates": [
+    {
+      "max_depth": 2,
+      "learning_rate": 0.05,
+      "n_estimators": 100,
+      "n_rows": 32382,
+      "n_students": 481,
+      "brier_score": 0.17836850591468198,
+      "roc_auc": 0.7652259328018032,
+      "log_loss": 0.5334961386525863,
+      "fit_evaluate_seconds": 7.316986800000052
+    },
+    {
+      "max_depth": 2,
+      "learning_rate": 0.05,
+      "n_estimators": 300,
+      "n_rows": 32382,
+      "n_students": 481,
+      "brier_score": 0.17650092604832415,
+      "roc_auc": 0.7691176510985945,
+      "log_loss": 0.5281611897354025,
+      "fit_evaluate_seconds": 10.605010599999957
+    },
+    {
+      "max_depth": 2,
+      "learning_rate": 0.1,
+      "n_estimators": 100,
+      "n_rows": 32382,
+      "n_students": 481,
+      "brier_score": 0.17707087618373815,
+      "roc_auc": 0.7677512133351143,
+      "log_loss": 0.5297369231002402,
+      "fit_evaluate_seconds": 5.8253550999999675
+    },
+    {
+      "max_depth": 2,
+      "learning_rate": 0.1,
+      "n_estimators": 300,
+      "n_rows": 32382,
+      "n_students": 481,
+      "brier_score": 0.17570010920896406,
+      "roc_auc": 0.7714163155028413,
+      "log_loss": 0.5259257088197914,
+      "fit_evaluate_seconds": 12.525027300000033
+    },
+    {
+      "max_depth": 4,
+      "learning_rate": 0.05,
+      "n_estimators": 100,
+      "n_rows": 32382,
+      "n_students": 481,
+      "brier_score": 0.17618772690089415,
+      "roc_auc": 0.7702083156635433,
+      "log_loss": 0.5273207960782106,
+      "fit_evaluate_seconds": 6.67007000000001
+    },
+    {
+      "max_depth": 4,
+      "learning_rate": 0.05,
+      "n_estimators": 300,
+      "n_rows": 32382,
+      "n_students": 481,
+      "brier_score": 0.17473831410390422,
+      "roc_auc": 0.774059817661503,
+      "log_loss": 0.5232659885524528,
+      "fit_evaluate_seconds": 12.514048300000013
+    },
+    {
+      "max_depth": 4,
+      "learning_rate": 0.1,
+      "n_estimators": 100,
+      "n_rows": 32382,
+      "n_students": 481,
+      "brier_score": 0.17520772057553458,
+      "roc_auc": 0.7727810900168635,
+      "log_loss": 0.5245230481535045,
+      "fit_evaluate_seconds": 5.842226799999992
+    },
+    {
+      "max_depth": 4,
+      "learning_rate": 0.1,
+      "n_estimators": 300,
+      "n_rows": 32382,
+      "n_students": 481,
+      "brier_score": 0.1738479764377164,
+      "roc_auc": 0.7766501022758918,
+      "log_loss": 0.520763750386574,
+      "fit_evaluate_seconds": 12.872466599999996
+    }
+  ],
+  "model_sha256": {
+    "XGBoost": "82bf997c8e0f24f6f94f9a20a9b60f28ed2f67e3032068b40057c802f19d20a5"
+  },
+  "xgboost_selected": {
+    "max_depth": 4,
+    "learning_rate": 0.1,
+    "n_estimators": 300
+  },
+  "code_sha256": {
+    "scripts/train_xgboost.py": "67e67976b3998b11b748611bf75ae960b8a78dbbc7de5b87a73047466b7e9464",
+    "src/models/xgboost_model.py": "b6cf48c4b407be680428d108c16108c3d5e21d6f3eca0595a488dbb76b6bd570",
+    "src/evaluation/metrics.py": "a3e2f4592d751c6dd47347a4bc966d551b134faede1ae80f0aefa28148b04d25",
+    "src/evaluation/sequential.py": "e26a0338250b188ed6f8e27691f90ec2a80220651267abe3e7cceaf92a60877c"
+  },
+  "requirements_sha256": "00c7527a67d0455e4eb4fb4d8760f05be9193c07e87f7eaf072d29bc29fccdd0"
+}
