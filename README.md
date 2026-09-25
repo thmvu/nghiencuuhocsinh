@@ -30,8 +30,9 @@ Không chia lại student trong các notebook sau. Không public raw data hoặc
 
 EDA, Gate A và RQ1 đã hoàn thành. Kết quả TEST RQ1 đã được đánh giá một lần sau Lock B;
 xem `reports/rq1_test_results.md` và `configs/protocol_b.json`.
-RQ2 đang phát triển trên VALIDATION: BKT state, Knowledge Graph prototype, candidate generator,
-B+ và Local Agent đã có; chưa Lock C và chưa đánh giá TEST RQ2.
+RQ2 đã qua Lock C và một lượt đánh giá TEST vận hành theo giao thức đã khóa.
+Xem `reports/rq2_test_results.md`. Chưa có bằng chứng Agent tốt hơn B+ về sư phạm;
+graph hiện chỉ là prototype và chưa có điểm người chấm mù.
 
 ## Preprocessing / Gate A
 
@@ -76,5 +77,6 @@ ollama pull gemma3:1b
 .\.venv\Scripts\python.exe scripts/run_rq2_validation_agent.py
 ```
 
-Số liệu tổng hợp tại `reports/rq2_validation_progress.md`; pilot giả lập không phải
-kết quả nghiên cứu. Không tạo hay xem RQ2 TEST scenarios trước Lock C/Gate C.
+Số liệu phát triển tại `reports/rq2_validation_progress.md`; pilot giả lập không phải
+kết quả nghiên cứu. TEST RQ2 đã được chạy **một lần** sau Lock C/Gate C;
+không chạy lại `scripts/evaluate_rq2_test.py` hoặc dùng kết quả TEST để đổi hệ thống.

@@ -46,3 +46,9 @@ Phạm vi khởi động: môi trường local, bảo toàn CSV, notebook EDA ch
 - RQ2 đã có BKT latent-mastery snapshots, graph prototype 20 kỹ năng/5 cạnh giả định, TRAIN-only candidate pool, B+ deterministic policy và Agent contract cho Ollama.
 - 50 validation scenarios từ 50 sinh viên riêng; Agent `gemma3:1b` đạt 49/50 output đúng schema, 48/50 candidate hợp lệ trong một lượt phát triển. Đây chưa phải kết quả TEST RQ2; xem `reports/rq2_validation_progress.md`.
 - Reviewer độc lập xác nhận sửa lỗi trùng mã kỹ năng, chặn dữ liệu held-out vào graph/pool và kiểm tra lại B+ từ shared inputs. Lock C, rubric và RQ2 TEST còn chờ.
+
+## Lock C và TEST RQ2
+
+- Lock C commit `18b3091` đã push trước khi mở TEST RQ2. 24 hash, runtime/model và 100 kiểm thử được kiểm tra; Gate C đạt.
+- Một lượt TEST: 50 sinh viên, 3 lần Agent/scenario, 147/150 output qua xác thực candidate (98%; CI bootstrap theo sinh viên 94–100%), 49/50 sinh viên có cùng một lựa chọn hợp lệ qua cả ba lần. Không timeout. Xem `reports/rq2_test_results.md`.
+- Kiểm toán độc lập xác nhận Lock C trước dấu mốc TEST, các chỉ số tính lại khớp nhật ký riêng và không có sửa mã sau khóa. Không có người chấm mù hoặc học liệu xác nhận graph, nên chưa có kết luận Agent khuyến nghị tốt hơn B+ hay cải thiện learning gain.
