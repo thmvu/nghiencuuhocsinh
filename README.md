@@ -33,6 +33,7 @@ xem `reports/rq1_test_results.md` và `configs/protocol_b.json`.
 RQ2 đã qua Lock C và một lượt đánh giá TEST vận hành theo giao thức đã khóa.
 Xem `reports/rq2_test_results.md`. Chưa có bằng chứng Agent tốt hơn B+ về sư phạm;
 graph hiện chỉ là prototype và chưa có điểm người chấm mù.
+Tổng quan 10 công trình liên quan: `reports/literature_review.md`.
 
 ## Preprocessing / Gate A
 
@@ -80,3 +81,15 @@ ollama pull gemma3:1b
 Số liệu phát triển tại `reports/rq2_validation_progress.md`; pilot giả lập không phải
 kết quả nghiên cứu. TEST RQ2 đã được chạy **một lần** sau Lock C/Gate C;
 không chạy lại `scripts/evaluate_rq2_test.py` hoặc dùng kết quả TEST để đổi hệ thống.
+
+## Demo RQ2 cục bộ
+
+Demo tạo trạng thái học sinh **giả lập**, giữ cùng graph và tập 8 bài ứng viên
+cho B+ và Agent. Đầu ra chỉ minh họa cách chạy, không phải quan sát nghiên cứu.
+
+```powershell
+.\.venv\Scripts\python.exe scripts/demo_rq2.py --bplus-only
+.\.venv\Scripts\python.exe scripts/demo_rq2.py
+```
+
+Lệnh thứ hai cần Ollama và `gemma3:1b` đang sẵn sàng trên máy.
