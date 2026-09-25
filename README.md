@@ -93,3 +93,10 @@ cho B+ và Agent. Đầu ra chỉ minh họa cách chạy, không phải quan s�
 ```
 
 Lệnh thứ hai cần Ollama và `gemma3:1b` đang sẵn sàng trên máy.
+
+## Chuẩn bị đánh giá mù RQ2
+
+Biểu mẫu rà soát graph, phiếu chấm mù cho hai người và cách tổng hợp điểm
+được mô tả tại `reports/rq2_human_review_guide.md`. Phiếu theo từng tình huống
+được tạo và lưu **chỉ trong `data/processed/rq2_human_review/`**, không đưa lên Git.
+Chỉ chấm khi có hai người chấm độc lập; kết quả hiện tại vẫn là đánh giá vận hành.

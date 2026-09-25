@@ -1,0 +1,6 @@
+prerequisite_skill_id,target_skill_id,prototype_rationale,curriculum_source_or_evidence,decision_accept_reject_uncertain,reviewer_role,review_date,notes
+277,279,Addition/Subtraction Integers -> Multiplication/Division Integers,,,,,
+311,312,Equation Solving Two or Fewer Steps -> More Than Two Steps,,,,,
+47,77,Conversion Fraction Decimals Percents -> Finding Percents,,,,,
+47,79,Conversion Fraction Decimals Percents -> Proportion,,,,,
+18,17,Probability Single Event -> Two Distinct Events,,,,,
