@@ -1,0 +1,122 @@
+{
+  "version": "rq2-c-v1",
+  "lock_date": "2026-09-25",
+  "stage": "C",
+  "gate_c": "RQ2 PRE-TEST CHECKLIST PASS",
+  "test_opened": false,
+  "test_policy": "one_final_evaluation_no_test_tuning",
+  "source_commit": "20317ae",
+  "frozen_artifacts_sha256": {
+    "src/rq2/policy.py": "980475f6829b4641216670ee2597af902353bebf825189d324dec93bd4c25aa1",
+    "artifacts/tables/rq2_prototype_graph.json": "d31097a55c2c256e72e6ba3cedaf1b1fa03955c430b57f8cc84127716310c510",
+    "src/rq2/scenarios.py": "5b116c5ec3e0b80ac62137d259927598138674ae4fbcdf9b109a9fbe8c63371f",
+    "src/rq2/ollama_client.py": "f35aa7d4543518f41e2f399d10352d4a76c36ead47b9edcad117dcc6988e83be",
+    "data/processed/test.parquet": "37727e6baad48d4fdf5e34f489f7f1a15602745f07faa9a9f2df659beda89fc9",
+    "src/rq2/graph.py": "ad04bdc35f18acc0ca70d9e1a1db491df17897706ed19bb2b750754fac105b2d",
+    "configs/protocol_a.json": "60001cd0375c8e10ee4a09464a6dd9892935cf6d89790de74bd313c1e7e20a01",
+    "scripts/evaluate_rq2_test.py": "8f6c67182b6b5a72fa23733d4741d95492de0b2d6669c875f3a0766899fe9f5d",
+    "data/processed/student_split.json": "7b7a5e10f9c8b6dcd8ef4efa3965c3ef738ff32d23907e91e0f2050622afd27d",
+    "configs/protocol_b.json": "0a5800e6a2c1688cd50df028aec2970a4645ac5f10c44914e02ea70b73f04c4d",
+    "src/rq2/candidates.py": "ba0be81a331461bb7d2b0b0d419b39c9bf2fe41c516095c10282fd36aab7be53",
+    "data/processed/rq2_validation_scenarios/candidate_pool.json": "0acf79d059066ac52497d4b4224d53e74ca538ad7dc3e0892b0cffd417cc5ba1",
+    "src/rq2/state.py": "24b0cea4f3edc9019125ff2e9c94a44a9e9f976c12237125a9a63ac2edab714b",
+    "data/processed/validation.parquet": "ae0ba35895e959157afcdd7931b9e96e15f62a49bc7f19eccf472b179399bd87",
+    "data/processed/train.parquet": "4168f4c556b4eb94d4838847861bada648522874af3da383d058d53dfe62acaf",
+    "src/rq2/test_evaluation.py": "2891b8e787ce93937e98fc21d8c54307963fd25cc2ec29fb290dce48136fec92",
+    "configs/rq2_agent_development.json": "c91a128564cd1b1024f6fa48a8b4b208da61790571247c0433c9f45e11b636d9",
+    "reports/rq2_rubric_lock_c.md": "c9ba2a87b13b206bec5fc2629ed07891837a1e4b7bdfffe6cbba29aadb449ad7",
+    "src/rq2/agent.py": "df5ebe6e982cd3930ba4425b1f3d2fd49a46fdef37dc3f767f5b1abce4e32ff4",
+    "artifacts/models/rq1_development/BKT.joblib": "6e01e4eebd9abccfb976533cda76eb5b2dbec785b244bdb1a8357d14d95772b1",
+    "artifacts/tables/rq2_agent_validation_summary.json": "d8714eb98d7c8083b5a9df5ed1a5e32ff7e496a54ede377064b072a565e04729",
+    "requirements-lock.txt": "58056c2e19d70a6feac816a6a71e950ad1b2583b2b14640c6372d5dd0c604026",
+    "artifacts/tables/rq2_validation_summary.json": "f3a47353dd1625ecf2a8c348cd7637e910e06279a75597e9478bd0846ebc2b52",
+    "configs/rq2_development.json": "e417df7bbd9a3481ed995a8fe001ba8c01594fa738a0548140d58d603dfc6361"
+  },
+  "test_input_sha256": "37727e6baad48d4fdf5e34f489f7f1a15602745f07faa9a9f2df659beda89fc9",
+  "bkt_checkpoint_path": "artifacts/models/rq1_development/BKT.joblib",
+  "graph_path": "artifacts/tables/rq2_prototype_graph.json",
+  "candidate_pool_path": "data/processed/rq2_validation_scenarios/candidate_pool.json",
+  "state": {
+    "type": "BKT_p_mastery",
+    "snapshot": "post_response_prefix_only",
+    "checkpoint_source": "TRAIN_fit_from_RQ1_Lock_B",
+    "estimated_not_ground_truth": true
+  },
+  "graph": {
+    "n_skills": 20,
+    "n_edges": 5,
+    "edge_basis": "prototype_assumption_pending_curriculum_review"
+  },
+  "candidates": {
+    "source": "TRAIN_only",
+    "minimum_problem_support": 5,
+    "difficulty": "TRAIN_problem_success_rate_proxy",
+    "all_candidates_minimally_valid": true
+  },
+  "bplus": {
+    "policy": "frozen_deterministic_prerequisite_weakness_then_difficulty_fit_then_remediation_progression_then_support_then_problem_id",
+    "source": "src/rq2/policy.py"
+  },
+  "scenario_protocol": {
+    "n_students": 50,
+    "one_snapshot_per_student": true,
+    "min_history": 5,
+    "n_candidates": 8,
+    "seed": 42,
+    "cutoff": "uniform_integer_inclusive_between_5_and_student_history_length",
+    "future_labels_forbidden": true,
+    "shortage_rule": "stop_and_report_no_test_run"
+  },
+  "agent": {
+    "endpoint": "http://127.0.0.1:11434/api/chat",
+    "ollama_version": "0.34.4",
+    "model": "gemma3:1b",
+    "model_digest": "8648f39daa8fbf5b18c7b4e6a8fb4990c692751d49917417b8842ca5758e7ffc",
+    "quantization": "Q4_K_M",
+    "temperature": 0,
+    "num_ctx": 2048,
+    "seed_policy": "no_seed_option",
+    "timeout_seconds": 90,
+    "repair_attempts": 0,
+    "runs_per_scenario": 3,
+    "prompt_sha256": "917a40b9804b63d04426b25294ee0d1df9ec6d3e0354d6b400e03cf052a0312e",
+    "schema_sha256": "dd5f38eadcc678d302f5140a07f71ff654eb785dc7ac87e93f739b211fd3dd22"
+  },
+  "bootstrap": {
+    "unit": "student",
+    "iterations": 1000,
+    "seed": 42,
+    "ci_quantiles": [
+      0.025,
+      0.975
+    ],
+    "keep_three_runs_together": true
+  },
+  "outcomes": {
+    "primary": "Agent_candidate_valid_rate_across_all_attempted_runs",
+    "secondary": [
+      "json_syntax_valid_rate",
+      "schema_valid_rate",
+      "timeout_count",
+      "error_count",
+      "latency_seconds_median",
+      "latency_seconds_p95",
+      "within_scenario_all_three_same_valid_candidate_rate"
+    ],
+    "bplus_agreement": "descriptive_only",
+    "interpretation": "operational_only_without_blind_raters"
+  },
+  "human_evaluation": {
+    "status": "conditional_no_confirmed_raters",
+    "rubric_path": "reports/rq2_rubric_lock_c.md",
+    "rubric_sha256": "c9ba2a87b13b206bec5fc2629ed07891837a1e4b7bdfffe6cbba29aadb449ad7",
+    "n_scenarios_if_available": 20,
+    "n_raters_if_available": 2,
+    "blind_scenario_seed": 43,
+    "no_pedagogical_superiority_claim_without_scores": true
+  },
+  "privacy": {
+    "student_ids_scenarios_raw_agent_responses_and_per_run_records": "ignored_local_data_only",
+    "published_artifacts": "aggregate_only"
+  }
+}
