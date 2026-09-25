@@ -1,6 +1,7 @@
 """Frozen RQ2 TEST protocol. No IO occurs in this module."""
 
 import json
+import hashlib
 import math
 import statistics
 import time
@@ -10,7 +11,8 @@ import numpy as np
 import pandas as pd
 from pydantic import ValidationError
 
-from src.rq2.agent import Recommendation, build_agent_request, validate_agent_output
+from src.rq2.agent import (Recommendation, SYSTEM_PROMPT,
+                           build_agent_request, validate_agent_output)
 from src.rq2.candidates import generate_candidates
 from src.rq2.ollama_client import call_local_ollama
 from src.rq2.policy import recommend_bplus
@@ -21,6 +23,15 @@ FROZEN_CODE = ('src/rq2/state.py', 'src/rq2/scenarios.py', 'src/rq2/graph.py',
                'src/rq2/candidates.py', 'src/rq2/policy.py', 'src/rq2/agent.py',
                'src/rq2/ollama_client.py', 'src/rq2/test_evaluation.py',
                'scripts/evaluate_rq2_test.py')
+
+
+def verify_agent_contract(agent):
+    """Pin the actual prompt and generated Pydantic schema before TEST calls."""
+    prompt = hashlib.sha256(SYSTEM_PROMPT.encode('utf-8')).hexdigest()
+    schema = hashlib.sha256(json.dumps(
+        Recommendation.model_json_schema(), sort_keys=True).encode('utf-8')).hexdigest()
+    if agent.get('prompt_sha256') != prompt or agent.get('schema_sha256') != schema:
+        raise ValueError('frozen Agent prompt or JSON schema changed')
 
 
 def validate_lock_c(lock, digest):
@@ -43,6 +54,7 @@ def validate_lock_c(lock, digest):
         protocol = lock['scenario_protocol']
         agent = lock['agent']
         bootstrap = lock['bootstrap']
+        verify_agent_contract(agent)
         if (protocol['n_students'] != 50 or protocol['min_history'] < 1 or
                 protocol['n_candidates'] < 1 or not isinstance(protocol['seed'], int) or
                 bootstrap['unit'] != 'student' or bootstrap['iterations'] < 1 or

@@ -1,10 +1,14 @@
 import json
+import io
 import unittest
+from unittest.mock import patch
 
 import pandas as pd
 
 from src.rq2.test_evaluation import (sample_test_scenarios, run_test_cases,
-                                     summarize_test_runs, validate_lock_c)
+                                     summarize_test_runs, validate_lock_c,
+                                     verify_agent_contract)
+from scripts.evaluate_rq2_test import verify_local_model
 
 
 class RQ2TestEvaluationTests(unittest.TestCase):
@@ -61,6 +65,25 @@ class RQ2TestEvaluationTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             validate_lock_c({'stage': 'C', 'gate_c': 'RQ2 PRE-TEST CHECKLIST PASS'},
                             lambda path: 'hash')
+
+    def test_prompt_and_schema_hashes_must_match_lock(self):
+        with self.assertRaises(ValueError):
+            verify_agent_contract({'prompt_sha256': 'wrong', 'schema_sha256': 'wrong'})
+
+    def test_runtime_version_and_model_digest_are_checked(self):
+        agent = {'model': 'local:small', 'model_digest': 'exact',
+                 'quantization': 'Q4_K_M', 'ollama_version': '1.2.3'}
+
+        def fake_open(url, timeout):
+            payload = {'version': '1.2.3'} if url.endswith('/api/version') else {
+                'models': [{'name': 'local:small', 'digest': 'exact',
+                            'details': {'quantization_level': 'Q4_K_M'}}]}
+            return io.BytesIO(json.dumps(payload).encode())
+
+        with patch('scripts.evaluate_rq2_test.urlopen', side_effect=fake_open):
+            verify_local_model(agent)
+            with self.assertRaises(ValueError):
+                verify_local_model({**agent, 'ollama_version': 'wrong'})
 
 
 if __name__ == '__main__':

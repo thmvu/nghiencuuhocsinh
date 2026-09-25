@@ -25,6 +25,10 @@ def digest(relative):
 
 def verify_local_model(agent):
     """Match the frozen Ollama model bytes and quantization before TEST access."""
+    with urlopen('http://127.0.0.1:11434/api/version', timeout=10) as response:
+        version = json.loads(response.read().decode('utf-8'))['version']
+    if version != agent['ollama_version']:
+        raise ValueError('Ollama runtime version differs from Lock C')
     with urlopen('http://127.0.0.1:11434/api/tags', timeout=10) as response:
         catalog = json.loads(response.read().decode('utf-8'))
     models = [item for item in catalog['models'] if item.get('name') == agent['model']]
