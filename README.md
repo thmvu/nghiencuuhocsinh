@@ -1,5 +1,11 @@
 # NCKH — Knowledge Tracing và Local LLM
 
+**Phạm vi hiện tại:** FoundationalASSIST là dataset chính duy nhất cho workload mới;
+ASSIST09 chỉ là fallback và không chạy thêm. Các kết quả ASSIST09 bên dưới là lịch sử
+đã có trong repo. FoundationalASSIST mới hoàn thành kiểm toán raw, chưa train hoặc khóa
+preprocessing. Xem `reports/foundationalassist_initial_audit.md` và notebook đã chạy
+`notebooks/01_foundationalassist_audit.ipynb` trước khi thiết lập protocol v4.
+
 Kế hoạch chính: `NCKH_Knowledge_Tracing_AI_Agent_Plan_v3_Consolidated.md`.
 
 ## Chạy EDA (PowerShell, tại thư mục dự án)

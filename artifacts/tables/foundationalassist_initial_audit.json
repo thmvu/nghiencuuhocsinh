@@ -1,0 +1,142 @@
+{
+  "status": "read_only_audit_no_rules_locked_no_training",
+  "provenance": {
+    "Interactions": {
+      "bytes": 245145636,
+      "sha256": "671e97d320d0cf9b7e2bd75830d531cfbd95d307a1a9a590531934ad0d3d8ba4",
+      "download_revision": "82b29188dffd2fd6bd3abc5a3de0db1ef1df12b9",
+      "download_etag": "671e97d320d0cf9b7e2bd75830d531cfbd95d307a1a9a590531934ad0d3d8ba4"
+    },
+    "Problems": {
+      "bytes": 1906331,
+      "sha256": "37faf41fce19d6d228021ffeb74719db48be722f950ba413068aa3647f2e7e50",
+      "download_revision": "82b29188dffd2fd6bd3abc5a3de0db1ef1df12b9",
+      "download_etag": "4ab1a9093e6dd03af808c0fd5a8e6473c1de8e90"
+    },
+    "Skills": {
+      "bytes": 256381,
+      "sha256": "405c09530e767832cfc90e67a80153d20d0358503c40807b58e138557048cd68",
+      "download_revision": "82b29188dffd2fd6bd3abc5a3de0db1ef1df12b9",
+      "download_etag": "0bbadab5a0c201c913315858345d137e839915f1"
+    }
+  },
+  "schema": {
+    "Interactions": {
+      "shape": [
+        1753384,
+        9
+      ],
+      "columns": [
+        "Unnamed: 0",
+        "id",
+        "problem_id",
+        "hint_count",
+        "answer_text",
+        "saw_answer",
+        "discrete_score",
+        "end_time",
+        "user_id"
+      ],
+      "empty_fields": {
+        "Unnamed: 0": 0,
+        "id": 0,
+        "problem_id": 0,
+        "hint_count": 0,
+        "answer_text": 77,
+        "saw_answer": 0,
+        "discrete_score": 8952,
+        "end_time": 3445,
+        "user_id": 0
+      }
+    },
+    "Problems": {
+      "shape": [
+        3395,
+        10
+      ],
+      "columns": [
+        "Problem Set Id",
+        "Problem Part",
+        "Problem Type",
+        "Answer Types",
+        "Problem Body",
+        "Fill-in Options",
+        "Fill-in Answers",
+        "Multiple Choice Options",
+        "Multiple Choice Answers",
+        "problem_id"
+      ],
+      "empty_fields": {
+        "Problem Set Id": 0,
+        "Problem Part": 0,
+        "Problem Type": 0,
+        "Answer Types": 0,
+        "Problem Body": 0,
+        "Fill-in Options": 1175,
+        "Fill-in Answers": 1110,
+        "Multiple Choice Options": 2220,
+        "Multiple Choice Answers": 2220,
+        "problem_id": 0
+      }
+    },
+    "Skills": {
+      "shape": [
+        3797,
+        4
+      ],
+      "columns": [
+        "problem_id",
+        "skill_id",
+        "node_code",
+        "node_name"
+      ],
+      "empty_fields": {
+        "problem_id": 0,
+        "skill_id": 0,
+        "node_code": 0,
+        "node_name": 0
+      }
+    }
+  },
+  "duplicates": {
+    "exact_raw_repeated_rows": 0,
+    "export_index_unique": true,
+    "repeated_rows_including_interaction_id_excluding_export_index": 31441,
+    "repeated_rows_on_requested_seven_fields": 31443,
+    "repeated_interaction_ids": 31441,
+    "interaction_ids_with_conflicting_business_fields": 0,
+    "same_seven_fields_with_distinct_interaction_ids": 2,
+    "diagnostic_unique_rows": 1721943,
+    "readme_unique_interactions": 1722169,
+    "readme_minus_diagnostic_unique_rows": 226
+  },
+  "target": {
+    "blank_score_raw": 8952,
+    "numeric_missing_or_invalid_raw": 8952,
+    "nonempty_invalid_score_raw": 0,
+    "nonbinary_score_raw": 0,
+    "blank_score_diagnostic_unique": 8952
+  },
+  "chronology": {
+    "blank_time_diagnostic_unique": 3390,
+    "unparseable_nonempty_time": 0,
+    "student_timestamp_ties_diagnostic_unique": 0
+  },
+  "joins": {
+    "interaction_problems_missing_metadata": 0,
+    "interaction_problems_missing_skill_mapping": 0,
+    "problem_exact_repeated_rows": 26,
+    "problem_ids_with_conflicting_metadata": 1,
+    "multi_skill_problems": 355,
+    "unique_skills": 224,
+    "unique_node_codes": 164,
+    "problem_rows_with_img_tag": 835
+  },
+  "interpretation": [
+    "Same interaction id and all seven business fields repeat; no raw rows removed.",
+    "README difference of 226 remains unexplained; do not invent missing rows.",
+    "Download revision comes from local Hugging Face cache metadata, not a new remote integrity check.",
+    "Absence of an img tag does not establish text completeness.",
+    "Skills is a mapping table, not an explicit prerequisite graph."
+  ]
+}
