@@ -2,13 +2,15 @@
 
 **Phạm vi hiện tại:** FoundationalASSIST là dataset chính duy nhất cho workload mới;
 ASSIST09 chỉ là fallback và không chạy thêm. Các kết quả ASSIST09 bên dưới là lịch sử
-đã có trong repo. FoundationalASSIST đã khóa cleaning và split, chưa train.
+đã có trong repo. FoundationalASSIST đã hoàn tất RQ1 TRAIN/VALIDATION và một lượt TEST
+sau hai khóa cấu hình riêng. Kết quả tại `reports/foundationalassist_v4_rq1_test.md`.
+RQ2 v4 chưa được phát triển/đánh giá; content eligibility vẫn chờ xác nhận.
 Plan hiện hành: `NCKH_Knowledge_Tracing_AI_Agent_Plan_v4_FoundationalASSIST.md`.
 Kết quả preprocessing: `artifacts/tables/foundationalassist_v4_preprocessing.json`.
 Chạy `python scripts/prepare_foundationalassist.py` để xác minh lock/split đã lưu;
 lần chạy sau không tái tạo split. Các lệnh ASSIST09 bên dưới chỉ là lịch sử.
 
-Kế hoạch chính: `NCKH_Knowledge_Tracing_AI_Agent_Plan_v3_Consolidated.md`.
+Kế hoạch v3 (lịch sử ASSIST09): `NCKH_Knowledge_Tracing_AI_Agent_Plan_v3_Consolidated.md`.
 
 ## Chạy EDA (PowerShell, tại thư mục dự án)
 

@@ -1,4 +1,14 @@
-# Tiến độ — plan v3
+# Tiến độ — v4 hiện hành, v3 lịch sử
+
+## FoundationalASSIST v4
+
+- Cleaning/split giữ nguyên: 1.611.613 interactions, 3.500/750/750 học sinh.
+- Training Lock commit `35e5c17` trước fit. 119 tests đạt trước TRAIN/VALIDATION; 123 trước TEST, gồm kiểm thử leakage và final gate.
+- PFA C=0,01; ba C lớn hơn không hội tụ trong budget. BKT 171 fit groups/513 starts, pooled fallback cho 23 skill. XGBoost depth4/eta0,1/300 trees chọn bằng VALIDATION.
+- Final Lock `30f8c92` push trước marker TEST. One-shot TEST: 238.330 scored rows/750 học sinh. XGBoost Brier 0,178223, AUC 0,788408; xem `reports/foundationalassist_v4_rq1_test.md`.
+- Hậu kiểm tái tính metrics và paired student bootstrap từ predictions đã lưu, không chạy model lại. RQ2 v4 là bước tiếp theo; chưa bật text eligibility hoặc dùng TEST để tune.
+
+## Lịch sử ASSIST09 / plan v3
 
 Phạm vi khởi động: môi trường local, bảo toàn CSV, notebook EDA chạy được và báo cáo dữ liệu thật.
 

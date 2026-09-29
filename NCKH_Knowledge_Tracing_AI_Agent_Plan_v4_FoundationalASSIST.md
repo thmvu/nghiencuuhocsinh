@@ -6,7 +6,7 @@ FoundationalASSIST là dataset chính duy nhất. ASSIST09 chỉ là historical/
 
 Snapshot tải: `82b29188dffd2fd6bd3abc5a3de0db1ef1df12b9`. SHA-256 ba CSV trong `configs/foundationalassist_v4_preprocessing.json`. Counts được tính từ snapshot thực tế, có thể khác README. Không bù/xóa dữ liệu để khớp README.
 
-Trạng thái: cleaning và split v4 đã khóa; chưa train. Lock preprocessing không phải Gate cho huấn luyện: cần khóa protocol features/models/evaluation riêng và kiểm thử causal history/OOF trên đường chạy v4 trước.
+Trạng thái: RQ1 hoàn tất. Training Configuration và feature/code manifest đã commit `35e5c17` trước fit; Lock B v4 commit `30f8c92` trước one-shot TEST. Xem `reports/foundationalassist_v4_rq1_test.md`. RQ2 chưa phát triển/đánh giá; content review còn chờ. Không chạy lại final TEST hoặc điều chỉnh mô hình theo TEST.
 
 ## 2. RQ1
 
@@ -33,7 +33,9 @@ Student-disjoint 70/15/15, seed 42. Sắp xếp ID học sinh hợp lệ, shuffl
 
 TRAIN 3.500 học sinh / 1.127.951 tương tác; VALIDATION 750 / 241.582; TEST 750 / 242.080. Tổng 1.611.613 tương tác. Chỉ đếm cấu trúc của TEST ở bước chuẩn bị; không chọn feature, model, prompt hoặc policy theo TEST.
 
-## 5. Lock RQ1 trước huấn luyện — còn phải hoàn thiện
+## 5. Lock RQ1 trước huấn luyện — đã hoàn tất
+
+Cấu hình cụ thể trong `configs/foundationalassist_v4_rq1_training.json`; final checkpoint/input/code pins trong `configs/foundationalassist_v4_rq1_final.json`. 123 kiểm thử tích hợp đạt trước TEST, bao gồm perturbation current/future label, OOF exclusion, evaluator và one-shot synthetic test.
 
 - Khóa trước grid, giới hạn fits/optimizer, điều kiện hội tụ, fallback skill chưa thấy, warm-up, metric chính và tie-break; không sao chép cấu hình thắng ASSIST09 như thể đã được chọn cho bộ mới.
 - Tất cả mô hình fit TRAIN; chọn cấu hình trên VALIDATION; dùng cùng scored rows sau warm-up. Predict trước update; reset state khi đổi học sinh.
@@ -72,8 +74,8 @@ Giới hạn phải báo: single-skill filtering, filtered sequences không cậ
 - [x] Tạo và lưu split học sinh mới.
 - [x] Tạo screen nội dung bảo toàn markup, fail-closed cho RQ2.
 - [ ] Hoàn thành rà soát nội dung để bật eligibility cho problem bank RQ2.
-- [ ] Khóa features/models/evaluation và kiểm thử đường chạy RQ1 v4.
-- [ ] Train/VALIDATION RQ1; Lock B v4; one-shot TEST.
+- [x] Khóa features/models/evaluation và kiểm thử đường chạy RQ1 v4.
+- [x] Train/VALIDATION RQ1; Lock B v4; one-shot TEST.
 - [ ] Graph, B+, Agent development; Lock C v4; one-shot TEST RQ2.
 
 Không cần chờ toàn bộ RQ2 xong mới train RQ1; Gate RQ1 chỉ phụ thuộc protocol và kiểm thử RQ1.
