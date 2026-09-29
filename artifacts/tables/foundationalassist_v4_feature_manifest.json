@@ -1,0 +1,38 @@
+{
+  "stage": "TRAIN_VALIDATION_features_no_TEST_access",
+  "config_sha256": "d87457c19d2135143431689f8b75f87828cc57a9ae4550a2383697b7a6c824cb",
+  "preprocessing_lock_sha256": "0ae994a4520bc62b618e076f49716cdd9af4ffbe9522cf7361da8d41de184503",
+  "split_sha256": "54ba8a52d2e6bc039f8c13178f67cd5d05016050953b09fa78e8d8645928ae96",
+  "input_sha256": {
+    "train": "06489c9b00b8d9750c085223a4ed884238fc63bd9be963b659e883f9d0301209",
+    "validation": "49a1264aecfc88d95330c8ff8c329c9d861823c3555640cfc437830958112820"
+  },
+  "code_sha256": {
+    "src/preprocessing/pipeline.py": "51788c552ab836864df5431208f02896b3e061eafd2b5abe3eb41142323bbc60",
+    "src/evaluation/sequential.py": "e26a0338250b188ed6f8e27691f90ec2a80220651267abe3e7cceaf92a60877c",
+    "src/evaluation/metrics.py": "a3e2f4592d751c6dd47347a4bc966d551b134faede1ae80f0aefa28148b04d25",
+    "src/models/baselines.py": "3be9bb62d56a36b5d4b5a4cd86c6776da939f310aa948a2f0a779a5ddc60cafa",
+    "src/models/pfa.py": "c2fd17bccc02c33379a968c61191d07b7dcfb7ece275c8e02ada2f7a9723fd5c",
+    "src/models/bkt.py": "25835a925bc75944f9116823bc206b13a5c4a38eadee60485eae25a1c26dc7ef",
+    "src/models/xgboost_model.py": "916b50c0897b9b041b87b1ea1e234fd93d585a4373ba3f13fe67d680bb2d8ee6",
+    "scripts/prepare_foundational_rq1_features.py": "7ed92d40d1cb850ce83cd60007e3b1efc6c8d1986f3a14ec07f84e4552229964",
+    "scripts/train_foundational_rq1.py": "8bd62e979aa9a41dbe5fa886667d83def0c7cd358893ef0c72611d770d937ca2"
+  },
+  "requirements_sha256": "ed0def08a1e7e2fda452acb9cc336a498fd2ab4f4d645670982f8d2c211541f9",
+  "partitions": {
+    "train": {
+      "sha256": "e7f7f0d6a030c4bfaaede9ca747183b0ccb3369d9c9aa34742b7e133b2812980",
+      "rows": 1127951,
+      "students": 3500,
+      "scored_rows": 1110451,
+      "scored_students": 3500
+    },
+    "validation": {
+      "sha256": "570117d9aaad93611e356b9c846a8b46effb4825e9b58ba6885fed831961b8e4",
+      "rows": 241582,
+      "students": 750,
+      "scored_rows": 237832,
+      "scored_students": 750
+    }
+  }
+}
