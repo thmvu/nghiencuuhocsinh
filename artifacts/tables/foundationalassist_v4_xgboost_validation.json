@@ -1,0 +1,183 @@
+{
+  "stage": "validation_development_not_final_test",
+  "status": "completed",
+  "group": "xgboost",
+  "test_opened": false,
+  "python": "3.10.11",
+  "config_sha256": "d87457c19d2135143431689f8b75f87828cc57a9ae4550a2383697b7a6c824cb",
+  "code_sha256": {
+    "src/preprocessing/pipeline.py": "51788c552ab836864df5431208f02896b3e061eafd2b5abe3eb41142323bbc60",
+    "src/evaluation/sequential.py": "e26a0338250b188ed6f8e27691f90ec2a80220651267abe3e7cceaf92a60877c",
+    "src/evaluation/metrics.py": "a3e2f4592d751c6dd47347a4bc966d551b134faede1ae80f0aefa28148b04d25",
+    "src/models/baselines.py": "3be9bb62d56a36b5d4b5a4cd86c6776da939f310aa948a2f0a779a5ddc60cafa",
+    "src/models/pfa.py": "c2fd17bccc02c33379a968c61191d07b7dcfb7ece275c8e02ada2f7a9723fd5c",
+    "src/models/bkt.py": "25835a925bc75944f9116823bc206b13a5c4a38eadee60485eae25a1c26dc7ef",
+    "src/models/xgboost_model.py": "916b50c0897b9b041b87b1ea1e234fd93d585a4373ba3f13fe67d680bb2d8ee6",
+    "scripts/prepare_foundational_rq1_features.py": "7ed92d40d1cb850ce83cd60007e3b1efc6c8d1986f3a14ec07f84e4552229964",
+    "scripts/train_foundational_rq1.py": "8bd62e979aa9a41dbe5fa886667d83def0c7cd358893ef0c72611d770d937ca2"
+  },
+  "feature_manifest_path": "data/processed/foundationalassist_v4/features/manifest.json",
+  "feature_manifest_sha256": "a8088b52f01b4eda6c1a343ac44aaac1897bd04c56ad876bc99dd47669b058f5",
+  "input_sha256": {
+    "train": "e7f7f0d6a030c4bfaaede9ca747183b0ccb3369d9c9aa34742b7e133b2812980",
+    "validation": "570117d9aaad93611e356b9c846a8b46effb4825e9b58ba6885fed831961b8e4"
+  },
+  "selection_metric": "validation_brier_score",
+  "tie_break": "first_candidate",
+  "results": [
+    {
+      "model": "XGBoost",
+      "parameters": {
+        "max_depth": 4,
+        "learning_rate": 0.1,
+        "n_estimators": 300
+      },
+      "status": "valid",
+      "n_rows": 237832,
+      "n_students": 750,
+      "brier_score": 0.18068132350938113,
+      "roc_auc": 0.7826829811072094,
+      "log_loss": 0.5383776104936001,
+      "n_unscored_students": 0,
+      "fit_evaluate_seconds": 65.1499748
+    }
+  ],
+  "candidates": [
+    {
+      "model": "XGBoost",
+      "parameters": {
+        "max_depth": 2,
+        "learning_rate": 0.05,
+        "n_estimators": 100
+      },
+      "status": "valid",
+      "n_rows": 237832,
+      "n_students": 750,
+      "brier_score": 0.18334039463349666,
+      "roc_auc": 0.7776141972405115,
+      "log_loss": 0.5459981304383703,
+      "n_unscored_students": 0,
+      "fit_evaluate_seconds": 32.991705300000035
+    },
+    {
+      "model": "XGBoost",
+      "parameters": {
+        "max_depth": 2,
+        "learning_rate": 0.05,
+        "n_estimators": 300
+      },
+      "status": "valid",
+      "n_rows": 237832,
+      "n_students": 750,
+      "brier_score": 0.1819011064966866,
+      "roc_auc": 0.7798525443047962,
+      "log_loss": 0.5415024954868134,
+      "n_unscored_students": 0,
+      "fit_evaluate_seconds": 69.37134739999999
+    },
+    {
+      "model": "XGBoost",
+      "parameters": {
+        "max_depth": 2,
+        "learning_rate": 0.1,
+        "n_estimators": 100
+      },
+      "status": "valid",
+      "n_rows": 237832,
+      "n_students": 750,
+      "brier_score": 0.18214426285538998,
+      "roc_auc": 0.7793120286096589,
+      "log_loss": 0.5422000731373069,
+      "n_unscored_students": 0,
+      "fit_evaluate_seconds": 30.06548609999993
+    },
+    {
+      "model": "XGBoost",
+      "parameters": {
+        "max_depth": 2,
+        "learning_rate": 0.1,
+        "n_estimators": 300
+      },
+      "status": "valid",
+      "n_rows": 237832,
+      "n_students": 750,
+      "brier_score": 0.18156916602270629,
+      "roc_auc": 0.7806195780750842,
+      "log_loss": 0.5406196222851831,
+      "n_unscored_students": 0,
+      "fit_evaluate_seconds": 63.566464999999994
+    },
+    {
+      "model": "XGBoost",
+      "parameters": {
+        "max_depth": 4,
+        "learning_rate": 0.05,
+        "n_estimators": 100
+      },
+      "status": "valid",
+      "n_rows": 237832,
+      "n_students": 750,
+      "brier_score": 0.18183507645012192,
+      "roc_auc": 0.780017040819976,
+      "log_loss": 0.541373528038704,
+      "n_unscored_students": 0,
+      "fit_evaluate_seconds": 41.33153319999997
+    },
+    {
+      "model": "XGBoost",
+      "parameters": {
+        "max_depth": 4,
+        "learning_rate": 0.05,
+        "n_estimators": 300
+      },
+      "status": "valid",
+      "n_rows": 237832,
+      "n_students": 750,
+      "brier_score": 0.1810848736533376,
+      "roc_auc": 0.7817396203358455,
+      "log_loss": 0.5393725641614473,
+      "n_unscored_students": 0,
+      "fit_evaluate_seconds": 77.9264071
+    },
+    {
+      "model": "XGBoost",
+      "parameters": {
+        "max_depth": 4,
+        "learning_rate": 0.1,
+        "n_estimators": 100
+      },
+      "status": "valid",
+      "n_rows": 237832,
+      "n_students": 750,
+      "brier_score": 0.18128374629394337,
+      "roc_auc": 0.7812404353046474,
+      "log_loss": 0.5399013060792393,
+      "n_unscored_students": 0,
+      "fit_evaluate_seconds": 30.964108499999952
+    },
+    {
+      "model": "XGBoost",
+      "parameters": {
+        "max_depth": 4,
+        "learning_rate": 0.1,
+        "n_estimators": 300
+      },
+      "status": "valid",
+      "n_rows": 237832,
+      "n_students": 750,
+      "brier_score": 0.18068132350938113,
+      "roc_auc": 0.7826829811072094,
+      "log_loss": 0.5383776104936001,
+      "n_unscored_students": 0,
+      "fit_evaluate_seconds": 65.1499748
+    }
+  ],
+  "model_sha256": {
+    "XGBoost": "00d590b06e2b6faf5dfdeb2872ca703c1ec5ab81b0ee98d2ad01908b4b32c242"
+  },
+  "selected_parameters": {
+    "max_depth": 4,
+    "learning_rate": 0.1,
+    "n_estimators": 300
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "stage": "RQ1_FINAL_TEST_V4",
+  "test_opened": false,
+  "created_utc": "2026-09-29T10:28:54.832677+00:00",
+  "reference": "XGBoost",
+  "models": {
+    "Global": "artifacts/models/foundationalassist_v4/Global.joblib",
+    "Problem": "artifacts/models/foundationalassist_v4/Problem.joblib",
+    "PFA": "artifacts/models/foundationalassist_v4/PFA.joblib",
+    "BKT": "artifacts/models/foundationalassist_v4/BKT.joblib",
+    "XGBoost": "artifacts/models/foundationalassist_v4/XGBoost.joblib"
+  },
+  "validation_selection": {
+    "Global": {},
+    "Problem": {},
+    "PFA": {
+      "C": 0.01
+    },
+    "BKT": {},
+    "XGBoost": {
+      "max_depth": 4,
+      "learning_rate": 0.1,
+      "n_estimators": 300
+    }
+  },
+  "fit_scope": "TRAIN only; no refit with VALIDATION",
+  "gate_tests_passed": 123,
+  "test_policy": "one_final_run_no_tuning",
+  "pinned_sha256": {
+    "artifacts/models/foundationalassist_v4/BKT.joblib": "b462d50b366d42760c9dff6645bae1525413fdb3a73e1f47a6ab9768b0a31004",
+    "artifacts/models/foundationalassist_v4/Global.joblib": "63d15f9869be831b87ff5d2d09e5d24db08aaac219370b0c73dd6b7c5f15c131",
+    "artifacts/models/foundationalassist_v4/PFA.joblib": "6a04dc7573e8e79dd005605cd14756e4c7a7a11dec0d6049d233e9b0f6167745",
+    "artifacts/models/foundationalassist_v4/Problem.joblib": "2f97fabd2667edd4e2b553b47c77eb4c4161caa563086475fbe873e62e568a4e",
+    "artifacts/models/foundationalassist_v4/XGBoost.joblib": "00d590b06e2b6faf5dfdeb2872ca703c1ec5ab81b0ee98d2ad01908b4b32c242",
+    "artifacts/tables/foundationalassist_v4_baselines_pfa_validation.json": "109438e5e208b5181182039609fe4a1c8214b9f98fd576ee0220b2f907b1d62e",
+    "artifacts/tables/foundationalassist_v4_bkt_validation.json": "383caeaf5428116af82b5b8a95eba1c130f991329f2f565e2c9c3aeab1d481f4",
+    "artifacts/tables/foundationalassist_v4_feature_manifest.json": "a8088b52f01b4eda6c1a343ac44aaac1897bd04c56ad876bc99dd47669b058f5",
+    "artifacts/tables/foundationalassist_v4_xgboost_validation.json": "e15dc3ef10983111b87c34ed12b83fd9b5dff7806b441639db80b03561cd3694",
+    "configs/foundationalassist_v4_preprocessing.json": "0ae994a4520bc62b618e076f49716cdd9af4ffbe9522cf7361da8d41de184503",
+    "configs/foundationalassist_v4_rq1_training.json": "d87457c19d2135143431689f8b75f87828cc57a9ae4550a2383697b7a6c824cb",
+    "data/processed/foundationalassist_v4/student_split.json": "54ba8a52d2e6bc039f8c13178f67cd5d05016050953b09fa78e8d8645928ae96",
+    "data/processed/foundationalassist_v4/test.parquet": "1549622eeab215d00ef647ed22009fce5561e5d63fb859dc61e772e86868abf6",
+    "data/processed/foundationalassist_v4/train.parquet": "06489c9b00b8d9750c085223a4ed884238fc63bd9be963b659e883f9d0301209",
+    "requirements-lock.txt": "ed0def08a1e7e2fda452acb9cc336a498fd2ab4f4d645670982f8d2c211541f9",
+    "scripts/evaluate_foundational_rq1_test.py": "406374d2ee3b43336d748be51c97f4d50139dfc797449f7d36bb80f5fef29806",
+    "scripts/prepare_foundational_rq1_features.py": "7ed92d40d1cb850ce83cd60007e3b1efc6c8d1986f3a14ec07f84e4552229964",
+    "scripts/train_foundational_rq1.py": "8bd62e979aa9a41dbe5fa886667d83def0c7cd358893ef0c72611d770d937ca2",
+    "src/evaluation/bootstrap.py": "7af177e11d462145001347070af401b159de1e5c5bde175aeaddbcd3a1628fc7",
+    "src/evaluation/metrics.py": "a3e2f4592d751c6dd47347a4bc966d551b134faede1ae80f0aefa28148b04d25",
+    "src/evaluation/sequential.py": "e26a0338250b188ed6f8e27691f90ec2a80220651267abe3e7cceaf92a60877c",
+    "src/models/baselines.py": "3be9bb62d56a36b5d4b5a4cd86c6776da939f310aa948a2f0a779a5ddc60cafa",
+    "src/models/bkt.py": "25835a925bc75944f9116823bc206b13a5c4a38eadee60485eae25a1c26dc7ef",
+    "src/models/pfa.py": "c2fd17bccc02c33379a968c61191d07b7dcfb7ece275c8e02ada2f7a9723fd5c",
+    "src/models/xgboost_model.py": "916b50c0897b9b041b87b1ea1e234fd93d585a4373ba3f13fe67d680bb2d8ee6",
+    "src/preprocessing/pipeline.py": "51788c552ab836864df5431208f02896b3e061eafd2b5abe3eb41142323bbc60"
+  }
+}
