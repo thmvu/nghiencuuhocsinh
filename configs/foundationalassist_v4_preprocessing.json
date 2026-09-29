@@ -1,0 +1,44 @@
+{
+  "version": "foundationalassist-v4-preprocessing-1",
+  "stage": "preprocessing_and_student_split",
+  "training_authorized": false,
+  "next_gate": "model_feature_and_evaluation_protocol_lock_before_training",
+  "dataset_revision": "82b29188dffd2fd6bd3abc5a3de0db1ef1df12b9",
+  "seed": 42,
+  "ratios": [
+    0.7,
+    0.15,
+    0.15
+  ],
+  "split_reuse_required": true,
+  "split_path": "data/processed/foundationalassist_v4/student_split.json",
+  "cleaning": {
+    "dedup": "id plus seven literal business fields; keep first source row",
+    "same_business_different_id": "retain",
+    "missing_invalid_label_time": "exclude",
+    "skill_unit": "skill_id",
+    "primary": "single_skill_problem",
+    "metadata_conflict": "RQ1 retained if eligible; RQ2 quarantine",
+    "chronology": "UTC end_time; reject student ties",
+    "state_updates": "eligible filtered interactions only"
+  },
+  "rq2_text_eligible": "false until documented review of all content conditions; automatic screening is insufficient",
+  "current_interaction_forbidden_features": [
+    "answer_text",
+    "hint_count",
+    "saw_answer",
+    "discrete_score"
+  ],
+  "pinned_sha256": {
+    "adaptive-learning-nckh/data/raw/FoundationalASSIST/Data/Interactions.csv": "671e97d320d0cf9b7e2bd75830d531cfbd95d307a1a9a590531934ad0d3d8ba4",
+    "adaptive-learning-nckh/data/raw/FoundationalASSIST/Data/Problems.csv": "37faf41fce19d6d228021ffeb74719db48be722f950ba413068aa3647f2e7e50",
+    "adaptive-learning-nckh/data/raw/FoundationalASSIST/Data/Skills.csv": "405c09530e767832cfc90e67a80153d20d0358503c40807b58e138557048cd68",
+    "data/processed/foundationalassist_v4/student_split.json": "54ba8a52d2e6bc039f8c13178f67cd5d05016050953b09fa78e8d8645928ae96",
+    "data/processed/foundationalassist_v4/train.parquet": "06489c9b00b8d9750c085223a4ed884238fc63bd9be963b659e883f9d0301209",
+    "data/processed/foundationalassist_v4/validation.parquet": "49a1264aecfc88d95330c8ff8c329c9d861823c3555640cfc437830958112820",
+    "data/processed/foundationalassist_v4/test.parquet": "1549622eeab215d00ef647ed22009fce5561e5d63fb859dc61e772e86868abf6",
+    "src/preprocessing/foundational.py": "c26170eb3c948b8ffd7086d80e5ad16363f75499928e43eb33b01367856e1893",
+    "scripts/prepare_foundationalassist.py": "56e70cc3e0b14fd30cc9b39683c103d204a6d1633d612479fe07db2c2b546b9b",
+    "artifacts/tables/foundationalassist_v4_preprocessing.json": "5b2a69120a4b33f478a8e23f3e4c3ac506424ae690661d056ee0f6324b63afe0"
+  }
+}

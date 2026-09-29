@@ -2,9 +2,11 @@
 
 **Phạm vi hiện tại:** FoundationalASSIST là dataset chính duy nhất cho workload mới;
 ASSIST09 chỉ là fallback và không chạy thêm. Các kết quả ASSIST09 bên dưới là lịch sử
-đã có trong repo. FoundationalASSIST mới hoàn thành kiểm toán raw, chưa train hoặc khóa
-preprocessing. Xem `reports/foundationalassist_initial_audit.md` và notebook đã chạy
-`notebooks/01_foundationalassist_audit.ipynb` trước khi thiết lập protocol v4.
+đã có trong repo. FoundationalASSIST đã khóa cleaning và split, chưa train.
+Plan hiện hành: `NCKH_Knowledge_Tracing_AI_Agent_Plan_v4_FoundationalASSIST.md`.
+Kết quả preprocessing: `artifacts/tables/foundationalassist_v4_preprocessing.json`.
+Chạy `python scripts/prepare_foundationalassist.py` để xác minh lock/split đã lưu;
+lần chạy sau không tái tạo split. Các lệnh ASSIST09 bên dưới chỉ là lịch sử.
 
 Kế hoạch chính: `NCKH_Knowledge_Tracing_AI_Agent_Plan_v3_Consolidated.md`.
 

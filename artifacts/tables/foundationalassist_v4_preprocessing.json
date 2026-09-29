@@ -1,0 +1,67 @@
+{
+  "status": "preprocessing_locked_training_not_authorized",
+  "funnel": [
+    {
+      "stage": "raw",
+      "rows": 1753384,
+      "removed": 0
+    },
+    {
+      "stage": "exact_dedup_with_id",
+      "rows": 1721943,
+      "removed": 31441
+    },
+    {
+      "stage": "valid_binary_label",
+      "rows": 1712991,
+      "removed": 8952
+    },
+    {
+      "stage": "valid_time",
+      "rows": 1709601,
+      "removed": 3390
+    },
+    {
+      "stage": "valid_skill_mapping",
+      "rows": 1709601,
+      "removed": 0
+    },
+    {
+      "stage": "single_skill",
+      "rows": 1611613,
+      "removed": 97988
+    }
+  ],
+  "split_counts": {
+    "test": {
+      "students": 750,
+      "rows": 242080
+    },
+    "train": {
+      "students": 3500,
+      "rows": 1127951
+    },
+    "validation": {
+      "students": 750,
+      "rows": 241582
+    }
+  },
+  "metadata_conflict_problem_count": 1,
+  "rq1_rows_on_metadata_conflict_problems": 495,
+  "skills_used": 194,
+  "rq2_content": {
+    "n_problems": 3368,
+    "automatic_screen_pass": 2233,
+    "rq2_text_eligible": 0,
+    "review_status": "pending",
+    "reason_counts_overlapping": {
+      "manual_review_required": 3368,
+      "media_or_external_asset": 871,
+      "not_single_skill": 355,
+      "unsupported_or_mixed_answer_type": 2,
+      "empty_or_nontext_body": 5,
+      "metadata_conflict": 1
+    }
+  },
+  "test_metrics_computed": false
+}
