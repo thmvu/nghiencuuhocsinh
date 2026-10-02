@@ -6,6 +6,41 @@ import pandas as pd
 from src.rq2.graph import require_train_only
 
 
+def build_foundational_metadata_pool(
+        train: pd.DataFrame, *, skill_ids: set[str],
+        excluded_problem_ids: set[str] | None = None) -> list[dict]:
+    """Build a TRAIN-only candidate inventory without reading item text.
+
+    ``difficulty`` is the observed TRAIN success rate (higher means easier),
+    not an intrinsic or IRT-calibrated difficulty. Text eligibility is a
+    separate content-review gate and is deliberately not an input here.
+    """
+    if 'split' not in train:
+        raise ValueError('FoundationalASSIST metadata pool requires an explicit split column')
+    require_train_only(train)
+    if not {'problem_id', 'skill_id', 'correct'} <= set(train.columns):
+        raise ValueError('TRAIN requires problem_id, skill_id, correct')
+    scope = {str(skill) for skill in skill_ids}
+    if not scope:
+        raise ValueError('skill_ids must be nonempty')
+    excluded = {str(problem) for problem in (excluded_problem_ids or set())}
+    frame = train[['problem_id', 'skill_id', 'correct']].dropna().copy()
+    frame['problem_id'] = frame['problem_id'].astype(str)
+    frame['skill_id'] = frame['skill_id'].astype(str)
+    if not frame['correct'].isin([0, 1]).all():
+        raise ValueError('correct must be binary')
+    frame = frame.loc[
+        frame['skill_id'].isin(scope) & ~frame['problem_id'].isin(excluded)
+    ]
+    stats = frame.groupby(['problem_id', 'skill_id'], sort=True)['correct'].agg(
+        ['mean', 'count'])
+    return [
+        {'problem_id': problem, 'skill_id': skill,
+         'difficulty': float(row['mean']), 'support': int(row['count'])}
+        for (problem, skill), row in stats.iterrows()
+    ]
+
+
 def build_candidate_pool(train: pd.DataFrame, graph: dict, min_support: int = 1) -> list[dict]:
     """Summarize observed TRAIN problems; success probability is difficulty fit proxy.
 

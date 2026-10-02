@@ -1,0 +1,32 @@
+{
+  "version": "foundationalassist-v4-rq2-metadata-bank-draft-1",
+  "stage": "candidate_inventory_development_not_lock_c",
+  "dataset_revision": "82b29188dffd2fd6bd3abc5a3de0db1ef1df12b9",
+  "source_split": "train_only",
+  "pilot_skill_ids_by_node_code": {
+    "6.NS.A.1": ["135"],
+    "6.RP.A.3a": ["129"],
+    "6.RP.A.3b": ["130"],
+    "6.RP.A.3c": ["131", "132", "133"],
+    "6.RP.A.3d": ["134"],
+    "7.RP.A.1": ["193"],
+    "7.RP.A.2a": ["194"],
+    "7.RP.A.2b": ["195"],
+    "7.RP.A.2c": ["196"],
+    "7.RP.A.3": ["198"],
+    "6.EE.B.5": ["164"],
+    "6.EE.B.6": ["165"],
+    "6.EE.B.7": ["166"],
+    "7.EE.B.4a": ["217", "1136"],
+    "8.EE.C.7b": ["259"]
+  },
+  "exclude_problem_metadata_conflicts": true,
+  "difficulty_proxy": "mean_train_correct; higher values indicate easier observed items",
+  "support": "number_of_train_interactions_for_problem_skill_pair",
+  "minimum_support_in_inventory": 1,
+  "rq2_text_eligible_filter": false,
+  "question_text_in_output": false,
+  "test_access": false,
+  "locks_candidate_selection": false,
+  "output_path": "data/processed/foundationalassist_v4/rq2_metadata_candidate_bank.json"
+}

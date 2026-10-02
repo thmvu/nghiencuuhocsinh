@@ -1,0 +1,102 @@
+{
+  "stage": "validation_coverage_diagnostic_not_policy_comparison",
+  "test_opened": false,
+  "thresholds_changed": false,
+  "policy_outputs_used_for_selection": false,
+  "input_sha256": {
+    "artifacts/models/foundationalassist_v4/BKT.joblib": "b462d50b366d42760c9dff6645bae1525413fdb3a73e1f47a6ab9768b0a31004",
+    "data/processed/foundationalassist_v4/train.parquet": "06489c9b00b8d9750c085223a4ed884238fc63bd9be963b659e883f9d0301209",
+    "data/processed/foundationalassist_v4/validation.parquet": "49a1264aecfc88d95330c8ff8c329c9d861823c3555640cfc437830958112820",
+    "data/processed/foundationalassist_v4/student_split.json": "54ba8a52d2e6bc039f8c13178f67cd5d05016050953b09fa78e8d8645928ae96",
+    "src/models/bkt.py": "25835a925bc75944f9116823bc206b13a5c4a38eadee60485eae25a1c26dc7ef",
+    "configs/foundationalassist_v4_rq2_validation.json": "e03200c9eb6ad3fd4826adb6a3cdabab35a4884851f9fcb6a1e148fe8f36f913",
+    "configs/foundationalassist_v4_rq2_curriculum_graph.json": "eb34a1055153f68214f720e642e62948c34daf2db232225466597a94c1d78841",
+    "configs/foundationalassist_v4_rq2_metadata_candidates.json": "6eabc29418f10376c139762df8df87e2656149915f015b6c23980d69aaf9e13b",
+    "data/processed/foundationalassist_v4/rq2_content_review.json": "aabb3efd4d09b0ecec6807c3d3c92a1c09b7dfbaa69554a85a0bbf100762184d",
+    "configs/foundationalassist_v4_rq1_final.json": "0b7a12866b08c6a24e97e09bb4d661d863115c76bd0c6f171ee0b73a0aaf0b05",
+    "configs/foundationalassist_v4_preprocessing.json": "0ae994a4520bc62b618e076f49716cdd9af4ffbe9522cf7361da8d41de184503",
+    "scripts/prepare_foundational_rq2_validation.py": "30f80026087256343dd23ae1851b06f9689497071ffd7c4b5cba16cf15e62266",
+    "src/rq2/foundational_validation.py": "7f1bedffe7c919931811eeae6d914c055058de4913d137dc1002e63ac1ad606e",
+    "src/rq2/state.py": "24b0cea4f3edc9019125ff2e9c94a44a9e9f976c12237125a9a63ac2edab714b",
+    "src/rq2/scenarios.py": "5b116c5ec3e0b80ac62137d259927598138674ae4fbcdf9b109a9fbe8c63371f",
+    "src/rq2/candidates.py": "92ed4898088f1931e1367c3e16d8259a3d625272b339e27aa7772ed6f758ca8c",
+    "src/rq2/agent.py": "df5ebe6e982cd3930ba4425b1f3d2fd49a46fdef37dc3f767f5b1abce4e32ff4",
+    "src/rq2/curriculum_graph.py": "58ed36ac9f1136953285dcb601e893bc2b1fd58ab8ddf43d02d44f9d5e4aa674",
+    "scripts/audit_foundational_rq2_coverage.py": "c061f5fdc791dbc12bd613c02d1102cb4901d0bdac12898377bddd13bb3dafc2"
+  },
+  "diagnostics": [
+    {
+      "prefix_length": 5,
+      "n_students": 750,
+      "students_with_supported_weak_link": 3,
+      "students_with_supported_weak_link_both_skills_observed": 3,
+      "students_with_candidate_source_target_signal": 0,
+      "supported_weak_link_student_counts_by_standard_edge": {
+        "6.NS.A.1->7.RP.A.1": 0,
+        "6.RP.A.3b->7.RP.A.1": 0,
+        "6.RP.A.3a->7.RP.A.2a": 2,
+        "6.RP.A.3b->7.RP.A.2b": 0,
+        "6.RP.A.3c->7.RP.A.3": 0,
+        "6.EE.B.5->6.EE.B.7": 0,
+        "6.EE.B.6->6.EE.B.7": 1,
+        "6.EE.B.7->7.EE.B.4a": 0,
+        "7.EE.B.4a->8.EE.C.7b": 0
+      }
+    },
+    {
+      "prefix_length": 10,
+      "n_students": 750,
+      "students_with_supported_weak_link": 5,
+      "students_with_supported_weak_link_both_skills_observed": 5,
+      "students_with_candidate_source_target_signal": 0,
+      "supported_weak_link_student_counts_by_standard_edge": {
+        "6.NS.A.1->7.RP.A.1": 0,
+        "6.RP.A.3b->7.RP.A.1": 0,
+        "6.RP.A.3a->7.RP.A.2a": 3,
+        "6.RP.A.3b->7.RP.A.2b": 0,
+        "6.RP.A.3c->7.RP.A.3": 0,
+        "6.EE.B.5->6.EE.B.7": 1,
+        "6.EE.B.6->6.EE.B.7": 1,
+        "6.EE.B.7->7.EE.B.4a": 0,
+        "7.EE.B.4a->8.EE.C.7b": 0
+      }
+    },
+    {
+      "prefix_length": 20,
+      "n_students": 750,
+      "students_with_supported_weak_link": 13,
+      "students_with_supported_weak_link_both_skills_observed": 13,
+      "students_with_candidate_source_target_signal": 0,
+      "supported_weak_link_student_counts_by_standard_edge": {
+        "6.NS.A.1->7.RP.A.1": 0,
+        "6.RP.A.3b->7.RP.A.1": 0,
+        "6.RP.A.3a->7.RP.A.2a": 10,
+        "6.RP.A.3b->7.RP.A.2b": 0,
+        "6.RP.A.3c->7.RP.A.3": 0,
+        "6.EE.B.5->6.EE.B.7": 1,
+        "6.EE.B.6->6.EE.B.7": 2,
+        "6.EE.B.7->7.EE.B.4a": 0,
+        "7.EE.B.4a->8.EE.C.7b": 0
+      }
+    },
+    {
+      "prefix_length": 50,
+      "n_students": 750,
+      "students_with_supported_weak_link": 33,
+      "students_with_supported_weak_link_both_skills_observed": 33,
+      "students_with_candidate_source_target_signal": 4,
+      "supported_weak_link_student_counts_by_standard_edge": {
+        "6.NS.A.1->7.RP.A.1": 0,
+        "6.RP.A.3b->7.RP.A.1": 0,
+        "6.RP.A.3a->7.RP.A.2a": 25,
+        "6.RP.A.3b->7.RP.A.2b": 6,
+        "6.RP.A.3c->7.RP.A.3": 0,
+        "6.EE.B.5->6.EE.B.7": 1,
+        "6.EE.B.6->6.EE.B.7": 5,
+        "6.EE.B.7->7.EE.B.4a": 0,
+        "7.EE.B.4a->8.EE.C.7b": 0
+      }
+    }
+  ],
+  "note": "Weak latent priors for unobserved skills are not observed learner deficits; report both-observed coverage separately."
+}

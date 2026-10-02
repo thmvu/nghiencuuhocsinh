@@ -2,11 +2,18 @@
 
 ## FoundationalASSIST v4
 
+- 02/10/2026, cập nhật coverage: kiểm tra cả 750 VALIDATION học sinh ở prefix 5/10/20/50; lần lượt 3/5/13/33 có liên kết cùng yếu với cả hai skill đã quan sát. Generator ban đầu giữ tín hiệu ở 0/0/0/4. Thêm cohort thăm dò riêng tại prefix50, không thay pilot: 33 học sinh/97 surfaced IDs, B+ đổi lựa chọn có/không cạnh ở 29/33. Đây là kiểm tra phản ứng policy có điều kiện, không chứng minh graph hoặc lợi ích học tập. 145 tests PASS; Agent chưa chạy do Ollama chưa mở được. Xem `reports/foundationalassist_v4_rq2_coverage.md`. Chưa Lock C/TEST RQ2.
+
+- 02/10/2026, sau review graph: thêm compact input/no-edge variant, B+ v4 xét cạnh trực tiếp tới weak target được trình bày (soft ranking, không AND), runner VALIDATION với hash/split/checkpoint v4 và baseline/permutation chung. 50 scenario/69 surfaced problem IDs; 1.025 TRAIN pairs sau support5. B+ graph/no-graph chưa khác vì graph signal không kích hoạt trên 50 scenario. 141 tests PASS. Context preflight bị URLError do Ollama chưa hoạt động; token runtime chưa đo, Agent chưa chạy. Chi tiết `reports/foundationalassist_v4_rq2_review_response.md`. Chưa Lock C/TEST RQ2.
+
+- 02/10/2026: người dùng tiếp tục project giáo dục riêng; hướng đề tài giảng viên đề nghị là AI hỗ trợ quyết định doanh nghiệp. Đã tạo graph giả định có nguồn cho RQ2 v4: 15 chuẩn/18 skill ID, 9 cạnh chuẩn/13 cạnh skill; expert_validated=false, Astra critique chưa thực hiện. Script chỉ đọc TRAIN có hash khớp Lock B v4. 133 kiểm thử tích hợp đạt. Graph chưa được nối vào runner scenario v4; bước tiếp là scenarios VALIDATION và độ nhạy bỏ cạnh, chưa Lock C/TEST RQ2.
+
 - Cleaning/split giữ nguyên: 1.611.613 interactions, 3.500/750/750 học sinh.
 - Training Lock commit `35e5c17` trước fit. 119 tests đạt trước TRAIN/VALIDATION; 123 trước TEST, gồm kiểm thử leakage và final gate.
 - PFA C=0,01; ba C lớn hơn không hội tụ trong budget. BKT 171 fit groups/513 starts, pooled fallback cho 23 skill. XGBoost depth4/eta0,1/300 trees chọn bằng VALIDATION.
 - Final Lock `30f8c92` push trước marker TEST. One-shot TEST: 238.330 scored rows/750 học sinh. XGBoost Brier 0,178223, AUC 0,788408; xem `reports/foundationalassist_v4_rq1_test.md`.
-- Hậu kiểm tái tính metrics và paired student bootstrap từ predictions đã lưu, không chạy model lại. RQ2 v4 là bước tiếp theo; chưa bật text eligibility hoặc dùng TEST để tune.
+- Hậu kiểm tái tính metrics và paired student bootstrap từ predictions đã lưu, không chạy model lại. RQ2 v4 có metadata-only TRAIN inventory 1.063 problem-skill pairs cho pilot 15 standard/18 skill ID; không chứa text và không lọc theo `rq2_text_eligible`. Graph/policy chưa khóa, không có lượt TEST RQ2 v4; content eligibility vẫn chờ human review. Bước review nội dung sẽ giới hạn vào các candidate ID duy nhất thực sự xuất hiện trong VALIDATION scenarios, không rà hết 2.233 bài auto-screen-pass. Reviewer hiện chưa được xác định; người đó nên review cả graph và candidate items surfaced.
+- Khi so policy metadata-only, RQ2 chỉ kết luận về lựa chọn/xếp hạng vận hành (valid candidate, ràng buộc graph, agreement, latency/stability và position bias), không kết luận chất lượng sư phạm hoặc lợi ích học tập. Thiết kế VALIDATION bổ sung random-uniform-by-ID và always-first baselines dưới các candidate-order permutation có seed dùng chung giữa policy.
 
 ## Lịch sử ASSIST09 / plan v3
 

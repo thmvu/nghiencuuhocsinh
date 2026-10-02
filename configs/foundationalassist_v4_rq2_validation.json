@@ -1,0 +1,47 @@
+{
+  "version": "foundationalassist-v4-rq2-validation-draft-2",
+  "stage": "validation_development_not_lock_c",
+  "test_access": false,
+  "seed": 42,
+  "validation_scenarios": 50,
+  "min_history": 5,
+  "minimum_train_support": 5,
+  "candidates_per_scenario": 8,
+  "permutations_per_scenario": 3,
+  "graph_variants": ["curriculum_edges", "no_edges"],
+  "supplementary_challenge": {
+    "stage": "exploratory_validation_only_not_representative",
+    "prefix_length": 50,
+    "selection": "all students with an observed weak source-target pair supported by TRAIN",
+    "candidate_construction": "sample eligible standard edge uniformly, then eligible skill-ID pair and one TRAIN problem per endpoint uniformly; fill remaining slots with existing diverse generator",
+    "interpretation": "conditional edge ablation on a common graph-constructed candidate set; not end-to-end no-graph, prevalence or pedagogical benefit",
+    "design_origin": "added after fixed-prefix coverage audit, before challenge policy outputs; original 50-student pilot retained separately"
+  },
+  "bplus": {
+    "version": "v4_direct_target_relevance_1",
+    "source_weak_threshold": 0.5,
+    "target_weak_threshold": 0.5,
+    "target_train_success_rate": 0.7,
+    "multiple_ids": "separate_states; each weak source ID may supply a soft ranking signal; no AND readiness or pooling",
+    "ranking": "weak source with a direct weak target represented in candidates; proximity to fixed TRAIN success-rate target; larger support; stable problem ID"
+  },
+  "metrics_before_validation": {
+    "primary_operational": "valid_candidate_rate",
+    "graph_sensitivity": "paired selection-change rate curriculum_edges vs no_edges at identical scenario and permutation",
+    "order_sensitivity": "fraction of students whose selected ID differs across permutations; invalid outputs separately counted",
+    "additional": ["schema_valid_rate", "soft_source_remediation_selection_rate", "agreement_with_bplus", "latency", "prompt_eval_count"],
+    "aggregation": "each student has equal weight; repeated calls are not independent students",
+    "remediation_metric_reference": "evaluate selected skill against the full author-proposed graph for BOTH variants; no_edges removes links from policy input only",
+    "claims": "operational behavior only; no pedagogical benefit, causal mastery prerequisites or learning gain"
+  },
+  "agent": {
+    "model": "gemma3:1b",
+    "temperature": 0,
+    "num_ctx": 8192,
+    "num_predict": 256,
+    "template_token_reserve": 1024,
+    "timeout_seconds": 90,
+    "repair_attempts": 0,
+    "context_check": "compact payload UTF-8 byte guard plus runtime prompt_eval_count; synthetic same-prompt probe at configured and double context before study calls"
+  }
+}

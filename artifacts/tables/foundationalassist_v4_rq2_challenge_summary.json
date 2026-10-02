@@ -1,0 +1,214 @@
+{
+  "stage": "foundationalassist_v4_rq2_validation_development",
+  "test_opened": false,
+  "claims": "operational behavior only; not pedagogical quality or learning gain",
+  "policies": {
+    "B+": {
+      "variants": {
+        "curriculum_edges": {
+          "n_calls": 99,
+          "n_students": 33,
+          "schema_valid_rate": 1.0,
+          "candidate_valid_rate": 1.0,
+          "agrees_with_bplus_rate": 1.0,
+          "soft_source_remediation_selected_rate": 1.0,
+          "all_valid_students": 33,
+          "order_sensitive_fraction_among_all_valid_students": 0,
+          "position_counts_valid": {
+            "0": 12,
+            "1": 13,
+            "2": 18,
+            "3": 7,
+            "4": 6,
+            "5": 11,
+            "6": 20,
+            "7": 12
+          },
+          "error_counts": {},
+          "latency_seconds_mean": null,
+          "latency_seconds_max": null,
+          "prompt_eval_count_mean": null,
+          "prompt_eval_count_max": null
+        },
+        "no_edges": {
+          "n_calls": 99,
+          "n_students": 33,
+          "schema_valid_rate": 1.0,
+          "candidate_valid_rate": 1.0,
+          "agrees_with_bplus_rate": 1.0,
+          "soft_source_remediation_selected_rate": 0.12121212121212122,
+          "all_valid_students": 33,
+          "order_sensitive_fraction_among_all_valid_students": 0,
+          "position_counts_valid": {
+            "0": 8,
+            "1": 18,
+            "2": 11,
+            "3": 16,
+            "4": 11,
+            "5": 11,
+            "6": 12,
+            "7": 12
+          },
+          "error_counts": {},
+          "latency_seconds_mean": null,
+          "latency_seconds_max": null,
+          "prompt_eval_count_mean": null,
+          "prompt_eval_count_max": null
+        }
+      },
+      "variation_interpretation": "selection variation across candidate permutations",
+      "paired_selection_change_rate_among_valid_pairs": 0.8787878787878788,
+      "paired_valid_student_count": 33,
+      "paired_valid_pair_count": 99,
+      "invalid_graph_pairs": 0
+    },
+    "always_first": {
+      "variants": {
+        "curriculum_edges": {
+          "n_calls": 99,
+          "n_students": 33,
+          "schema_valid_rate": 1.0,
+          "candidate_valid_rate": 1.0,
+          "agrees_with_bplus_rate": 0.1212121212121212,
+          "soft_source_remediation_selected_rate": 0.1919191919191919,
+          "all_valid_students": 33,
+          "order_sensitive_fraction_among_all_valid_students": 0.9696969696969697,
+          "position_counts_valid": {
+            "0": 99
+          },
+          "error_counts": {},
+          "latency_seconds_mean": null,
+          "latency_seconds_max": null,
+          "prompt_eval_count_mean": null,
+          "prompt_eval_count_max": null
+        },
+        "no_edges": {
+          "n_calls": 99,
+          "n_students": 33,
+          "schema_valid_rate": 1.0,
+          "candidate_valid_rate": 1.0,
+          "agrees_with_bplus_rate": 0.0808080808080808,
+          "soft_source_remediation_selected_rate": 0.1919191919191919,
+          "all_valid_students": 33,
+          "order_sensitive_fraction_among_all_valid_students": 0.9696969696969697,
+          "position_counts_valid": {
+            "0": 99
+          },
+          "error_counts": {},
+          "latency_seconds_mean": null,
+          "latency_seconds_max": null,
+          "prompt_eval_count_mean": null,
+          "prompt_eval_count_max": null
+        }
+      },
+      "variation_interpretation": "selection variation across candidate permutations",
+      "paired_selection_change_rate_among_valid_pairs": 0,
+      "paired_valid_student_count": 33,
+      "paired_valid_pair_count": 99,
+      "invalid_graph_pairs": 0
+    },
+    "random": {
+      "variants": {
+        "curriculum_edges": {
+          "n_calls": 99,
+          "n_students": 33,
+          "schema_valid_rate": 1.0,
+          "candidate_valid_rate": 1.0,
+          "agrees_with_bplus_rate": 0.15151515151515152,
+          "soft_source_remediation_selected_rate": 0.2121212121212121,
+          "all_valid_students": 33,
+          "order_sensitive_fraction_among_all_valid_students": 0.9393939393939394,
+          "position_counts_valid": {
+            "0": 12,
+            "1": 14,
+            "2": 11,
+            "3": 7,
+            "4": 14,
+            "5": 16,
+            "6": 12,
+            "7": 13
+          },
+          "error_counts": {},
+          "latency_seconds_mean": null,
+          "latency_seconds_max": null,
+          "prompt_eval_count_mean": null,
+          "prompt_eval_count_max": null
+        },
+        "no_edges": {
+          "n_calls": 99,
+          "n_students": 33,
+          "schema_valid_rate": 1.0,
+          "candidate_valid_rate": 1.0,
+          "agrees_with_bplus_rate": 0.1111111111111111,
+          "soft_source_remediation_selected_rate": 0.2121212121212121,
+          "all_valid_students": 33,
+          "order_sensitive_fraction_among_all_valid_students": 0.9393939393939394,
+          "position_counts_valid": {
+            "0": 12,
+            "1": 14,
+            "2": 11,
+            "3": 7,
+            "4": 14,
+            "5": 16,
+            "6": 12,
+            "7": 13
+          },
+          "error_counts": {},
+          "latency_seconds_mean": null,
+          "latency_seconds_max": null,
+          "prompt_eval_count_mean": null,
+          "prompt_eval_count_max": null
+        }
+      },
+      "variation_interpretation": "different stochastic draws, not position bias",
+      "paired_selection_change_rate_among_valid_pairs": 0,
+      "paired_valid_student_count": 33,
+      "paired_valid_pair_count": 99,
+      "invalid_graph_pairs": 0
+    }
+  },
+  "graph_activation_coverage": {
+    "n_scenarios": 33,
+    "scenarios_with_any_weak_source": 33,
+    "scenarios_with_represented_weak_graph_target": 33,
+    "scenarios_with_relevant_weak_source": 33,
+    "scenarios_with_relevant_source_candidate": 33
+  },
+  "config_sha256": "e03200c9eb6ad3fd4826adb6a3cdabab35a4884851f9fcb6a1e148fe8f36f913",
+  "input_sha256": {
+    "artifacts/models/foundationalassist_v4/BKT.joblib": "b462d50b366d42760c9dff6645bae1525413fdb3a73e1f47a6ab9768b0a31004",
+    "data/processed/foundationalassist_v4/train.parquet": "06489c9b00b8d9750c085223a4ed884238fc63bd9be963b659e883f9d0301209",
+    "data/processed/foundationalassist_v4/validation.parquet": "49a1264aecfc88d95330c8ff8c329c9d861823c3555640cfc437830958112820",
+    "data/processed/foundationalassist_v4/student_split.json": "54ba8a52d2e6bc039f8c13178f67cd5d05016050953b09fa78e8d8645928ae96",
+    "src/models/bkt.py": "25835a925bc75944f9116823bc206b13a5c4a38eadee60485eae25a1c26dc7ef",
+    "configs/foundationalassist_v4_rq2_validation.json": "e03200c9eb6ad3fd4826adb6a3cdabab35a4884851f9fcb6a1e148fe8f36f913",
+    "configs/foundationalassist_v4_rq2_curriculum_graph.json": "eb34a1055153f68214f720e642e62948c34daf2db232225466597a94c1d78841",
+    "configs/foundationalassist_v4_rq2_metadata_candidates.json": "6eabc29418f10376c139762df8df87e2656149915f015b6c23980d69aaf9e13b",
+    "data/processed/foundationalassist_v4/rq2_content_review.json": "aabb3efd4d09b0ecec6807c3d3c92a1c09b7dfbaa69554a85a0bbf100762184d",
+    "configs/foundationalassist_v4_rq1_final.json": "0b7a12866b08c6a24e97e09bb4d661d863115c76bd0c6f171ee0b73a0aaf0b05",
+    "configs/foundationalassist_v4_preprocessing.json": "0ae994a4520bc62b618e076f49716cdd9af4ffbe9522cf7361da8d41de184503",
+    "scripts/prepare_foundational_rq2_validation.py": "30f80026087256343dd23ae1851b06f9689497071ffd7c4b5cba16cf15e62266",
+    "src/rq2/foundational_validation.py": "7f1bedffe7c919931811eeae6d914c055058de4913d137dc1002e63ac1ad606e",
+    "src/rq2/state.py": "24b0cea4f3edc9019125ff2e9c94a44a9e9f976c12237125a9a63ac2edab714b",
+    "src/rq2/scenarios.py": "5b116c5ec3e0b80ac62137d259927598138674ae4fbcdf9b109a9fbe8c63371f",
+    "src/rq2/candidates.py": "92ed4898088f1931e1367c3e16d8259a3d625272b339e27aa7772ed6f758ca8c",
+    "src/rq2/agent.py": "df5ebe6e982cd3930ba4425b1f3d2fd49a46fdef37dc3f767f5b1abce4e32ff4",
+    "src/rq2/curriculum_graph.py": "58ed36ac9f1136953285dcb601e893bc2b1fd58ab8ddf43d02d44f9d5e4aa674"
+  },
+  "n_scenarios": 33,
+  "supported_pool_pairs": 1025,
+  "n_surfaced_candidate_ids": 97,
+  "scenarios_sha256": "18f2f2aa3badd0efa9a55c99255f95628cc131e9839383dea97d7416687fe69a",
+  "cohort": "challenge",
+  "cohort_design": {
+    "stage": "exploratory_validation_only_not_representative",
+    "prefix_length": 50,
+    "selection": "all students with an observed weak source-target pair supported by TRAIN",
+    "candidate_construction": "sample eligible standard edge uniformly, then eligible skill-ID pair and one TRAIN problem per endpoint uniformly; fill remaining slots with existing diverse generator",
+    "interpretation": "conditional edge ablation on a common graph-constructed candidate set; not end-to-end no-graph, prevalence or pedagogical benefit",
+    "design_origin": "added after fixed-prefix coverage audit, before challenge policy outputs; original 50-student pilot retained separately"
+  },
+  "context_verified": false,
+  "agent_status": "blocked_context_preflight",
+  "context_probe_error_type": "URLError"
+}

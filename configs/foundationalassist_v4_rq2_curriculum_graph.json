@@ -1,0 +1,44 @@
+{
+  "version": "foundationalassist-v4-curriculum-draft-1",
+  "stage": "validation_development_not_lock_c",
+  "dataset_revision": "82b29188dffd2fd6bd3abc5a3de0db1ef1df12b9",
+  "status": "author_proposed_curriculum_constraints_not_expert_validated",
+  "test_access": false,
+  "expert_validated": false,
+  "edge_semantics": "curriculum_order_hypothesis_not_causal_mastery_prerequisite",
+  "skill_state_semantics": "separate_BKT_state_per_skill_id_no_standard_pooling",
+  "review": {"author": "project_author_with_AI_assistance", "human_curriculum_reviewer": null, "astra_review": "not_performed"},
+  "pilot_skill_ids_by_node_code": {
+    "6.NS.A.1": ["135"], "6.RP.A.3a": ["129"], "6.RP.A.3b": ["130"],
+    "6.RP.A.3c": ["131", "132", "133"], "6.RP.A.3d": ["134"],
+    "7.RP.A.1": ["193"], "7.RP.A.2a": ["194"], "7.RP.A.2b": ["195"],
+    "7.RP.A.2c": ["196"], "7.RP.A.3": ["198"],
+    "6.EE.B.5": ["164"], "6.EE.B.6": ["165"], "6.EE.B.7": ["166"],
+    "7.EE.B.4a": ["217", "1136"], "8.EE.C.7b": ["259"]
+  },
+  "sibling_groups": [["6.RP.A.3a", "6.RP.A.3b", "6.RP.A.3c", "6.RP.A.3d"], ["7.RP.A.2a", "7.RP.A.2b", "7.RP.A.2c"]],
+  "sources": {
+    "ccss_6_ns": {"title": "CCSS Grade 6 The Number System", "url": "https://www.thecorestandards.org/Math/Content/6/NS/", "accessed": "2026-10-02"},
+    "ccss_6_rp": {"title": "CCSS Grade 6 Ratios and Proportional Relationships", "url": "https://www.thecorestandards.org/Math/Content/6/RP/", "accessed": "2026-10-02"},
+    "ccss_7_rp": {"title": "CCSS Grade 7 Ratios and Proportional Relationships", "url": "https://www.thecorestandards.org/Math/Content/7/RP/", "accessed": "2026-10-02"},
+    "ccss_6_ee": {"title": "CCSS Grade 6 Expressions and Equations", "url": "https://www.thecorestandards.org/Math/Content/6/EE/", "accessed": "2026-10-02"},
+    "ccss_7_ee": {"title": "CCSS Grade 7 Expressions and Equations", "url": "https://www.thecorestandards.org/Math/Content/7/EE/", "accessed": "2026-10-02"},
+    "ccss_8_ee": {"title": "CCSS Grade 8 Expressions and Equations", "url": "https://www.thecorestandards.org/Math/Content/8/EE/", "accessed": "2026-10-02"},
+    "im_7_2_7": {"title": "IM Grade 7 Unit 2 Lesson 7 Comparing Relationships with Tables", "url": "https://im.kendallhunt.com/MS/teachers/2/2/7/preparation.html", "accessed": "2026-10-02"}
+  },
+  "standard_edges": [
+    {"source": "6.NS.A.1", "target": "7.RP.A.1", "basis": "author_content_inference", "source_refs": ["ccss_6_ns", "ccss_7_rp"], "rationale": "Chia phan so cung cap phep tinh cho unit rate voi dai luong phan so. Chieu canh la gia thuyet cua tac gia, khong do CCSS xac nhan."},
+    {"source": "6.RP.A.3b", "target": "7.RP.A.1", "basis": "author_content_inference", "source_refs": ["ccss_6_rp", "ccss_7_rp"], "rationale": "Unit rate lop 6 mo rong sang unit rate cua ti so phan so lop 7; day la suy luan ve noi dung."},
+    {"source": "6.RP.A.3a", "target": "7.RP.A.2a", "basis": "author_substandard_inference_from_IM_parent_alignment", "source_refs": ["ccss_6_rp", "ccss_7_rp", "im_7_2_7"], "rationale": "Bang ti so tuong duong ho tro nhan dien quan he ti le. IM ghi Building On 6.RP.A.3 va Addressing 7.RP.A.2; viec chon rieng 3a -> 2a la suy luan cua tac gia."},
+    {"source": "6.RP.A.3b", "target": "7.RP.A.2b", "basis": "author_content_inference", "source_refs": ["ccss_6_rp", "ccss_7_rp"], "rationale": "Tinh unit rate ho tro nhan dien hang so ti le trong cac cach bieu dien. Khong xem thu tu lop la bang chung mastery."},
+    {"source": "6.RP.A.3c", "target": "7.RP.A.3", "basis": "author_content_inference", "source_refs": ["ccss_6_rp", "ccss_7_rp"], "rationale": "Bai phan tram co ban mo rong sang bai ti so va phan tram nhieu buoc; canh khong bao phu moi prerequisite cua chuan dich."},
+    {"source": "6.EE.B.5", "target": "6.EE.B.7", "basis": "author_content_inference", "source_refs": ["ccss_6_ee"], "rationale": "Hieu nghiem va kiem tra bang the gia tri ho tro viec giai phuong trinh don gian. CCSS mo ta hai noi dung, khong xac nhan canh."},
+    {"source": "6.EE.B.6", "target": "6.EE.B.7", "basis": "author_content_inference", "source_refs": ["ccss_6_ee"], "rationale": "Dung bien bieu dien dai luong ho tro viet phuong trinh de giai bai toan; la rang buoc prototype do tac gia de xuat."},
+    {"source": "6.EE.B.7", "target": "7.EE.B.4a", "basis": "author_content_inference", "source_refs": ["ccss_6_ee", "ccss_7_ee"], "rationale": "Phuong trinh mot phep toan mo rong sang dang px+q=r va p(x+q)=r. Cac prerequisite khac ngoai pilot chua duoc mo hinh hoa."},
+    {"source": "7.EE.B.4a", "target": "8.EE.C.7b", "basis": "author_content_inference", "source_refs": ["ccss_7_ee", "ccss_8_ee"], "rationale": "Giai phuong trinh huu ti hai buoc ho tro mo rong sang phuong trinh tuyen tinh can khai trien va thu gon. Khong phai quan he nhan qua da kiem chung."}
+  ],
+  "isolated_standard_notes": {
+    "6.RP.A.3d": "Khong ep chuyen doi don vi thanh prerequisite cho moi chuan ti le.",
+    "7.RP.A.2c": "Viet phuong trinh ti le co lien quan den bien va 6.EE.C.9 ngoai pilot; khong noi tat tu ca nhom ti so sang ca nhom phuong trinh."
+  }
+}

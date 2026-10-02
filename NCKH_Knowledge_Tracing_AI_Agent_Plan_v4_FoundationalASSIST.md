@@ -6,7 +6,7 @@ FoundationalASSIST là dataset chính duy nhất. ASSIST09 chỉ là historical/
 
 Snapshot tải: `82b29188dffd2fd6bd3abc5a3de0db1ef1df12b9`. SHA-256 ba CSV trong `configs/foundationalassist_v4_preprocessing.json`. Counts được tính từ snapshot thực tế, có thể khác README. Không bù/xóa dữ liệu để khớp README.
 
-Trạng thái: RQ1 hoàn tất. Training Configuration và feature/code manifest đã commit `35e5c17` trước fit; Lock B v4 commit `30f8c92` trước one-shot TEST. Xem `reports/foundationalassist_v4_rq1_test.md`. RQ2 chưa phát triển/đánh giá; content review còn chờ. Không chạy lại final TEST hoặc điều chỉnh mô hình theo TEST.
+Trạng thái: RQ1 hoàn tất. Training Configuration và feature/code manifest đã commit `35e5c17` trước fit; Lock B v4 commit `30f8c92` trước one-shot TEST. Xem `reports/foundationalassist_v4_rq1_test.md`. RQ2 đang chuẩn bị inventory và graph giả định cho VALIDATION; chưa có TEST v4, content review còn chờ. Không chạy lại final TEST hoặc điều chỉnh mô hình theo TEST.
 
 ## 2. RQ1
 
@@ -46,19 +46,27 @@ Cấu hình cụ thể trong `configs/foundationalassist_v4_rq1_training.json`; 
 
 ## 6. RQ2: BKT state + graph + bài thật
 
-Hai policy B+ deterministic và Local Agent nhận cùng BKT latent state, cùng graph, cùng candidate set và cùng nội dung bài được phép. BKT checkpoint phải được fit trên TRAIN v4; không dùng checkpoint ASSIST09. Mô hình thắng RQ1 không bắt buộc là nguồn state.
+Hai policy B+ deterministic và Local Agent nhận cùng BKT latent state, cùng graph và cùng candidate metadata (`problem_id`, `skill_id`, difficulty proxy, support). Hai policy không cần question text để chọn ID; do đó metadata candidate inventory được xây riêng trên TRAIN và không bị chặn bởi `rq2_text_eligible`. Nó vẫn loại problem có metadata conflict và chỉ chứa candidate trong skill scope đã chọn. BKT checkpoint phải được fit trên TRAIN v4; không dùng checkpoint ASSIST09. Mô hình thắng RQ1 không bắt buộc là nguồn state.
+
+Thiết kế metadata-only phải có hai baseline: chọn đều ngẫu nhiên theo problem ID trong candidate set hợp lệ, và luôn chọn candidate đầu tiên theo thứ tự được trình bày. Mỗi repetition VALIDATION dùng một hoán vị có seed; cùng thứ tự được đưa cho B+, Agent và cả hai baseline, còn các repetition khác nhau dùng hoán vị khác. Ghi lại seed/thứ tự, giữ nguyên thành viên candidate set, và báo cáo tần suất chọn theo vị trí cùng độ ổn định khi problem đổi vị trí. Khóa số repetition và cách tạo permutation trước Lock C. Đây là phép kiểm tra vận hành/position bias, không phải chất lượng dạy học.
 
 Skills.csv là problem–skill mapping, không phải prerequisite graph. Xây graph riêng có nguồn curriculum hoặc giả định được ghi rõ. Graph, candidate rules và prompt phát triển bằng TRAIN/VALIDATION, khóa trước TEST RQ2 mới.
 
+`node_code` có định dạng mã chuẩn Common Core, nhưng đây chỉ là căn cứ nhận diện standard, không tự chứng minh cạnh tiên quyết. Với nội dung Illustrative Mathematics được phân phối trên ASSISTments, dùng Copyright Notice của ASSISTments làm nguồn license: nội dung IM thuộc phạm vi notice được nêu là CC BY-NC-SA 4.0; một số bài có thể đã được ASSISTments chỉnh sửa hoặc tách phần. FoundationalASSIST không chỉ gồm nội dung IM, và metadata hiện có chưa xác định nguồn IM theo từng problem. Vì vậy không áp license IM cho toàn dataset; trước khi tái sử dụng/hiển thị nội dung cụ thể cần xác minh attribution và license theo problem. Ưu tiên diễn giải thay vì sao chép nguyên văn; ghi attribution và ShareAlike khi áp dụng.
+
+Graph draft phải phân biệt (a) cạnh liên standard/domain/grade được đề xuất từ thứ tự curriculum và (b) các standard con cùng cluster. Các standard con như `6.RP.A.3a–d` và pilot `7.RP.A.2a–c` là các khía cạnh trong cùng cluster; không mặc định nối thành chuỗi tiên quyết tuyến tính. Cạnh curriculum không chứng minh mastery nguồn là điều kiện cần để học đích.
+
+Theo hướng người dùng ngày 02/10/2026, tiếp tục project giáo dục riêng bằng graph tác giả đề xuất có nguồn, ghi `expert_validated=false`, dùng cho metadata-only development. Draft ở `configs/foundationalassist_v4_rq2_curriculum_graph.json`; nguồn và giới hạn ở `reports/foundationalassist_v4_rq2_graph_decisions.md`. Human review không chặn metadata-only development; vẫn cần trước khi tuyên bố expert validation hoặc chất lượng sư phạm. AI critique kể cả Astra không thay human review. Khóa giả định này và thiết kế độ nhạy bỏ cạnh trước TEST RQ2; chưa Lock C.
+
 ### Điều kiện `rq2_text_eligible`
 
-Cờ chỉ bật khi đồng thời: metadata không conflict; body tồn tại; không phụ thuộc image/media/external asset; options và answer parse được đúng loại câu hỏi; math markup giữ đủ ý nghĩa; skill mapping phù hợp với thiết kế. MVP dùng single-skill cho state/policy tương thích.
+Cờ chỉ bật khi đồng thời: metadata không conflict; body tồn tại; không phụ thuộc image/media/external asset; options và answer parse được đúng loại câu hỏi; math markup giữ đủ ý nghĩa; skill mapping phù hợp với thiết kế. MVP dùng single-skill cho state/policy tương thích. Cờ này áp dụng cho candidate có thể hiển thị nội dung hoặc dùng trong human pedagogical review/demo, không áp dụng cho metadata-only ranking bank.
 
-Screen tự động chỉ đánh dấu `automatic_screen_pass`. Không có ảnh không chứng minh đủ nội dung. Tất cả bài hiện chờ rà soát; `rq2_text_eligible=False` cho tới khi có xác nhận nội dung kèm người rà soát/nguồn. Review kiểm tra cả phụ thuộc biểu đồ, nội dung phần trước và lựa chọn trả lời, không chỉ `<img>`.
+Screen tự động chỉ đánh dấu `automatic_screen_pass`. Không có ảnh không chứng minh đủ nội dung. `rq2_text_eligible=False` cho tới khi có xác nhận nội dung kèm người rà soát/nguồn. Không yêu cầu rà toàn bộ 2.233 bài qua automatic screen chỉ để chạy metadata-only policy: trước hết tạo scenario trên VALIDATION, lấy hợp các `problem_id` thực sự xuất hiện trong candidate lists, rồi chỉ rà các item duy nhất đó nếu cần hiển thị nội dung hoặc human pedagogical assessment. Người rà graph nên đồng thời rà các item đã surfaced để gom thành một đợt; hiện chưa xác định được người này. Review kiểm tra cả phụ thuộc biểu đồ, nội dung phần trước và lựa chọn trả lời, không chỉ `<img>`.
 
 Normalize bảo toàn HTML/LaTeX: Unicode NFC và newline thống nhất, giữ nguyên markup; không strip tags cho input Agent. Nếu hiển thị HTML cho người chấm, cần renderer bảo toàn toán và vô hiệu hóa mã/script cùng tài nguyên ngoài. Không đưa raw HTML không tin cậy vào trang chạy trực tiếp. Đáp án dùng kiểm tra parse nội bộ; không tự động đưa đáp án vào prompt recommendation.
 
-Review packet cục bộ ở `data/processed/foundationalassist_v4/rq2_content_review.json` lưu đủ phiên bản conflict, lý do screen và các ô review; không đưa lên Git. Việc review bài không cần xem kết quả TEST.
+Review packet cục bộ ở `data/processed/foundationalassist_v4/rq2_content_review.json` lưu đủ phiên bản conflict, lý do screen và các ô review; không đưa lên Git. Việc review bài không cần xem kết quả TEST. Metadata-only Agent chỉ nhận ID bài, skill, difficulty proxy tính trên TRAIN, support, state và graph; vì thế kết quả chỉ hỗ trợ phát biểu về hành vi chọn/xếp hạng theo các tín hiệu này, tính hợp lệ candidate, tuân thủ ràng buộc, mức đồng thuận với B+, latency/độ ổn định và position bias. Không gọi đó là chất lượng sư phạm, độ phù hợp nội dung hay lợi ích học tập. Chỉ nội dung đã `rq2_text_eligible=True` mới được hiển thị cho người chấm/demo hoặc dùng cho đánh giá chất lượng dựa trên nội dung.
 
 ## 7. Đánh giá và giới hạn
 
@@ -73,6 +81,12 @@ Giới hạn phải báo: single-skill filtering, filtered sequences không cậ
 - [x] Khóa cleaning và báo số interaction mất theo từng filter.
 - [x] Tạo và lưu split học sinh mới.
 - [x] Tạo screen nội dung bảo toàn markup, fail-closed cho RQ2.
+- [x] Tạo metadata-only TRAIN candidate inventory tách khỏi text eligibility; chưa khóa C.
+- [x] Tạo graph draft có nguồn: 15 chuẩn/18 skill ID, 9 cạnh chuẩn; chưa expert-validated, chưa Lock C.
+- [x] Tạo 50 VALIDATION scenarios v4/69 surfaced IDs, chạy B+ v4, random-by-ID và always-first dưới permutation chung; xem `reports/foundationalassist_v4_rq2_review_response.md`.
+- [x] Chẩn đoán coverage trên 750 VALIDATION học sinh; giữ pilot 50 học sinh, bổ sung riêng cohort thăm dò 33 học sinh tại prefix50. Xem `reports/foundationalassist_v4_rq2_coverage.md`; không gộp cohort hoặc suy ra chất lượng sư phạm từ graph sensitivity.
+- [ ] Chốt vai trò từng cohort và protocol cuối trước Lock C; thiết kế bổ sung được chọn sau coverage audit, chưa tiền đăng ký.
+- [ ] Đo prompt_eval_count bằng Ollama thực và chạy Agent VALIDATION; context preflight hiện chưa kết nối được runtime.
 - [ ] Hoàn thành rà soát nội dung để bật eligibility cho problem bank RQ2.
 - [x] Khóa features/models/evaluation và kiểm thử đường chạy RQ1 v4.
 - [x] Train/VALIDATION RQ1; Lock B v4; one-shot TEST.
