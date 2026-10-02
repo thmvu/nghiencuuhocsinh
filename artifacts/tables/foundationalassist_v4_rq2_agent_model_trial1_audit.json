@@ -1,0 +1,58 @@
+{
+  "stage": "model_trial1_post_run_validation_audit",
+  "test_opened": false,
+  "model_calls": 0,
+  "new_calls_verified": 144,
+  "valid_calls": 144,
+  "requests_changed_model_only": true,
+  "original_studies_unchanged": true,
+  "raw_responses_and_metrics_verified": true,
+  "enum_position_counts_valid": {
+    "representative": {
+      "curriculum_edges": {
+        "0": 3,
+        "1": 3,
+        "2": 4,
+        "3": 4,
+        "4": 6,
+        "5": 5,
+        "6": 5,
+        "7": 6
+      },
+      "no_edges": {
+        "0": 3,
+        "1": 3,
+        "2": 6,
+        "3": 4,
+        "4": 5,
+        "5": 5,
+        "6": 5,
+        "7": 5
+      }
+    },
+    "challenge": {
+      "curriculum_edges": {
+        "0": 6,
+        "1": 5,
+        "2": 6,
+        "3": 4,
+        "4": 6,
+        "5": 2,
+        "6": 1,
+        "7": 6
+      },
+      "no_edges": {
+        "0": 5,
+        "1": 5,
+        "2": 5,
+        "3": 4,
+        "4": 6,
+        "5": 3,
+        "6": 2,
+        "7": 6
+      }
+    }
+  },
+  "summary_sha256": "910e35734165ed776e3a705fe4bc2054afe0f2a5c8464913cc601426fff5d5f5",
+  "auditor_sha256": "c90b58a0e5e9e30b9fcc17c23d29926ab9ffd45d23c81e20b064a6a1ea03a96e"
+}

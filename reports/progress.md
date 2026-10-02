@@ -2,6 +2,8 @@
 
 ## FoundationalASSIST v4
 
+- 02/10/2026, sửa Agent: thêm schema enum/giới hạn reason, enum order độc lập, raw response và error stages vào private logs. Revision1 chạy 288 calls với hai arm schema-only/objective; thêm đúng một model trial Qwen2.5:1.5b với 144 request chỉ thay model. Tổng 432 calls mới hợp lệ; raw-response/request/hash/metric audit đạt và 152 tests PASS. Giảm first-position rate ở Qwen nhưng variability vẫn 83–100%, không promote model hoặc Lock C. 498 calls cũ giữ nguyên. Xem `reports/foundationalassist_v4_rq2_agent_repair.md`.
+
 - 02/10/2026, Agent thật đã chạy: Ollama 0.34.4 / gemma3:1b, 300 pilot calls (287 hợp lệ) và 198 challenge calls (193 hợp lệ), không repair/retry. Context probe đạt ở cả hai cohort. Thiên lệch vị trí đầu mạnh: khoảng 83–98% trong lựa chọn hợp lệ; chưa có bằng chứng Agent hữu ích hơn B+. Hậu kiểm private calls/public metrics/pinned inputs/runtime đạt; hai cohort trùng 2 học sinh, không gộp estimates. Xem `reports/foundationalassist_v4_rq2_agent_validation.md`. RQ1 giữ nguyên, chưa Lock C/TEST RQ2. Các ghi chú Ollama bị chặn/chưa chạy dưới đây là trạng thái trước lượt này.
 
 - 02/10/2026, cập nhật coverage: kiểm tra cả 750 VALIDATION học sinh ở prefix 5/10/20/50; lần lượt 3/5/13/33 có liên kết cùng yếu với cả hai skill đã quan sát. Generator ban đầu giữ tín hiệu ở 0/0/0/4. Thêm cohort thăm dò riêng tại prefix50, không thay pilot: 33 học sinh/97 surfaced IDs, B+ đổi lựa chọn có/không cạnh ở 29/33. Đây là kiểm tra phản ứng policy có điều kiện, không chứng minh graph hoặc lợi ích học tập. 145 tests PASS; Agent chưa chạy do Ollama chưa mở được. Xem `reports/foundationalassist_v4_rq2_coverage.md`. Chưa Lock C/TEST RQ2.

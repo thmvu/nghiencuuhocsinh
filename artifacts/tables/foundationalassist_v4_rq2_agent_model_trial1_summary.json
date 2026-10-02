@@ -1,0 +1,814 @@
+{
+  "stage": "validation_development_not_lock_c",
+  "test_opened": false,
+  "agent_status": "completed_validation_not_test",
+  "version": "foundationalassist-v4-rq2-agent-model-trial-1",
+  "model": "qwen2.5:1.5b",
+  "model_digest": "65ec06548149b04c096a120e4a6da9d4017ea809c91734ea5631e89f96ddc57b",
+  "ollama_version": "0.34.4",
+  "input_sha256": {
+    "configs/foundationalassist_v4_rq2_agent_revision1.json": "06398df73fe24b6fc1db74f8ebf5c452eb723539a9c218ef8b31da369059ac17",
+    "configs/foundationalassist_v4_rq2_validation.json": "e03200c9eb6ad3fd4826adb6a3cdabab35a4884851f9fcb6a1e148fe8f36f913",
+    "artifacts/tables/foundationalassist_v4_rq2_curriculum_graph.json": "2b8d8c3324cf431b256c80ae8e0f7ad174185eacb0713b4c1fbf6debf8e556aa",
+    "scripts/run_foundational_rq2_agent_revision1.py": "db3bc1a87bc3cf54c0bf2755c855b9e30411d4ccded8a7d6cc09a16c575b6ebe",
+    "src/rq2/agent_revision.py": "b0c4b5ecb3dbe192f28e678a1c28d12607370d29008444d3461afbbb2dcbfe60",
+    "artifacts/models/foundationalassist_v4/BKT.joblib": "b462d50b366d42760c9dff6645bae1525413fdb3a73e1f47a6ab9768b0a31004",
+    "data/processed/foundationalassist_v4/train.parquet": "06489c9b00b8d9750c085223a4ed884238fc63bd9be963b659e883f9d0301209",
+    "data/processed/foundationalassist_v4/validation.parquet": "49a1264aecfc88d95330c8ff8c329c9d861823c3555640cfc437830958112820",
+    "data/processed/foundationalassist_v4/student_split.json": "54ba8a52d2e6bc039f8c13178f67cd5d05016050953b09fa78e8d8645928ae96",
+    "src/models/bkt.py": "25835a925bc75944f9116823bc206b13a5c4a38eadee60485eae25a1c26dc7ef",
+    "configs/foundationalassist_v4_rq2_curriculum_graph.json": "eb34a1055153f68214f720e642e62948c34daf2db232225466597a94c1d78841",
+    "configs/foundationalassist_v4_rq2_metadata_candidates.json": "6eabc29418f10376c139762df8df87e2656149915f015b6c23980d69aaf9e13b",
+    "data/processed/foundationalassist_v4/rq2_content_review.json": "aabb3efd4d09b0ecec6807c3d3c92a1c09b7dfbaa69554a85a0bbf100762184d",
+    "configs/foundationalassist_v4_rq1_final.json": "0b7a12866b08c6a24e97e09bb4d661d863115c76bd0c6f171ee0b73a0aaf0b05",
+    "configs/foundationalassist_v4_preprocessing.json": "0ae994a4520bc62b618e076f49716cdd9af4ffbe9522cf7361da8d41de184503",
+    "scripts/prepare_foundational_rq2_validation.py": "30f80026087256343dd23ae1851b06f9689497071ffd7c4b5cba16cf15e62266",
+    "src/rq2/foundational_validation.py": "7f1bedffe7c919931811eeae6d914c055058de4913d137dc1002e63ac1ad606e",
+    "src/rq2/state.py": "24b0cea4f3edc9019125ff2e9c94a44a9e9f976c12237125a9a63ac2edab714b",
+    "src/rq2/scenarios.py": "5b116c5ec3e0b80ac62137d259927598138674ae4fbcdf9b109a9fbe8c63371f",
+    "src/rq2/candidates.py": "92ed4898088f1931e1367c3e16d8259a3d625272b339e27aa7772ed6f758ca8c",
+    "src/rq2/agent.py": "df5ebe6e982cd3930ba4425b1f3d2fd49a46fdef37dc3f767f5b1abce4e32ff4",
+    "src/rq2/curriculum_graph.py": "58ed36ac9f1136953285dcb601e893bc2b1fd58ab8ddf43d02d44f9d5e4aa674",
+    "data/processed/foundationalassist_v4/rq2_validation/deterministic_runs.json": "a0520b64e6186d0dd151ea414eb1f41d2f1ee5543a448641b1385f8d49db7db0",
+    "data/processed/foundationalassist_v4/rq2_validation/agent_runs.json": "a5cd61bd0867ff90b69c16475f9989636983b69a21d7bcbd5a9bfa2f1dddaf00",
+    "data/processed/foundationalassist_v4/rq2_validation/scenarios.json": "e7d55164ec324cb97b6eae3f7268b8967e523a4020dd1087bd620bfe2c390edb",
+    "artifacts/tables/foundationalassist_v4_rq2_validation_summary.json": "704e38a4eda4d6be2ec043204f4d577e7c24b0edc5ab561fd5602d703a86dd22",
+    "data/processed/foundationalassist_v4/rq2_validation/challenge/deterministic_runs.json": "63d611771445afbd1d04518bef4d2e3e94c1faa6b44aa495f2b757a318849e56",
+    "data/processed/foundationalassist_v4/rq2_validation/challenge/agent_runs.json": "4f687e5ada3980aaed567c641984b88d1dff55dbfb5592e0fc9ce2ab4d5610f7",
+    "data/processed/foundationalassist_v4/rq2_validation/challenge/scenarios.json": "18f2f2aa3badd0efa9a55c99255f95628cc131e9839383dea97d7416687fe69a",
+    "artifacts/tables/foundationalassist_v4_rq2_challenge_summary.json": "5f60ced4abbe1a6577adb89c99362cfe0d2ad2f62fc9fc5b20df380e044ae8d9",
+    "configs/foundationalassist_v4_rq2_agent_model_trial1.json": "a8d68a874410ea313fd61d2bef83aeb1e5432dbf3c6928f5a4079f794ddaa2e5",
+    "scripts/run_foundational_rq2_agent_model_trial1.py": "e6e2946a0e61b869b396d4ef9cf6c082dc695a4c164d5a72cbe8e4b87be33d08",
+    "artifacts/tables/foundationalassist_v4_rq2_agent_revision1_summary.json": "7d17fc79a92b5391ce347d13dd7e54ba449cc64686163f3ab052f622a62b88c5",
+    "data/processed/foundationalassist_v4/rq2_validation/agent_revision1/runs.json": "ce7026c0dd52e126b82dd888a46ae01f0cdcb11695f0c429131763c2cd28466d"
+  },
+  "new_calls_planned": 144,
+  "claims": "exploratory instruction-rule execution comparison; no educational benefit or universal model ranking",
+  "schedule_sha256": "50c74ce99e34fdf3bdf3b6066d0cf2f308693eeb25d98762eb1270aaa2e86c6f",
+  "context_verified": true,
+  "context_probe": {
+    "probes": [
+      {
+        "graph_variant": "curriculum_edges",
+        "prompt_eval_count": 1830,
+        "double_context_prompt_eval_count": 1830,
+        "byte_guard": 5604
+      },
+      {
+        "graph_variant": "no_edges",
+        "prompt_eval_count": 1607,
+        "double_context_prompt_eval_count": 1607,
+        "byte_guard": 5058
+      }
+    ],
+    "probe_calls_not_study": 4
+  },
+  "cohorts": {
+    "representative": {
+      "n_students": 12,
+      "policies": {
+        "Agent_legacy": {
+          "variants": {
+            "curriculum_edges": {
+              "n_calls": 36,
+              "n_students": 12,
+              "schema_valid_rate": 1.0,
+              "candidate_valid_rate": 0.9444444444444444,
+              "agrees_with_bplus_rate": 0.1388888888888889,
+              "soft_source_remediation_selected_rate": 0.0,
+              "all_valid_students": 11,
+              "order_sensitive_fraction_among_all_valid_students": 1,
+              "position_counts_valid": {
+                "0": 32,
+                "1": 2
+              },
+              "error_counts": {
+                "ValueError": 2
+              },
+              "latency_seconds_mean": 1.077993338888973,
+              "latency_seconds_max": 1.5839058000001387,
+              "prompt_eval_count_mean": 1708.75,
+              "prompt_eval_count_max": 1720
+            },
+            "no_edges": {
+              "n_calls": 36,
+              "n_students": 12,
+              "schema_valid_rate": 1.0,
+              "candidate_valid_rate": 0.9166666666666666,
+              "agrees_with_bplus_rate": 0.1111111111111111,
+              "soft_source_remediation_selected_rate": 0.0,
+              "all_valid_students": 9,
+              "order_sensitive_fraction_among_all_valid_students": 1,
+              "position_counts_valid": {
+                "0": 26,
+                "1": 6,
+                "2": 1
+              },
+              "error_counts": {
+                "ValueError": 3
+              },
+              "latency_seconds_mean": 1.1463321722221989,
+              "latency_seconds_max": 1.8806501999997636,
+              "prompt_eval_count_mean": 1485.75,
+              "prompt_eval_count_max": 1497
+            }
+          },
+          "variation_interpretation": "selection variation across candidate permutations",
+          "paired_selection_change_rate_among_valid_pairs": 0.2222222222222222,
+          "paired_valid_student_count": 12,
+          "paired_valid_pair_count": 32,
+          "invalid_graph_pairs": 4
+        },
+        "Agent_model_trial1": {
+          "variants": {
+            "curriculum_edges": {
+              "n_calls": 36,
+              "n_students": 12,
+              "schema_valid_rate": 1.0,
+              "candidate_valid_rate": 1.0,
+              "agrees_with_bplus_rate": 0.027777777777777776,
+              "soft_source_remediation_selected_rate": 0.0,
+              "all_valid_students": 12,
+              "order_sensitive_fraction_among_all_valid_students": 0.8333333333333334,
+              "position_counts_valid": {
+                "0": 12,
+                "1": 11,
+                "2": 4,
+                "3": 5,
+                "4": 2,
+                "5": 2
+              },
+              "error_counts": {},
+              "latency_seconds_mean": 1.1055074805553886,
+              "latency_seconds_max": 4.433703599999717,
+              "prompt_eval_count_mean": 1812.75,
+              "prompt_eval_count_max": 1824
+            },
+            "no_edges": {
+              "n_calls": 36,
+              "n_students": 12,
+              "schema_valid_rate": 1.0,
+              "candidate_valid_rate": 1.0,
+              "agrees_with_bplus_rate": 0.05555555555555555,
+              "soft_source_remediation_selected_rate": 0.0,
+              "all_valid_students": 12,
+              "order_sensitive_fraction_among_all_valid_students": 0.8333333333333334,
+              "position_counts_valid": {
+                "0": 12,
+                "1": 12,
+                "2": 3,
+                "3": 5,
+                "4": 2,
+                "5": 1,
+                "6": 1
+              },
+              "error_counts": {},
+              "latency_seconds_mean": 0.8117512833334027,
+              "latency_seconds_max": 1.2890337000008003,
+              "prompt_eval_count_mean": 1589.75,
+              "prompt_eval_count_max": 1601
+            }
+          },
+          "variation_interpretation": "selection variation across candidate permutations",
+          "paired_selection_change_rate_among_valid_pairs": 0.19444444444444442,
+          "paired_valid_student_count": 12,
+          "paired_valid_pair_count": 36,
+          "invalid_graph_pairs": 0
+        },
+        "Agent_schema_and_objective": {
+          "variants": {
+            "curriculum_edges": {
+              "n_calls": 36,
+              "n_students": 12,
+              "schema_valid_rate": 1.0,
+              "candidate_valid_rate": 1.0,
+              "agrees_with_bplus_rate": 0.1388888888888889,
+              "soft_source_remediation_selected_rate": 0.0,
+              "all_valid_students": 12,
+              "order_sensitive_fraction_among_all_valid_students": 1,
+              "position_counts_valid": {
+                "0": 31,
+                "1": 4,
+                "2": 1
+              },
+              "error_counts": {},
+              "latency_seconds_mean": 1.0828174611112646,
+              "latency_seconds_max": 1.2835648999989644,
+              "prompt_eval_count_mean": 1855.75,
+              "prompt_eval_count_max": 1867
+            },
+            "no_edges": {
+              "n_calls": 36,
+              "n_students": 12,
+              "schema_valid_rate": 1.0,
+              "candidate_valid_rate": 1.0,
+              "agrees_with_bplus_rate": 0.1111111111111111,
+              "soft_source_remediation_selected_rate": 0.0,
+              "all_valid_students": 12,
+              "order_sensitive_fraction_among_all_valid_students": 1,
+              "position_counts_valid": {
+                "0": 23,
+                "1": 12,
+                "2": 1
+              },
+              "error_counts": {},
+              "latency_seconds_mean": 1.0166510861111218,
+              "latency_seconds_max": 1.2552959999993618,
+              "prompt_eval_count_mean": 1632.75,
+              "prompt_eval_count_max": 1644
+            }
+          },
+          "variation_interpretation": "selection variation across candidate permutations",
+          "paired_selection_change_rate_among_valid_pairs": 0.2777777777777778,
+          "paired_valid_student_count": 12,
+          "paired_valid_pair_count": 36,
+          "invalid_graph_pairs": 0
+        },
+        "Agent_schema_only": {
+          "variants": {
+            "curriculum_edges": {
+              "n_calls": 36,
+              "n_students": 12,
+              "schema_valid_rate": 1.0,
+              "candidate_valid_rate": 1.0,
+              "agrees_with_bplus_rate": 0.1388888888888889,
+              "soft_source_remediation_selected_rate": 0.0,
+              "all_valid_students": 12,
+              "order_sensitive_fraction_among_all_valid_students": 1,
+              "position_counts_valid": {
+                "0": 34,
+                "1": 2
+              },
+              "error_counts": {},
+              "latency_seconds_mean": 1.0261022555553407,
+              "latency_seconds_max": 5.01382250000097,
+              "prompt_eval_count_mean": 1708.75,
+              "prompt_eval_count_max": 1720
+            },
+            "no_edges": {
+              "n_calls": 36,
+              "n_students": 12,
+              "schema_valid_rate": 1.0,
+              "candidate_valid_rate": 1.0,
+              "agrees_with_bplus_rate": 0.1111111111111111,
+              "soft_source_remediation_selected_rate": 0.0,
+              "all_valid_students": 12,
+              "order_sensitive_fraction_among_all_valid_students": 1,
+              "position_counts_valid": {
+                "0": 28,
+                "1": 7,
+                "2": 1
+              },
+              "error_counts": {},
+              "latency_seconds_mean": 0.8601772638886965,
+              "latency_seconds_max": 1.0834334999999555,
+              "prompt_eval_count_mean": 1485.75,
+              "prompt_eval_count_max": 1497
+            }
+          },
+          "variation_interpretation": "selection variation across candidate permutations",
+          "paired_selection_change_rate_among_valid_pairs": 0.2222222222222222,
+          "paired_valid_student_count": 12,
+          "paired_valid_pair_count": 36,
+          "invalid_graph_pairs": 0
+        },
+        "B+": {
+          "variants": {
+            "curriculum_edges": {
+              "n_calls": 36,
+              "n_students": 12,
+              "schema_valid_rate": 1.0,
+              "candidate_valid_rate": 1.0,
+              "agrees_with_bplus_rate": 1.0,
+              "soft_source_remediation_selected_rate": 0.0,
+              "all_valid_students": 12,
+              "order_sensitive_fraction_among_all_valid_students": 0,
+              "position_counts_valid": {
+                "0": 5,
+                "1": 1,
+                "2": 4,
+                "3": 7,
+                "4": 7,
+                "5": 4,
+                "6": 3,
+                "7": 5
+              },
+              "error_counts": {},
+              "latency_seconds_mean": null,
+              "latency_seconds_max": null,
+              "prompt_eval_count_mean": null,
+              "prompt_eval_count_max": null
+            },
+            "no_edges": {
+              "n_calls": 36,
+              "n_students": 12,
+              "schema_valid_rate": 1.0,
+              "candidate_valid_rate": 1.0,
+              "agrees_with_bplus_rate": 1.0,
+              "soft_source_remediation_selected_rate": 0.0,
+              "all_valid_students": 12,
+              "order_sensitive_fraction_among_all_valid_students": 0,
+              "position_counts_valid": {
+                "0": 5,
+                "1": 1,
+                "2": 4,
+                "3": 7,
+                "4": 7,
+                "5": 4,
+                "6": 3,
+                "7": 5
+              },
+              "error_counts": {},
+              "latency_seconds_mean": null,
+              "latency_seconds_max": null,
+              "prompt_eval_count_mean": null,
+              "prompt_eval_count_max": null
+            }
+          },
+          "variation_interpretation": "selection variation across candidate permutations",
+          "paired_selection_change_rate_among_valid_pairs": 0,
+          "paired_valid_student_count": 12,
+          "paired_valid_pair_count": 36,
+          "invalid_graph_pairs": 0
+        },
+        "always_first": {
+          "variants": {
+            "curriculum_edges": {
+              "n_calls": 36,
+              "n_students": 12,
+              "schema_valid_rate": 1.0,
+              "candidate_valid_rate": 1.0,
+              "agrees_with_bplus_rate": 0.1388888888888889,
+              "soft_source_remediation_selected_rate": 0.0,
+              "all_valid_students": 12,
+              "order_sensitive_fraction_among_all_valid_students": 1,
+              "position_counts_valid": {
+                "0": 36
+              },
+              "error_counts": {},
+              "latency_seconds_mean": null,
+              "latency_seconds_max": null,
+              "prompt_eval_count_mean": null,
+              "prompt_eval_count_max": null
+            },
+            "no_edges": {
+              "n_calls": 36,
+              "n_students": 12,
+              "schema_valid_rate": 1.0,
+              "candidate_valid_rate": 1.0,
+              "agrees_with_bplus_rate": 0.1388888888888889,
+              "soft_source_remediation_selected_rate": 0.0,
+              "all_valid_students": 12,
+              "order_sensitive_fraction_among_all_valid_students": 1,
+              "position_counts_valid": {
+                "0": 36
+              },
+              "error_counts": {},
+              "latency_seconds_mean": null,
+              "latency_seconds_max": null,
+              "prompt_eval_count_mean": null,
+              "prompt_eval_count_max": null
+            }
+          },
+          "variation_interpretation": "selection variation across candidate permutations",
+          "paired_selection_change_rate_among_valid_pairs": 0,
+          "paired_valid_student_count": 12,
+          "paired_valid_pair_count": 36,
+          "invalid_graph_pairs": 0
+        },
+        "random": {
+          "variants": {
+            "curriculum_edges": {
+              "n_calls": 36,
+              "n_students": 12,
+              "schema_valid_rate": 1.0,
+              "candidate_valid_rate": 1.0,
+              "agrees_with_bplus_rate": 0.1388888888888889,
+              "soft_source_remediation_selected_rate": 0.0,
+              "all_valid_students": 12,
+              "order_sensitive_fraction_among_all_valid_students": 0.9166666666666666,
+              "position_counts_valid": {
+                "0": 3,
+                "1": 8,
+                "2": 2,
+                "3": 5,
+                "4": 7,
+                "5": 6,
+                "6": 2,
+                "7": 3
+              },
+              "error_counts": {},
+              "latency_seconds_mean": null,
+              "latency_seconds_max": null,
+              "prompt_eval_count_mean": null,
+              "prompt_eval_count_max": null
+            },
+            "no_edges": {
+              "n_calls": 36,
+              "n_students": 12,
+              "schema_valid_rate": 1.0,
+              "candidate_valid_rate": 1.0,
+              "agrees_with_bplus_rate": 0.1388888888888889,
+              "soft_source_remediation_selected_rate": 0.0,
+              "all_valid_students": 12,
+              "order_sensitive_fraction_among_all_valid_students": 0.9166666666666666,
+              "position_counts_valid": {
+                "0": 3,
+                "1": 8,
+                "2": 2,
+                "3": 5,
+                "4": 7,
+                "5": 6,
+                "6": 2,
+                "7": 3
+              },
+              "error_counts": {},
+              "latency_seconds_mean": null,
+              "latency_seconds_max": null,
+              "prompt_eval_count_mean": null,
+              "prompt_eval_count_max": null
+            }
+          },
+          "variation_interpretation": "different stochastic draws, not position bias",
+          "paired_selection_change_rate_among_valid_pairs": 0,
+          "paired_valid_student_count": 12,
+          "paired_valid_pair_count": 36,
+          "invalid_graph_pairs": 0
+        }
+      }
+    },
+    "challenge": {
+      "n_students": 12,
+      "policies": {
+        "Agent_legacy": {
+          "variants": {
+            "curriculum_edges": {
+              "n_calls": 36,
+              "n_students": 12,
+              "schema_valid_rate": 0.9722222222222222,
+              "candidate_valid_rate": 0.9444444444444444,
+              "agrees_with_bplus_rate": 0.08333333333333333,
+              "soft_source_remediation_selected_rate": 0.16666666666666666,
+              "all_valid_students": 10,
+              "order_sensitive_fraction_among_all_valid_students": 1,
+              "position_counts_valid": {
+                "0": 33,
+                "1": 1
+              },
+              "error_counts": {
+                "ValueError": 2
+              },
+              "latency_seconds_mean": 1.0802916111110283,
+              "latency_seconds_max": 3.801882200000364,
+              "prompt_eval_count_mean": 1705.3714285714286,
+              "prompt_eval_count_max": 1726
+            },
+            "no_edges": {
+              "n_calls": 36,
+              "n_students": 12,
+              "schema_valid_rate": 1.0,
+              "candidate_valid_rate": 1.0,
+              "agrees_with_bplus_rate": 0.1111111111111111,
+              "soft_source_remediation_selected_rate": 0.1111111111111111,
+              "all_valid_students": 12,
+              "order_sensitive_fraction_among_all_valid_students": 0.9166666666666666,
+              "position_counts_valid": {
+                "0": 29,
+                "1": 6,
+                "2": 1
+              },
+              "error_counts": {},
+              "latency_seconds_mean": 1.0553851944443724,
+              "latency_seconds_max": 1.4004355999995823,
+              "prompt_eval_count_mean": 1482.25,
+              "prompt_eval_count_max": 1503
+            }
+          },
+          "variation_interpretation": "selection variation across candidate permutations",
+          "paired_selection_change_rate_among_valid_pairs": 0.18055555555555555,
+          "paired_valid_student_count": 12,
+          "paired_valid_pair_count": 34,
+          "invalid_graph_pairs": 2
+        },
+        "Agent_model_trial1": {
+          "variants": {
+            "curriculum_edges": {
+              "n_calls": 36,
+              "n_students": 12,
+              "schema_valid_rate": 1.0,
+              "candidate_valid_rate": 1.0,
+              "agrees_with_bplus_rate": 0.0,
+              "soft_source_remediation_selected_rate": 0.05555555555555555,
+              "all_valid_students": 12,
+              "order_sensitive_fraction_among_all_valid_students": 1,
+              "position_counts_valid": {
+                "0": 22,
+                "1": 7,
+                "2": 1,
+                "3": 4,
+                "4": 1,
+                "5": 1
+              },
+              "error_counts": {},
+              "latency_seconds_mean": 1.0538481277778575,
+              "latency_seconds_max": 1.749959900000249,
+              "prompt_eval_count_mean": 1809.25,
+              "prompt_eval_count_max": 1830
+            },
+            "no_edges": {
+              "n_calls": 36,
+              "n_students": 12,
+              "schema_valid_rate": 1.0,
+              "candidate_valid_rate": 1.0,
+              "agrees_with_bplus_rate": 0.2222222222222222,
+              "soft_source_remediation_selected_rate": 0.05555555555555555,
+              "all_valid_students": 12,
+              "order_sensitive_fraction_among_all_valid_students": 0.9166666666666666,
+              "position_counts_valid": {
+                "0": 21,
+                "1": 5,
+                "2": 2,
+                "3": 4,
+                "4": 1,
+                "5": 1,
+                "6": 1,
+                "7": 1
+              },
+              "error_counts": {},
+              "latency_seconds_mean": 0.8110429027778486,
+              "latency_seconds_max": 1.3295232000000397,
+              "prompt_eval_count_mean": 1586.25,
+              "prompt_eval_count_max": 1607
+            }
+          },
+          "variation_interpretation": "selection variation across candidate permutations",
+          "paired_selection_change_rate_among_valid_pairs": 0.19444444444444442,
+          "paired_valid_student_count": 12,
+          "paired_valid_pair_count": 36,
+          "invalid_graph_pairs": 0
+        },
+        "Agent_schema_and_objective": {
+          "variants": {
+            "curriculum_edges": {
+              "n_calls": 36,
+              "n_students": 12,
+              "schema_valid_rate": 1.0,
+              "candidate_valid_rate": 1.0,
+              "agrees_with_bplus_rate": 0.08333333333333333,
+              "soft_source_remediation_selected_rate": 0.16666666666666666,
+              "all_valid_students": 12,
+              "order_sensitive_fraction_among_all_valid_students": 0.9166666666666666,
+              "position_counts_valid": {
+                "0": 32,
+                "1": 4
+              },
+              "error_counts": {},
+              "latency_seconds_mean": 1.1465501722222546,
+              "latency_seconds_max": 1.4231662000001961,
+              "prompt_eval_count_mean": 1852.25,
+              "prompt_eval_count_max": 1873
+            },
+            "no_edges": {
+              "n_calls": 36,
+              "n_students": 12,
+              "schema_valid_rate": 1.0,
+              "candidate_valid_rate": 1.0,
+              "agrees_with_bplus_rate": 0.1111111111111111,
+              "soft_source_remediation_selected_rate": 0.1111111111111111,
+              "all_valid_students": 12,
+              "order_sensitive_fraction_among_all_valid_students": 1,
+              "position_counts_valid": {
+                "0": 27,
+                "1": 8,
+                "3": 1
+              },
+              "error_counts": {},
+              "latency_seconds_mean": 1.0805836722220192,
+              "latency_seconds_max": 1.2632730000004813,
+              "prompt_eval_count_mean": 1629.25,
+              "prompt_eval_count_max": 1650
+            }
+          },
+          "variation_interpretation": "selection variation across candidate permutations",
+          "paired_selection_change_rate_among_valid_pairs": 0.1388888888888889,
+          "paired_valid_student_count": 12,
+          "paired_valid_pair_count": 36,
+          "invalid_graph_pairs": 0
+        },
+        "Agent_schema_only": {
+          "variants": {
+            "curriculum_edges": {
+              "n_calls": 36,
+              "n_students": 12,
+              "schema_valid_rate": 1.0,
+              "candidate_valid_rate": 1.0,
+              "agrees_with_bplus_rate": 0.08333333333333333,
+              "soft_source_remediation_selected_rate": 0.16666666666666666,
+              "all_valid_students": 12,
+              "order_sensitive_fraction_among_all_valid_students": 0.9166666666666666,
+              "position_counts_valid": {
+                "0": 35,
+                "1": 1
+              },
+              "error_counts": {},
+              "latency_seconds_mean": 0.9403734027777723,
+              "latency_seconds_max": 1.1618815000001632,
+              "prompt_eval_count_mean": 1705.25,
+              "prompt_eval_count_max": 1726
+            },
+            "no_edges": {
+              "n_calls": 36,
+              "n_students": 12,
+              "schema_valid_rate": 1.0,
+              "candidate_valid_rate": 1.0,
+              "agrees_with_bplus_rate": 0.1111111111111111,
+              "soft_source_remediation_selected_rate": 0.1111111111111111,
+              "all_valid_students": 12,
+              "order_sensitive_fraction_among_all_valid_students": 0.9166666666666666,
+              "position_counts_valid": {
+                "0": 29,
+                "1": 6,
+                "2": 1
+              },
+              "error_counts": {},
+              "latency_seconds_mean": 0.8819693194445285,
+              "latency_seconds_max": 1.2465621999999712,
+              "prompt_eval_count_mean": 1482.25,
+              "prompt_eval_count_max": 1503
+            }
+          },
+          "variation_interpretation": "selection variation across candidate permutations",
+          "paired_selection_change_rate_among_valid_pairs": 0.16666666666666666,
+          "paired_valid_student_count": 12,
+          "paired_valid_pair_count": 36,
+          "invalid_graph_pairs": 0
+        },
+        "B+": {
+          "variants": {
+            "curriculum_edges": {
+              "n_calls": 36,
+              "n_students": 12,
+              "schema_valid_rate": 1.0,
+              "candidate_valid_rate": 1.0,
+              "agrees_with_bplus_rate": 1.0,
+              "soft_source_remediation_selected_rate": 1.0,
+              "all_valid_students": 12,
+              "order_sensitive_fraction_among_all_valid_students": 0,
+              "position_counts_valid": {
+                "0": 4,
+                "1": 5,
+                "2": 10,
+                "3": 3,
+                "5": 2,
+                "6": 6,
+                "7": 6
+              },
+              "error_counts": {},
+              "latency_seconds_mean": null,
+              "latency_seconds_max": null,
+              "prompt_eval_count_mean": null,
+              "prompt_eval_count_max": null
+            },
+            "no_edges": {
+              "n_calls": 36,
+              "n_students": 12,
+              "schema_valid_rate": 1.0,
+              "candidate_valid_rate": 1.0,
+              "agrees_with_bplus_rate": 1.0,
+              "soft_source_remediation_selected_rate": 0.0,
+              "all_valid_students": 12,
+              "order_sensitive_fraction_among_all_valid_students": 0,
+              "position_counts_valid": {
+                "0": 3,
+                "1": 5,
+                "2": 4,
+                "3": 5,
+                "4": 6,
+                "5": 4,
+                "6": 7,
+                "7": 2
+              },
+              "error_counts": {},
+              "latency_seconds_mean": null,
+              "latency_seconds_max": null,
+              "prompt_eval_count_mean": null,
+              "prompt_eval_count_max": null
+            }
+          },
+          "variation_interpretation": "selection variation across candidate permutations",
+          "paired_selection_change_rate_among_valid_pairs": 1,
+          "paired_valid_student_count": 12,
+          "paired_valid_pair_count": 36,
+          "invalid_graph_pairs": 0
+        },
+        "always_first": {
+          "variants": {
+            "curriculum_edges": {
+              "n_calls": 36,
+              "n_students": 12,
+              "schema_valid_rate": 1.0,
+              "candidate_valid_rate": 1.0,
+              "agrees_with_bplus_rate": 0.1111111111111111,
+              "soft_source_remediation_selected_rate": 0.19444444444444442,
+              "all_valid_students": 12,
+              "order_sensitive_fraction_among_all_valid_students": 0.9166666666666666,
+              "position_counts_valid": {
+                "0": 36
+              },
+              "error_counts": {},
+              "latency_seconds_mean": null,
+              "latency_seconds_max": null,
+              "prompt_eval_count_mean": null,
+              "prompt_eval_count_max": null
+            },
+            "no_edges": {
+              "n_calls": 36,
+              "n_students": 12,
+              "schema_valid_rate": 1.0,
+              "candidate_valid_rate": 1.0,
+              "agrees_with_bplus_rate": 0.08333333333333333,
+              "soft_source_remediation_selected_rate": 0.19444444444444442,
+              "all_valid_students": 12,
+              "order_sensitive_fraction_among_all_valid_students": 0.9166666666666666,
+              "position_counts_valid": {
+                "0": 36
+              },
+              "error_counts": {},
+              "latency_seconds_mean": null,
+              "latency_seconds_max": null,
+              "prompt_eval_count_mean": null,
+              "prompt_eval_count_max": null
+            }
+          },
+          "variation_interpretation": "selection variation across candidate permutations",
+          "paired_selection_change_rate_among_valid_pairs": 0,
+          "paired_valid_student_count": 12,
+          "paired_valid_pair_count": 36,
+          "invalid_graph_pairs": 0
+        },
+        "random": {
+          "variants": {
+            "curriculum_edges": {
+              "n_calls": 36,
+              "n_students": 12,
+              "schema_valid_rate": 1.0,
+              "candidate_valid_rate": 1.0,
+              "agrees_with_bplus_rate": 0.25,
+              "soft_source_remediation_selected_rate": 0.2777777777777778,
+              "all_valid_students": 12,
+              "order_sensitive_fraction_among_all_valid_students": 0.9166666666666666,
+              "position_counts_valid": {
+                "0": 5,
+                "1": 5,
+                "2": 4,
+                "3": 5,
+                "4": 4,
+                "5": 6,
+                "6": 4,
+                "7": 3
+              },
+              "error_counts": {},
+              "latency_seconds_mean": null,
+              "latency_seconds_max": null,
+              "prompt_eval_count_mean": null,
+              "prompt_eval_count_max": null
+            },
+            "no_edges": {
+              "n_calls": 36,
+              "n_students": 12,
+              "schema_valid_rate": 1.0,
+              "candidate_valid_rate": 1.0,
+              "agrees_with_bplus_rate": 0.08333333333333333,
+              "soft_source_remediation_selected_rate": 0.2777777777777778,
+              "all_valid_students": 12,
+              "order_sensitive_fraction_among_all_valid_students": 0.9166666666666666,
+              "position_counts_valid": {
+                "0": 5,
+                "1": 5,
+                "2": 4,
+                "3": 5,
+                "4": 4,
+                "5": 6,
+                "6": 4,
+                "7": 3
+              },
+              "error_counts": {},
+              "latency_seconds_mean": null,
+              "latency_seconds_max": null,
+              "prompt_eval_count_mean": null,
+              "prompt_eval_count_max": null
+            }
+          },
+          "variation_interpretation": "different stochastic draws, not position bias",
+          "paired_selection_change_rate_among_valid_pairs": 0,
+          "paired_valid_student_count": 12,
+          "paired_valid_pair_count": 36,
+          "invalid_graph_pairs": 0
+        }
+      }
+    }
+  },
+  "private_runs_sha256": "3bf62fb73d64dead9569bd8852aee69fa7a4a8b1c555818a7fb22d47150dab3d",
+  "previous_studies_unchanged": true,
+  "runtime_identity_unchanged": true
+}

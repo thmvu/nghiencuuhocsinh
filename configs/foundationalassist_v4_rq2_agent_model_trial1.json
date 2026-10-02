@@ -1,0 +1,12 @@
+{
+  "version": "foundationalassist-v4-rq2-agent-model-trial-1",
+  "stage": "validation_development_not_lock_c",
+  "test_access": false,
+  "model": "qwen2.5:1.5b",
+  "model_digest": "65ec06548149b04c096a120e4a6da9d4017ea809c91734ea5631e89f96ddc57b",
+  "new_calls": 144,
+  "reason": "revision1 fixed output validity but gemma3:1b retained display-order bias; one alternative instruction model selected under low available RAM",
+  "design": "use exactly revision1 schema_and_objective schedule, enum order, candidate display order, context/output limits and metrics; change model only",
+  "claims": "exploratory instruction-rule execution comparison; no educational benefit or universal model ranking",
+  "limit": "one model trial, no automatic sweep; preserve all original and revision1 results"
+}

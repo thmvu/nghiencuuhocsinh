@@ -1,0 +1,13 @@
+{
+  "stage": "revision1_post_run_validation_audit",
+  "test_opened": false,
+  "model_calls": 0,
+  "new_calls_verified": 288,
+  "valid_calls": 288,
+  "original_inputs_unchanged": true,
+  "requests_and_raw_responses_verified": true,
+  "metrics_recomputed": true,
+  "display_and_enum_positions_verified": true,
+  "summary_sha256": "7d17fc79a92b5391ce347d13dd7e54ba449cc64686163f3ab052f622a62b88c5",
+  "auditor_sha256": "5c63bbab5d9b183d5112881f0aba5f2ce8da6edda291f7f8dbfce59e48610f77"
+}

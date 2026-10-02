@@ -1,0 +1,33 @@
+{
+  "version": "foundationalassist-v4-rq2-agent-revision-1",
+  "stage": "validation_development_not_lock_c",
+  "test_access": false,
+  "base_config": "configs/foundationalassist_v4_rq2_validation.json",
+  "base_config_sha256": "e03200c9eb6ad3fd4826adb6a3cdabab35a4884851f9fcb6a1e148fe8f36f913",
+  "cases_per_cohort": 12,
+  "subset_seed": 20261002,
+  "enum_seed": 241002,
+  "reason_max_chars": 160,
+  "arms": [
+    "schema_only",
+    "schema_and_objective"
+  ],
+  "new_calls": 288,
+  "selection": "fixed seeded subset from each saved cohort, without reading policy outcomes; preserve original scenario indices/permutations",
+  "enum_order": "independently shuffled per original scenario index and repetition; same across arms and graph variants; never copied from display order",
+  "metrics_before_run": {
+    "primary": "candidate_valid_rate with invalid calls retained",
+    "stability": "student selection variability across the original three display permutations",
+    "position": "first display position and first schema enum position among valid calls, both reported",
+    "additional": [
+      "schema_valid_rate",
+      "agreement_with_bplus",
+      "soft_source_remediation_selection_rate",
+      "latency",
+      "error_stage_counts"
+    ],
+    "comparison": "archived legacy outputs on exactly the same selected cases; two new arms use the same model and runtime options",
+    "claims": "bounded exploratory development; the objective arm explicitly follows the B+ numeric rule, so agreement measures rule execution, not pedagogical value",
+    "follow_up": "no automatic prompt/model search; retain all arms and failures; full VALIDATION required before any Lock C"
+  }
+}

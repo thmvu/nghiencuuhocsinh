@@ -87,6 +87,7 @@ Giới hạn phải báo: single-skill filtering, filtered sequences không cậ
 - [x] Chẩn đoán coverage trên 750 VALIDATION học sinh; giữ pilot 50 học sinh, bổ sung riêng cohort thăm dò 33 học sinh tại prefix50. Xem `reports/foundationalassist_v4_rq2_coverage.md`; không gộp cohort hoặc suy ra chất lượng sư phạm từ graph sensitivity.
 - [ ] Chốt vai trò từng cohort và protocol cuối trước Lock C; thiết kế bổ sung được chọn sau coverage audit, chưa tiền đăng ký.
 - [x] Đo prompt_eval_count bằng Ollama thật và chạy 498 Agent VALIDATION calls qua hai cohort riêng; xem `reports/foundationalassist_v4_rq2_agent_validation.md`. Hậu kiểm đạt, chưa mở TEST. Agent hiện tại thiên lệch vị trí mạnh; cần chốt hướng cuối trước Lock C.
+- [x] Sửa schema/logging và kiểm chứng hữu hạn: 432 calls mới, 152 tests PASS; xem `reports/foundationalassist_v4_rq2_agent_repair.md`. Validity đạt trong thử nghiệm nhưng order bias/decision stability chưa giải quyết hoàn toàn; không tự promote cấu hình hoặc mở TEST.
 - [ ] Hoàn thành rà soát nội dung để bật eligibility cho problem bank RQ2.
 - [x] Khóa features/models/evaluation và kiểm thử đường chạy RQ1 v4.
 - [x] Train/VALIDATION RQ1; Lock B v4; one-shot TEST.

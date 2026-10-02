@@ -4,3 +4,10 @@
 *.ipynb text eol=lf
 *.md text eol=lf
 *.png binary
+# Preserve the exact Windows-generated RQ2 snapshots recorded in SHA-256 manifests.
+artifacts/tables/foundationalassist_v4_rq2_*.json text eol=crlf
+configs/foundationalassist_v4_rq2_agent_revision1.json text eol=crlf
+configs/foundationalassist_v4_rq2_agent_model_trial1.json text eol=crlf
+# These locked snapshots are referenced byte-for-byte by the RQ2 input manifest.
+configs/foundationalassist_v4_rq1_final.json text eol=crlf
+configs/foundationalassist_v4_preprocessing.json text eol=crlf
