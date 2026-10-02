@@ -1,0 +1,16 @@
+{
+  "version": "foundationalassist-v4-rq2-agent-calculator-1",
+  "stage": "validation_development_not_lock_c",
+  "test_access": false,
+  "model": "qwen2.5:1.5b",
+  "model_digest": "65ec06548149b04c096a120e4a6da9d4017ea809c91734ea5631e89f96ddc57b",
+  "new_calls": 144,
+  "design": "reuse exactly model_trial1 state, candidate display order, enum order, permutations, model and runtime settings; add per-candidate computed evidence and its explanatory instruction only",
+  "evidence": ["weak_linked_source", "train_success_gap", "train_support"],
+  "fairness": "Agent and calculator B+ receive identical unsorted evidence; no winner, rank or shortlist is supplied; calculator B+ must equal frozen B+ for every scheduled call",
+  "no_edges": "compute evidence from supplied no-edge graph only; full reference graph is evaluation-only",
+  "metrics_before_run": ["candidate validity", "agreement with original B+", "student-level choice variability across three display permutations", "first display position among valid calls", "enum position counts among valid calls", "soft remediation against common reference graph", "paired graph selection change"],
+  "diagnostic_success_before_run": "all calls valid, agreement >= 0.95 and choice variability <= 0.10 separately in each cohort/variant; diagnostic thresholds only, never automatically authorize Lock C",
+  "claims": "exploratory calculator-assisted execution of an explicitly supplied deterministic rule, not independent pedagogical reasoning, learning gain or a clean held-out confirmation",
+  "limit": "one calculator intervention on the previously inspected development subset, no automatic prompt/model sweep or TEST access"
+}
