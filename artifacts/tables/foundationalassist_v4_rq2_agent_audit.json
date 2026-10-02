@@ -1,0 +1,41 @@
+{
+  "stage": "post_run_validation_audit_not_test",
+  "test_opened": false,
+  "model_invocations": 0,
+  "runtime_identity_matches_both_runs": true,
+  "cohorts": [
+    {
+      "cohort": "representative",
+      "n_students": 50,
+      "agent_calls": 300,
+      "candidate_valid_calls": 287,
+      "schema_valid_calls": 299,
+      "calls_failing_after_schema_validation": 12,
+      "accepted_selection_membership_and_positions_verified": true,
+      "summary_recomputed_from_private_calls": true,
+      "pinned_inputs_unchanged": true,
+      "summary_sha256": "704e38a4eda4d6be2ec043204f4d577e7c24b0edc5ab561fd5602d703a86dd22",
+      "private_calls_sha256": "a5cd61bd0867ff90b69c16475f9989636983b69a21d7bcbd5a9bfa2f1dddaf00",
+      "model_digest": "8648f39daa8fbf5b18c7b4e6a8fb4990c692751d49917417b8842ca5758e7ffc",
+      "ollama_version": "0.34.4"
+    },
+    {
+      "cohort": "challenge",
+      "n_students": 33,
+      "agent_calls": 198,
+      "candidate_valid_calls": 193,
+      "schema_valid_calls": 196,
+      "calls_failing_after_schema_validation": 3,
+      "accepted_selection_membership_and_positions_verified": true,
+      "summary_recomputed_from_private_calls": true,
+      "pinned_inputs_unchanged": true,
+      "summary_sha256": "5f60ced4abbe1a6577adb89c99362cfe0d2ad2f62fc9fc5b20df380e044ae8d9",
+      "private_calls_sha256": "4f687e5ada3980aaed567c641984b88d1dff55dbfb5592e0fc9ce2ab4d5610f7",
+      "model_digest": "8648f39daa8fbf5b18c7b4e6a8fb4990c692751d49917417b8842ca5758e7ffc",
+      "ollama_version": "0.34.4"
+    }
+  ],
+  "overlapping_students_between_cohorts": 2,
+  "auditor_sha256": "dd2dd752b4576c0cd1443f46a56fffaee55fd51b83946a5b6c597805bc8c78bc",
+  "limitation": "Raw response/reason not retained by this runner; generic ValueError logs cannot distinguish every refusal cause. No pooling of cohort estimates."
+}

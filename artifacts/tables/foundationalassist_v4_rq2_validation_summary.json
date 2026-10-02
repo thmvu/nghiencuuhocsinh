@@ -165,6 +165,58 @@
       "paired_valid_student_count": 50,
       "paired_valid_pair_count": 150,
       "invalid_graph_pairs": 0
+    },
+    "Agent": {
+      "variants": {
+        "curriculum_edges": {
+          "n_calls": 150,
+          "n_students": 50,
+          "schema_valid_rate": 1.0,
+          "candidate_valid_rate": 0.9466666666666667,
+          "agrees_with_bplus_rate": 0.09999999999999999,
+          "soft_source_remediation_selected_rate": 0.0,
+          "all_valid_students": 44,
+          "order_sensitive_fraction_among_all_valid_students": 0.9772727272727273,
+          "position_counts_valid": {
+            "0": 134,
+            "1": 8
+          },
+          "error_counts": {
+            "ValueError": 8
+          },
+          "latency_seconds_mean": 1.0909030500000456,
+          "latency_seconds_max": 4.780885799999851,
+          "prompt_eval_count_mean": 1708.28,
+          "prompt_eval_count_max": 1727
+        },
+        "no_edges": {
+          "n_calls": 150,
+          "n_students": 50,
+          "schema_valid_rate": 0.9933333333333333,
+          "candidate_valid_rate": 0.9666666666666667,
+          "agrees_with_bplus_rate": 0.09333333333333332,
+          "soft_source_remediation_selected_rate": 0.0,
+          "all_valid_students": 45,
+          "order_sensitive_fraction_among_all_valid_students": 0.9777777777777777,
+          "position_counts_valid": {
+            "0": 121,
+            "1": 23,
+            "2": 1
+          },
+          "error_counts": {
+            "ValueError": 5
+          },
+          "latency_seconds_mean": 1.1430853379999644,
+          "latency_seconds_max": 5.926507700000002,
+          "prompt_eval_count_mean": 1485.4228187919464,
+          "prompt_eval_count_max": 1504
+        }
+      },
+      "variation_interpretation": "selection variation across candidate permutations",
+      "paired_selection_change_rate_among_valid_pairs": 0.17333333333333334,
+      "paired_valid_student_count": 50,
+      "paired_valid_pair_count": 138,
+      "invalid_graph_pairs": 12
     }
   },
   "graph_activation_coverage": {
@@ -201,7 +253,33 @@
   "scenarios_sha256": "e7d55164ec324cb97b6eae3f7268b8967e523a4020dd1087bd620bfe2c390edb",
   "cohort": "representative",
   "cohort_design": "original 50-student random-prefix pilot",
-  "context_verified": false,
-  "agent_status": "blocked_context_preflight",
-  "context_probe_error_type": "URLError"
+  "context_verified": true,
+  "agent_status": "validation_run_completed_not_test",
+  "context_probe": {
+    "stage": "local_context_feasibility_not_rq2_results",
+    "verified": true,
+    "model": "gemma3:1b",
+    "model_digest": "8648f39daa8fbf5b18c7b4e6a8fb4990c692751d49917417b8842ca5758e7ffc",
+    "ollama_version": "0.34.4",
+    "probes": [
+      {
+        "variant": "curriculum_edges",
+        "prompt_eval_count": 1727,
+        "double_context_prompt_eval_count": 1727,
+        "conservative_byte_guard_with_reserve": 4748,
+        "configured_context": 8192,
+        "output_reserve": 256,
+        "same_prompt_token_count": true
+      },
+      {
+        "variant": "no_edges",
+        "prompt_eval_count": 1504,
+        "double_context_prompt_eval_count": 1504,
+        "conservative_byte_guard_with_reserve": 4202,
+        "configured_context": 8192,
+        "output_reserve": 256,
+        "same_prompt_token_count": true
+      }
+    ]
+  }
 }

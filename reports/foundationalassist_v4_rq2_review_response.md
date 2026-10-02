@@ -2,6 +2,8 @@
 
 Ngày 02/10/2026. Xử lý nhận xét graph/policy và chuẩn bị thí nghiệm metadata-only trên VALIDATION. RQ1 không train lại; TEST RQ2 chưa mở; chưa Lock C. Graph vẫn author-proposed, `expert_validated=false`.
 
+**Cập nhật sau lượt study thật:** runtime đã khởi động được theo yêu cầu tiếp theo của người dùng; context probe và 498 Agent calls hoàn tất, hậu kiểm đạt. Xem `reports/foundationalassist_v4_rq2_agent_validation.md`. Mục runtime chưa có phép đo bên dưới ghi lại trạng thái trước lượt study này.
+
 ## Những thay đổi đã có code và test
 
 - **B+ v4 xét nguồn–đích:** chỉ ưu tiên ứng viên thuộc skill nguồn yếu (`p < 0.5`) khi có cạnh trực tiếp tới skill đích yếu (`p < 0.5`) có bài trong candidate set. Không dùng transitive closure; không áp hard readiness gate. Policy v4 ở `src/rq2/foundational_validation.py`, không sửa baseline ASSIST09.
@@ -41,4 +43,4 @@ Update coverage: giữ pilot ban đầu, đã chẩn đoán cả 750 học sinh 
 
 145 kiểm thử tích hợp PASS; `git diff --check` sạch. Test mới kiểm tra đổi đích vắng candidate, đích đã mạnh, mastery nhiều ID khác nhau, cạnh lặp, không rò audit/topo, input/permutation chung, future-label perturbation, chặn TEST, thiếu telemetry, context quá ngân sách/output cutoff và coverage. Mock transport chỉ dùng unit test, không tạo artifact Agent study.
 
-Chưa hoàn tất: đo runtime token, Agent VALIDATION thật, quyết định coverage, Lock C và TEST RQ2. Raw, checkpoint, split và kết quả RQ1 giữ nguyên.
+Chưa hoàn tất: quyết định protocol cuối và hướng xử lý Agent thiên lệch vị trí, Lock C và TEST RQ2. Token runtime, Agent VALIDATION và hậu kiểm đã hoàn tất trong báo cáo cập nhật. Raw, checkpoint, split và kết quả RQ1 giữ nguyên.

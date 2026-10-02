@@ -47,6 +47,6 @@ Output tách riêng: `artifacts/tables/foundationalassist_v4_rq2_challenge_summa
 .\.venv\Scripts\python.exe scripts\prepare_foundational_rq2_validation.py --cohort challenge --run-agent
 ```
 
-Hai lệnh Agent chỉ chạy sau preflight runtime/context thật. Hiện Ollama chưa hoạt động nên chưa có Agent study results. Runner checkpoint từng call vào file private và báo tiến độ mỗi 10 call; không tự resume/mix lượt chạy dở vào kết quả hoàn tất. 145 kiểm thử tích hợp đạt, gồm future-outcome perturbation, endpoint chưa quan sát, ablation đầu vào chung và nhãn đánh giá tham chiếu chung.
+Hai lệnh Agent chỉ chạy sau preflight runtime/context thật. Cập nhật 02/10/2026: đã chạy đủ 300 pilot và 198 challenge calls, context và hậu kiểm đạt; xem `reports/foundationalassist_v4_rq2_agent_validation.md`. Runner checkpoint từng call vào file private và báo tiến độ mỗi 10 call; không tự resume/mix lượt chạy dở vào kết quả hoàn tất. Không chạy lại lệnh preparation không có Agent sau study nếu muốn giữ summary hiện tại: runner ghi đè summary tương ứng. 145 kiểm thử tích hợp đạt, gồm future-outcome perturbation, endpoint chưa quan sát, ablation đầu vào chung và nhãn đánh giá tham chiếu chung.
 
-Trước Lock C còn phải đo context và chạy Agent VALIDATION thật, quyết định vai trò cuối của từng cohort, khóa runtime/prompt/policy/metric và phạm vi phát biểu. TEST RQ2 vẫn đóng.
+Trước Lock C còn phải quyết định vai trò cuối của từng cohort, hướng xử lý cấu hình Agent đang thiên lệch vị trí, khóa runtime/prompt/policy/metric và phạm vi phát biểu. TEST RQ2 vẫn đóng.
