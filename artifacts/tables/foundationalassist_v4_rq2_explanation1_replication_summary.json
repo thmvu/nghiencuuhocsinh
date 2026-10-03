@@ -1,0 +1,197 @@
+{
+  "stage": "validation_development_not_lock_c",
+  "test_opened": false,
+  "agent_status": "completed_validation_not_test",
+  "version": "foundationalassist-v4-rq2-explanation-1-runtime-replication",
+  "model": "qwen2.5:1.5b",
+  "model_digest": "65ec06548149b04c096a120e4a6da9d4017ea809c91734ea5631e89f96ddc57b",
+  "claims": "controlled rendering guarantees supported displayed clauses by construction, not LLM factual reasoning or better pedagogical decisions; raw draft quality and semantic grounding need separate review",
+  "input_sha256": {
+    "configs/foundationalassist_v4_rq2_agent_revision1.json": "06398df73fe24b6fc1db74f8ebf5c452eb723539a9c218ef8b31da369059ac17",
+    "configs/foundationalassist_v4_rq2_validation.json": "e03200c9eb6ad3fd4826adb6a3cdabab35a4884851f9fcb6a1e148fe8f36f913",
+    "artifacts/tables/foundationalassist_v4_rq2_curriculum_graph.json": "2b8d8c3324cf431b256c80ae8e0f7ad174185eacb0713b4c1fbf6debf8e556aa",
+    "scripts/run_foundational_rq2_agent_revision1.py": "db3bc1a87bc3cf54c0bf2755c855b9e30411d4ccded8a7d6cc09a16c575b6ebe",
+    "src/rq2/agent_revision.py": "b0c4b5ecb3dbe192f28e678a1c28d12607370d29008444d3461afbbb2dcbfe60",
+    "artifacts/models/foundationalassist_v4/BKT.joblib": "b462d50b366d42760c9dff6645bae1525413fdb3a73e1f47a6ab9768b0a31004",
+    "data/processed/foundationalassist_v4/train.parquet": "06489c9b00b8d9750c085223a4ed884238fc63bd9be963b659e883f9d0301209",
+    "data/processed/foundationalassist_v4/validation.parquet": "49a1264aecfc88d95330c8ff8c329c9d861823c3555640cfc437830958112820",
+    "data/processed/foundationalassist_v4/student_split.json": "54ba8a52d2e6bc039f8c13178f67cd5d05016050953b09fa78e8d8645928ae96",
+    "src/models/bkt.py": "25835a925bc75944f9116823bc206b13a5c4a38eadee60485eae25a1c26dc7ef",
+    "configs/foundationalassist_v4_rq2_curriculum_graph.json": "eb34a1055153f68214f720e642e62948c34daf2db232225466597a94c1d78841",
+    "configs/foundationalassist_v4_rq2_metadata_candidates.json": "6eabc29418f10376c139762df8df87e2656149915f015b6c23980d69aaf9e13b",
+    "data/processed/foundationalassist_v4/rq2_content_review.json": "aabb3efd4d09b0ecec6807c3d3c92a1c09b7dfbaa69554a85a0bbf100762184d",
+    "configs/foundationalassist_v4_rq1_final.json": "0b7a12866b08c6a24e97e09bb4d661d863115c76bd0c6f171ee0b73a0aaf0b05",
+    "configs/foundationalassist_v4_preprocessing.json": "0ae994a4520bc62b618e076f49716cdd9af4ffbe9522cf7361da8d41de184503",
+    "scripts/prepare_foundational_rq2_validation.py": "30f80026087256343dd23ae1851b06f9689497071ffd7c4b5cba16cf15e62266",
+    "src/rq2/foundational_validation.py": "7f1bedffe7c919931811eeae6d914c055058de4913d137dc1002e63ac1ad606e",
+    "src/rq2/state.py": "24b0cea4f3edc9019125ff2e9c94a44a9e9f976c12237125a9a63ac2edab714b",
+    "src/rq2/scenarios.py": "5b116c5ec3e0b80ac62137d259927598138674ae4fbcdf9b109a9fbe8c63371f",
+    "src/rq2/candidates.py": "92ed4898088f1931e1367c3e16d8259a3d625272b339e27aa7772ed6f758ca8c",
+    "src/rq2/agent.py": "df5ebe6e982cd3930ba4425b1f3d2fd49a46fdef37dc3f767f5b1abce4e32ff4",
+    "src/rq2/curriculum_graph.py": "58ed36ac9f1136953285dcb601e893bc2b1fd58ab8ddf43d02d44f9d5e4aa674",
+    "data/processed/foundationalassist_v4/rq2_validation/deterministic_runs.json": "a0520b64e6186d0dd151ea414eb1f41d2f1ee5543a448641b1385f8d49db7db0",
+    "data/processed/foundationalassist_v4/rq2_validation/agent_runs.json": "a5cd61bd0867ff90b69c16475f9989636983b69a21d7bcbd5a9bfa2f1dddaf00",
+    "data/processed/foundationalassist_v4/rq2_validation/scenarios.json": "e7d55164ec324cb97b6eae3f7268b8967e523a4020dd1087bd620bfe2c390edb",
+    "artifacts/tables/foundationalassist_v4_rq2_validation_summary.json": "704e38a4eda4d6be2ec043204f4d577e7c24b0edc5ab561fd5602d703a86dd22",
+    "data/processed/foundationalassist_v4/rq2_validation/challenge/deterministic_runs.json": "63d611771445afbd1d04518bef4d2e3e94c1faa6b44aa495f2b757a318849e56",
+    "data/processed/foundationalassist_v4/rq2_validation/challenge/agent_runs.json": "4f687e5ada3980aaed567c641984b88d1dff55dbfb5592e0fc9ce2ab4d5610f7",
+    "data/processed/foundationalassist_v4/rq2_validation/challenge/scenarios.json": "18f2f2aa3badd0efa9a55c99255f95628cc131e9839383dea97d7416687fe69a",
+    "artifacts/tables/foundationalassist_v4_rq2_challenge_summary.json": "5f60ced4abbe1a6577adb89c99362cfe0d2ad2f62fc9fc5b20df380e044ae8d9",
+    "configs/foundationalassist_v4_rq2_agent_model_trial1.json": "a8d68a874410ea313fd61d2bef83aeb1e5432dbf3c6928f5a4079f794ddaa2e5",
+    "scripts/run_foundational_rq2_agent_model_trial1.py": "e6e2946a0e61b869b396d4ef9cf6c082dc695a4c164d5a72cbe8e4b87be33d08",
+    "artifacts/tables/foundationalassist_v4_rq2_agent_revision1_summary.json": "7d17fc79a92b5391ce347d13dd7e54ba449cc64686163f3ab052f622a62b88c5",
+    "data/processed/foundationalassist_v4/rq2_validation/agent_revision1/runs.json": "ce7026c0dd52e126b82dd888a46ae01f0cdcb11695f0c429131763c2cd28466d",
+    "configs/foundationalassist_v4_rq2_agent_calculator1.json": "abd244aeaf79a5ac4f0322abd198a065d7514a0b47d7c63caefbf65d86b1945d",
+    "scripts/run_foundational_rq2_agent_calculator1.py": "c5a781d3226decf692e654e2ff32c25247337b9feb1b866d77c13de32fb82815",
+    "src/rq2/calculator_agent.py": "c542faa5fafd4d21411e8ee4e34ce7debd306fb063384b5bc7dcffd794bac2a4",
+    "artifacts/tables/foundationalassist_v4_rq2_agent_model_trial1_summary.json": "910e35734165ed776e3a705fe4bc2054afe0f2a5c8464913cc601426fff5d5f5",
+    "data/processed/foundationalassist_v4/rq2_validation/agent_model_trial1/schedule.json": "50c74ce99e34fdf3bdf3b6066d0cf2f308693eeb25d98762eb1270aaa2e86c6f",
+    "data/processed/foundationalassist_v4/rq2_validation/agent_model_trial1/runs.json": "3bf62fb73d64dead9569bd8852aee69fa7a4a8b1c555818a7fb22d47150dab3d",
+    "configs/foundationalassist_v4_rq2_explanation1.json": "ade5bb9321b66d91b23bcdabe55aa6eacd92e478ec170fe47baa76fa90186471",
+    "scripts/run_foundational_rq2_explanation1.py": "1f015fe3cceba5e63fe09c1f049ede6dec968d9ee316e2a97f241819cab7a13d",
+    "src/rq2/grounded_explanation.py": "42a50e0ae0f9a6450eb817bc720e0cc6864286812570942eaa541eb86dfe4ad0",
+    "reports/rq2_grounded_explanation_design.md": "803a6867cf9195ef696fd2d0fd4c7a62be9bbdc3ade717690428a48446b2cf95",
+    "artifacts/tables/foundationalassist_v4_rq2_agent_calculator1_summary.json": "523838d7e97e5cc43a005956bf74d54f717ea1889f35c21699b062203834f325",
+    "data/processed/foundationalassist_v4/rq2_validation/agent_calculator1/runs.json": "54879e5c3593a08d10543e4f4b0910ba62cb4601480ac16922305ea56ec81859",
+    "configs/foundationalassist_v4_rq2_explanation1_replication.json": "79f662918068a49969d08078ba0f7cc1666c7dea58e97df629984bcb302c0bf1",
+    "scripts/run_foundational_rq2_explanation1_replication.py": "b238739319f0e2ddb89961c974b4ec612bac6ed9183ecaa7c092261e166543c7",
+    "artifacts/tables/foundationalassist_v4_rq2_explanation1_summary.json": "8a11898674c3ed292d4e40dbec5b925a4b5e98909406183ccd1cddcb067c9338",
+    "data/processed/foundationalassist_v4/rq2_validation/explanation1/runs.json": "57fb94aae60bb6aa343ee7e3faa3d772a208142da6e287c144e14d58af8c0b1b",
+    "artifacts/tables/foundationalassist_v4_rq2_explanation1_audit.json": "306f34aafdabd8c37cd9f5ee7b9dbf34d2461f333300f2a67d8a7007f367e8cc"
+  },
+  "study_calls_completed": 144,
+  "new_calls_planned": 144,
+  "schedule_sha256": "50c74ce99e34fdf3bdf3b6066d0cf2f308693eeb25d98762eb1270aaa2e86c6f",
+  "template_runs_sha256": "9fe747949d5b4d62c237e6c8a82855abb1781adc678afe97d4468e696d5c04d5",
+  "template_checks_before_llm": {
+    "calls": 144,
+    "valid": 144
+  },
+  "ollama_version": "0.35.1",
+  "context_probe": {
+    "probes": [
+      {
+        "graph_variant": "curriculum_edges",
+        "prompt_eval_count": 700,
+        "double_context_prompt_eval_count": 700,
+        "byte_guard": 4511
+      },
+      {
+        "graph_variant": "no_edges",
+        "prompt_eval_count": 700,
+        "double_context_prompt_eval_count": 700,
+        "byte_guard": 4512
+      }
+    ],
+    "probe_calls_not_study": 4
+  },
+  "cohorts": {
+    "representative": {
+      "n_students": 12,
+      "variants": {
+        "curriculum_edges": {
+          "n_calls": 36,
+          "n_students": 12,
+          "schema_valid_count": 36,
+          "fixed_id_consistent_count": 36,
+          "decisive_factor_correct_count": 36,
+          "citations_valid_count": 24,
+          "citation_coverage_count": 0,
+          "accepted_count": 0,
+          "error_stage_counts": {
+            "evidence_checks": 36
+          },
+          "template_valid_count": 36,
+          "bplus_selection_changed_students": 0,
+          "complete_three_repetition_students": 12,
+          "all_three_explanations_accepted_students": 0,
+          "expected_factor_counts": {
+            "success_gap": 36
+          },
+          "latency_seconds_mean": 1.5119958055555698,
+          "prompt_eval_count_max": 700,
+          "eval_count_max": 153
+        },
+        "no_edges": {
+          "n_calls": 36,
+          "n_students": 12,
+          "schema_valid_count": 36,
+          "fixed_id_consistent_count": 36,
+          "decisive_factor_correct_count": 36,
+          "citations_valid_count": 21,
+          "citation_coverage_count": 0,
+          "accepted_count": 0,
+          "error_stage_counts": {
+            "evidence_checks": 36
+          },
+          "template_valid_count": 36,
+          "bplus_selection_changed_students": 0,
+          "complete_three_repetition_students": 12,
+          "all_three_explanations_accepted_students": 0,
+          "expected_factor_counts": {
+            "success_gap": 36
+          },
+          "latency_seconds_mean": 1.2576040027777633,
+          "prompt_eval_count_max": 700,
+          "eval_count_max": 151
+        }
+      }
+    },
+    "challenge": {
+      "n_students": 12,
+      "variants": {
+        "curriculum_edges": {
+          "n_calls": 36,
+          "n_students": 12,
+          "schema_valid_count": 36,
+          "fixed_id_consistent_count": 36,
+          "decisive_factor_correct_count": 24,
+          "citations_valid_count": 33,
+          "citation_coverage_count": 31,
+          "accepted_count": 21,
+          "error_stage_counts": {
+            "evidence_checks": 15
+          },
+          "template_valid_count": 36,
+          "bplus_selection_changed_students": 0,
+          "complete_three_repetition_students": 12,
+          "all_three_explanations_accepted_students": 7,
+          "expected_factor_counts": {
+            "success_gap": 15,
+            "source_signal": 21
+          },
+          "latency_seconds_mean": 1.4215255138888918,
+          "prompt_eval_count_max": 699,
+          "eval_count_max": 162
+        },
+        "no_edges": {
+          "n_calls": 36,
+          "n_students": 12,
+          "schema_valid_count": 36,
+          "fixed_id_consistent_count": 36,
+          "decisive_factor_correct_count": 36,
+          "citations_valid_count": 27,
+          "citation_coverage_count": 0,
+          "accepted_count": 0,
+          "error_stage_counts": {
+            "evidence_checks": 36
+          },
+          "template_valid_count": 36,
+          "bplus_selection_changed_students": 0,
+          "complete_three_repetition_students": 12,
+          "all_three_explanations_accepted_students": 0,
+          "expected_factor_counts": {
+            "success_gap": 36
+          },
+          "latency_seconds_mean": 1.193175927777765,
+          "prompt_eval_count_max": 700,
+          "eval_count_max": 151
+        }
+      }
+    }
+  },
+  "private_runs_sha256": "86a42ff92e532edee8252cb96a510d712f9ec926d7754c3808f7c97ff3b1f453",
+  "previous_studies_unchanged": true,
+  "runtime_identity_unchanged": true,
+  "raw_drafts_semantically_verified": false
+}

@@ -2,6 +2,8 @@
 
 ## FoundationalASSIST v4
 
+- 03/10/2026, triển khai hướng B+ chọn/Agent giải thích, cập nhật thiết kế riêng; không nhận Agent chọn độc lập đã sửa thành công. 171 tests PASS. Lượt đầu đủ 144 calls nhưng Ollama đổi 0.34.4→0.35.1, giữ archive chưa xác nhận. Replication giữ request giống hệt, kiểm tra runtime từng call: 144/144 schema/ID đúng, 21/144 đạt toàn bộ gate giải thích; template 144/144, B+ giữ lựa chọn qua permutation. Audit source/raw response/trace/metric/runtime đạt. Raw draft chưa review ngữ nghĩa và không hiển thị; renderer chỉ dùng catalog đã kiểm tra. Chưa dùng Agent mặc định, Lock C/TEST đóng. Xem `reports/foundationalassist_v4_rq2_explanation.md`.
+
 - 02/10/2026, thử calculator trên cùng subset VALIDATION: thêm bằng chứng tính sẵn cho từng ứng viên, giữ model/state/display/enum order; calculator B+ khớp B+ cũ 144/144 đầu vào. Qwen chạy 144/144 lượt hợp lệ, audit request/raw response/hash/metric/context đạt, 160 tests PASS. Agreement chỉ 1/36, 2/36, 1/36, 6/36 và variability 11–12/12: chưa sửa được thực hiện luật, không promote cấu hình hoặc Lock C. Không tiếp tục sweep, RQ1/TEST giữ nguyên. Xem `reports/foundationalassist_v4_rq2_agent_calculator.md`.
 
 - 02/10/2026, sửa Agent: thêm schema enum/giới hạn reason, enum order độc lập, raw response và error stages vào private logs. Revision1 chạy 288 calls với hai arm schema-only/objective; thêm đúng một model trial Qwen2.5:1.5b với 144 request chỉ thay model. Tổng 432 calls mới hợp lệ; raw-response/request/hash/metric audit đạt và 152 tests PASS. Giảm first-position rate ở Qwen nhưng variability vẫn 83–100%, không promote model hoặc Lock C. 498 calls cũ giữ nguyên. Xem `reports/foundationalassist_v4_rq2_agent_repair.md`.

@@ -1,0 +1,19 @@
+{
+  "stage": "explanation1_replication_completed_audit",
+  "test_opened": false,
+  "model_calls": 0,
+  "planned_calls_verified": 144,
+  "real_agent_calls_verified": 144,
+  "accepted_calls_verified": 21,
+  "template_valid_count": 144,
+  "fixed_bplus_choices_and_ranking_traces_verified": true,
+  "previous_studies_unchanged": true,
+  "raw_draft_semantics_verified": false,
+  "rendering_is_controlled_not_free_text": true,
+  "runtime_identity_verified": true,
+  "requests_identical_to_parent_archive": true,
+  "per_call_runtime_observations_verified": 144,
+  "lock_c_authorized": false,
+  "summary_sha256": "375b232752ecc9fd94412634b989998859cf22d06758ddf7f638ffcb6deaac41",
+  "auditor_sha256": "aff964f0c3d7dbd7dc48f1eba8daa4b7437f731a33a4ef0c9fc4ff4d5226d5c4"
+}

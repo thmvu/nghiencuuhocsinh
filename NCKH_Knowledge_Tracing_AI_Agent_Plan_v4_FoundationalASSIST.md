@@ -70,6 +70,8 @@ Review packet cục bộ ở `data/processed/foundationalassist_v4/rq2_content_r
 
 ## 7. Đánh giá và giới hạn
 
+Hướng tiếp tục từ 03/10/2026: B+ chọn bài, Agent giải thích bằng chứng đã cung cấp; xem `reports/rq2_grounded_explanation_design.md`. Đây là thay đổi vai trò/câu hỏi vận hành RQ2 sau kết quả âm của nhánh Agent chọn độc lập, không phải sửa thành công nhánh cũ. Nhánh chọn độc lập giữ làm development reference. Đo fixed-ID consistency, yếu tố quyết định, citation coverage, tỷ lệ giải thích đạt kiểm tra, latency và so với template. Renderer chỉ dựng câu từ catalog đã kiểm tra; raw draft chưa được xác minh ngữ nghĩa và không hiển thị. Chưa khóa Lock C hoặc mở TEST; không nhận công cải thiện lựa chọn hay chất lượng giáo dục cho Agent giải thích.
+
 RQ2 là exploratory recommendation study, đo vận hành và chất lượng dưới rubric nếu có người chấm. Quy trình human evaluation/prompt/model/rubric của ASSIST09 không tự động trở thành Lock C v4. Cần thiết kế và khóa riêng trước TEST v4. Không tuyên bố learning gain hoặc causal benefit nếu chưa có thử nghiệm học tập phù hợp.
 
 Giới hạn phải báo: single-skill filtering, filtered sequences không cập nhật những tương tác bị loại, missing label/time, định nghĩa outcome, BKT latent estimates, graph provenance, text-only selection bias và các bài không đủ nội dung.
@@ -89,6 +91,7 @@ Giới hạn phải báo: single-skill filtering, filtered sequences không cậ
 - [x] Đo prompt_eval_count bằng Ollama thật và chạy 498 Agent VALIDATION calls qua hai cohort riêng; xem `reports/foundationalassist_v4_rq2_agent_validation.md`. Hậu kiểm đạt, chưa mở TEST. Agent hiện tại thiên lệch vị trí mạnh; cần chốt hướng cuối trước Lock C.
 - [x] Sửa schema/logging và kiểm chứng hữu hạn: 432 calls mới, 152 tests PASS; xem `reports/foundationalassist_v4_rq2_agent_repair.md`. Validity đạt trong thử nghiệm nhưng order bias/decision stability chưa giải quyết hoàn toàn; không tự promote cấu hình hoặc mở TEST.
 - [x] Thử calculator hữu hạn: 144 calls VALIDATION, parity B+ và hậu kiểm đạt, 160 tests PASS; xem `reports/foundationalassist_v4_rq2_agent_calculator.md`. Các giá trị tính sẵn chưa cải thiện nhất quán khả năng thực hiện luật/stability; giữ kết quả âm, không sweep thêm hoặc tự khóa C. Chuyển sang B+ chọn/Agent giải thích, nếu chọn hướng đó, là thay đổi RQ2 cần protocol riêng.
+- [x] Triển khai B+ chọn/Agent giải thích cùng template baseline và renderer có kiểm tra. 171 tests PASS; lượt đầu giữ archive do runtime drift, replication 144 calls trên Ollama 0.35.1 có request giống hệt và hậu kiểm đạt. Chỉ 21/144 lời giải thích đạt toàn bộ gate, chưa đặt Agent mặc định. Xem `reports/foundationalassist_v4_rq2_explanation.md`; raw draft chưa review ngữ nghĩa, Lock C/TEST vẫn đóng.
 - [ ] Hoàn thành rà soát nội dung để bật eligibility cho problem bank RQ2.
 - [x] Khóa features/models/evaluation và kiểm thử đường chạy RQ1 v4.
 - [x] Train/VALIDATION RQ1; Lock B v4; one-shot TEST.

@@ -1,0 +1,16 @@
+{
+  "version": "foundationalassist-v4-rq2-explanation-1",
+  "stage": "validation_development_not_lock_c",
+  "test_access": false,
+  "new_calls": 144,
+  "model": "qwen2.5:1.5b",
+  "model_digest": "65ec06548149b04c096a120e4a6da9d4017ea809c91734ea5631e89f96ddc57b",
+  "agent": {"temperature": 0, "num_ctx": 8192, "num_predict": 512, "template_token_reserve": 1024, "timeout_seconds": 90},
+  "draft_max_chars": 240,
+  "design": "same saved development scenarios/permutations/graph variants; B+ alone selects; Agent identifies decisive ranking stage and cites supplied facts; no prompt sweep or TEST",
+  "metrics_before_run": ["schema validity", "fixed selection ID consistency", "decisive factor accuracy", "citation coverage and membership", "all structural checks pass", "raw draft retained but not automatically semantically verified", "latency and token telemetry", "template baseline validity", "B+ selection stability"],
+  "coverage": "require selected_item, rank_<predicted decisive factor>, state_estimate, graph_assumption and learning_limit citations; require decisive factor to match independently computed B+ trace",
+  "serving": "never display raw draft; render verified catalog sentences only after all structural checks pass; reject explanation explicitly without altering B+ selection or silently supplying a fallback",
+  "claims": "controlled rendering guarantees supported displayed clauses by construction, not LLM factual reasoning or better pedagogical decisions; raw draft quality and semantic grounding need separate review",
+  "limit": "one bounded exploratory explanation intervention, not a held-out confirmation or Lock C"
+}

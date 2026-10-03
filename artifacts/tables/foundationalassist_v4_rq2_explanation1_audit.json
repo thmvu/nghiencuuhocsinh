@@ -1,0 +1,17 @@
+{
+  "stage": "explanation1_runtime_drift_archive_audit",
+  "test_opened": false,
+  "model_calls": 0,
+  "planned_calls_verified": 144,
+  "real_agent_calls_verified": 144,
+  "accepted_calls_verified": 19,
+  "template_valid_count": 144,
+  "fixed_bplus_choices_and_ranking_traces_verified": true,
+  "previous_studies_unchanged": true,
+  "raw_draft_semantics_verified": false,
+  "rendering_is_controlled_not_free_text": true,
+  "runtime_identity_verified": false,
+  "lock_c_authorized": false,
+  "summary_sha256": "8a11898674c3ed292d4e40dbec5b925a4b5e98909406183ccd1cddcb067c9338",
+  "auditor_sha256": "7a4c3d19770f0f2dffc8198f1e72e81a3da457e29e8caf4a5e9e9fe25b5d43e6"
+}

@@ -1,0 +1,11 @@
+{
+  "version": "foundationalassist-v4-rq2-explanation-1-runtime-replication",
+  "stage": "validation_development_not_lock_c",
+  "test_access": false,
+  "expected_ollama_version": "0.35.1",
+  "new_calls": 144,
+  "reason": "original full run failed its final runtime gate: Ollama changed from 0.34.4 to 0.35.1 while model digest stayed unchanged; retain that mixed-runtime archive",
+  "design": "one technical replication of the exact previous explanation requests; same prompt/schema/state/candidates/schedule/model/metrics; no tuning from previous outcomes",
+  "runtime_guard": "check model/version before probes, after each probe and before/after each study call; save raw response before rejecting drift",
+  "limit": "one replication for runtime failure, no model or prompt sweep; TEST remains closed"
+}
