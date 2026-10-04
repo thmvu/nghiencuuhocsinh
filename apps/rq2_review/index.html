@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phiếu rà soát gợi ý bài</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <aside>
+    <div class="brand">Sổ rà soát<br><strong>Gợi ý bài học</strong></div>
+    <p class="session">VALIDATION · Tác giả tự đánh giá</p>
+    <label for="reviewer">Tên hoặc bí danh của bạn</label>
+    <input id="reviewer" maxlength="100" placeholder="Nhập để lưu phiếu" autocomplete="off">
+    <nav aria-label="Hai bước rà soát">
+      <div id="step-selection" class="step"><span>1</span><div>Chọn theo dữ liệu<small>Chưa xem lựa chọn của Agent</small></div></div>
+      <div id="step-rating" class="step"><span>2</span><div>Đọc và chấm lý do<small>Giữ nguyên lời giải thích gốc</small></div></div>
+    </nav>
+    <div class="progress-block"><p id="progress-label"></p><progress id="progress" max="40" value="0"></progress></div>
+    <div class="legend">
+      <h2>Đọc số liệu thế nào?</h2>
+      <p><b>Mastery BKT</b> là ước lượng nắm vững kỹ năng. Không phải xác suất làm đúng bài này hoặc thiếu hụt đã xác nhận.</p>
+      <p><b>Tỷ lệ đúng TRAIN</b> càng cao, bài càng dễ với nhóm TRAIN; không phải dự đoán riêng cho học sinh này.</p>
+      <p><b>Support</b> là số tương tác TRAIN của bài, không phải số lần học sinh này luyện.</p>
+      <p>Không có nội dung đề bài trong phiếu. Chỉ nhận xét lựa chọn dựa metadata.</p>
+    </div>
+    <button id="summary-button" class="secondary">Xem tiến độ chấm</button>
+    <p class="local-note">Lưu trên máy của bạn.<br>Không gọi AI, không gửi dữ liệu lên mạng.</p>
+  </aside>
+  <main>
+    <div id="demo-banner" hidden>Bản thử với dữ liệu giả lập. Điểm ở đây không thuộc nghiên cứu.</div>
+    <header><div><p id="phase-label" class="muted"></p><h1 id="title">Đang mở phiếu…</h1></div><div class="navigation"><button id="previous" class="secondary">Phiếu trước</button><button id="next" class="secondary">Phiếu sau</button></div></header>
+    <p id="feedback" role="status" aria-live="polite"></p>
+    <div id="content"></div>
+  </main>
+</body>
+</html>

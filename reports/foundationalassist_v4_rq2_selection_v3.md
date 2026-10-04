@@ -65,6 +65,8 @@ Cờ số không khớp: 88/240; unknown-ID được heuristic nhận diện: 0;
 
 ## Rubric và bước tiếp theo
 
+Cập nhật sau thí nghiệm: người dùng nhận tự rà soát; giao diện local và hướng dẫn ở `reports/rq2_selection_v3_author_review_guide.md`. Tác giả tự chấm được lưu riêng và không nhận là expert review độc lập. Không sửa protocol, phiếu source hoặc manifest này để thay đổi kết quả đã khóa. Nhánh training Agent/teacher examples mới chỉ là phương án tại `reports/rq2_small_agent_training_options.md`, chưa huấn luyện.
+
 Đã tạo phiếu local 40 lượt hợp lệ bằng seed 20261006, cân bằng 20 mỗi graph variant, xáo thứ tự và ẩn danh model. Lấy mẫu từ tất cả lượt hợp lệ, bao gồm lượt có cờ. Điểm và reviewer còn trống. Chưa xác định người chấm, không tự tạo điểm và không thay người chấm bằng AI. Chiều rationale ghi **chưa đánh giá** về ngữ nghĩa; Agent không được xếp là đạt toàn bộ yêu cầu chỉ dựa vào schema hoặc các cờ.
 
 Sau v3 không sửa thêm prompt/model/contract hoặc nhóm học sinh để cải thiện kết quả. Trước Lock C cần hoàn tất thiết kế TEST: scenario rules, metric/CI, failure handling và rubric/rater, commit trước một lần mở TEST. Metadata-only chỉ hỗ trợ kết luận vận hành; không đo chất lượng sư phạm, nội dung bài hoặc learning gain. Graph vẫn là tác giả đề xuất, chưa expert-validated.
