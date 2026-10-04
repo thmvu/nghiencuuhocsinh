@@ -9,9 +9,13 @@
   "agent": {"model": "qwen2.5:1.5b", "temperature": 0, "num_ctx": 8192, "num_predict": 512, "template_token_reserve": 1024, "timeout_seconds": 90},
   "reason_max_chars": 360,
   "primary_metric": "valid completed candidate-selection fraction across all planned study calls on a batch with verified runtime integrity",
-  "secondary_metrics": ["within-student selection variability across permutations with incomplete triplets reported", "first display and enum position counts", "latency including failures", "selected estimated mastery and TRAIN statistics", "soft source-remediation against the same author-proposed reference graph"],
+  "secondary_metrics": ["ID and skill stability across complete triplets; missing triplets reported", "distinct-skill normalized mastery mid-rank with single-skill exclusions and planned-call coverage", "lowest-mastery skill selection", "display and enum position counts and first-position fractions", "latency including failures with separate scope for local baseline computation", "paired graph sensitivity and soft remediation against the same author-proposed reference graph"],
+  "comparison_policies": ["Agent", "B+", "random", "always_first"],
+  "rank_contract": "exact mastery equality; average ranks over distinct candidate skills; (rank-1)/(k-1); undefined k=1; all tied k>1 gives 0.5",
+  "random_reference": "uniform IDs weighted by item counts per skill; exact expected rank and lowest-skill probability; ID stability 1/m^2, skill stability sum((n_s/m)^3) for independent draws on fixed membership",
+  "planned_probe_calls": 4,
   "supplementary_metric": "agreement with B+; disagreement is not an error or proof of inferior pedagogy",
-  "reason_review": "separate blinded metadata rationale rubric; no automatic semantic or pedagogical quality score",
+  "reason_review": "model-anonymized Agent rationale rubric only; cross-policy blinding requires comparable baseline explanations; no automatic semantic or pedagogical quality score",
   "claims": "operational metadata selection only; no learning gain, verified mastery or educational-quality claim",
   "limit": "one predeclared development batch on previously inspected scenarios; no model/prompt sweep or TEST access"
 }

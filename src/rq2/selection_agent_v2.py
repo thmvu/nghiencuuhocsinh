@@ -16,6 +16,11 @@ def selection_request(shared, config, enum_ids):
     if len(enum_ids) != len(ids) or set(enum_ids) != ids:
         raise ValueError('enum must contain each candidate ID exactly once')
     request, _ = make_agent_request(shared, config['agent'])
+    phrase = 'prerequisite graph'
+    if request['messages'][0]['content'].count(phrase) != 1:
+        raise ValueError('expected shared graph wording changed; review v2 prompt')
+    request['messages'][0]['content'] = request['messages'][0]['content'].replace(
+        phrase, 'author-proposed curriculum graph', 1)
     request['format']['properties']['problem_id']['enum'] = list(enum_ids)
     request['format']['properties']['reason']['maxLength'] = config['reason_max_chars']
     request['messages'][0]['content'] += (
