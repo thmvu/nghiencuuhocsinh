@@ -1,0 +1,54 @@
+{
+  "stage": "validation_development_not_lock_c",
+  "test_opened": false,
+  "input_sha256": {
+    "artifacts/models/foundationalassist_v4/BKT.joblib": "b462d50b366d42760c9dff6645bae1525413fdb3a73e1f47a6ab9768b0a31004",
+    "data/processed/foundationalassist_v4/train.parquet": "06489c9b00b8d9750c085223a4ed884238fc63bd9be963b659e883f9d0301209",
+    "data/processed/foundationalassist_v4/validation.parquet": "49a1264aecfc88d95330c8ff8c329c9d861823c3555640cfc437830958112820",
+    "data/processed/foundationalassist_v4/student_split.json": "54ba8a52d2e6bc039f8c13178f67cd5d05016050953b09fa78e8d8645928ae96",
+    "src/models/bkt.py": "25835a925bc75944f9116823bc206b13a5c4a38eadee60485eae25a1c26dc7ef",
+    "configs/foundationalassist_v4_rq2_validation.json": "e03200c9eb6ad3fd4826adb6a3cdabab35a4884851f9fcb6a1e148fe8f36f913",
+    "configs/foundationalassist_v4_rq2_curriculum_graph.json": "eb34a1055153f68214f720e642e62948c34daf2db232225466597a94c1d78841",
+    "configs/foundationalassist_v4_rq2_metadata_candidates.json": "6eabc29418f10376c139762df8df87e2656149915f015b6c23980d69aaf9e13b",
+    "data/processed/foundationalassist_v4/rq2_content_review.json": "aabb3efd4d09b0ecec6807c3d3c92a1c09b7dfbaa69554a85a0bbf100762184d",
+    "configs/foundationalassist_v4_rq1_final.json": "0b7a12866b08c6a24e97e09bb4d661d863115c76bd0c6f171ee0b73a0aaf0b05",
+    "configs/foundationalassist_v4_preprocessing.json": "0ae994a4520bc62b618e076f49716cdd9af4ffbe9522cf7361da8d41de184503",
+    "scripts/prepare_foundational_rq2_validation.py": "30f80026087256343dd23ae1851b06f9689497071ffd7c4b5cba16cf15e62266",
+    "src/rq2/foundational_validation.py": "7f1bedffe7c919931811eeae6d914c055058de4913d137dc1002e63ac1ad606e",
+    "src/rq2/state.py": "24b0cea4f3edc9019125ff2e9c94a44a9e9f976c12237125a9a63ac2edab714b",
+    "src/rq2/scenarios.py": "5b116c5ec3e0b80ac62137d259927598138674ae4fbcdf9b109a9fbe8c63371f",
+    "src/rq2/candidates.py": "92ed4898088f1931e1367c3e16d8259a3d625272b339e27aa7772ed6f758ca8c",
+    "src/rq2/agent.py": "df5ebe6e982cd3930ba4425b1f3d2fd49a46fdef37dc3f767f5b1abce4e32ff4",
+    "src/rq2/curriculum_graph.py": "58ed36ac9f1136953285dcb601e893bc2b1fd58ab8ddf43d02d44f9d5e4aa674",
+    "data/processed/foundationalassist_v4/rq2_validation/challenge/scenarios.json": "18f2f2aa3badd0efa9a55c99255f95628cc131e9839383dea97d7416687fe69a",
+    "data/processed/foundationalassist_v4/rq2_validation/scenarios.json": "e7d55164ec324cb97b6eae3f7268b8967e523a4020dd1087bd620bfe2c390edb",
+    "configs/foundationalassist_v4_rq2_selection_v3.json": "087ab16009b6f31f035c97be988f1c8e270a9de7d45f2dec34d3e7f8f0e7dcdf",
+    "configs/foundationalassist_v4_rq2_selection_v3_diagnostic.json": "5d00a427351f04e7be05d0d9274856249a7e7a8a71115e5b50f988047f22bed4",
+    "scripts/run_foundational_rq2_selection_v3.py": "068dc6d7adc17eaa80ffdf36b3ea61f8fcbc0fa20f87d092b423d87c74b1ddf0",
+    "src/rq2/selection_agent_v3.py": "ed6d33f6f8b1367f9c7b669983ad95e81b0e4d4abbe047a5c4ca6a04aa61f264",
+    "src/rq2/runtime_journal.py": "c950014628843b8f978c4d338f5efd791e9dd0f2e7c4e03e3cbf7b94165f4f9d",
+    "src/rq2/selection_agent_v2.py": "c671483d0fcf37f02001694aabbb357231d21609e6e7409e2f0fbba58e925888",
+    "scripts/prepare_foundational_rq2_selection_v2.py": "28912671c52137873a22ea272a90f425c2584378c5ffe71aa10bee67fce7cdb7",
+    "reports/rq2_selection_protocol_v3.md": "372adfe73be91b45a22ef12f53c0e48410712ae6ff662b35c4031d31cf868c79",
+    "artifacts/tables/foundationalassist_v4_rq2_selection_v3_diagnostic.json": "88eab636724854c75ed68e7b7e35746abbb7ce8f08036f0aab6a45fa0e52df31"
+  },
+  "cohort": {
+    "new_students": 40,
+    "excluded_previous_students": 81,
+    "new_challenge_eligible": 0,
+    "graph_activation_coverage": {
+      "n_scenarios": 40,
+      "scenarios_with_any_weak_source": 17,
+      "scenarios_with_represented_weak_graph_target": 10,
+      "scenarios_with_relevant_weak_source": 1,
+      "scenarios_with_relevant_source_candidate": 1
+    }
+  },
+  "planned_calls": {
+    "probe": 4,
+    "study": 240,
+    "repeat": 36
+  },
+  "scenario_sha256": "6e26cbd600997a52f1b6db7263e6e6dd3bbda99efb47792a34258758f01f04e3",
+  "new_model_calls": 0
+}

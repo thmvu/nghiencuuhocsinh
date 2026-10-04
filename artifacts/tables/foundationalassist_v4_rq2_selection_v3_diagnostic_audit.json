@@ -1,0 +1,24 @@
+{
+  "phase": "diagnostic",
+  "test_opened": false,
+  "new_model_calls": 0,
+  "call_accounting_verified": {
+    "contract_360": {
+      "attempts": 24,
+      "transport": 24,
+      "responses": 24
+    },
+    "contract_600": {
+      "attempts": 24,
+      "transport": 24,
+      "responses": 24
+    }
+  },
+  "requests_responses_hashes_metrics_verified": true,
+  "runtime_identity_verified": true,
+  "stop_or_contract_decision_verified": true,
+  "reason_semantically_verified": false,
+  "lock_c_authorized": false,
+  "summary_sha256": "88eab636724854c75ed68e7b7e35746abbb7ce8f08036f0aab6a45fa0e52df31",
+  "auditor_sha256": "49dce4b6f2b74b21f530ff124c6389c2477792fd0257963bda3fbf35b965f6e1"
+}

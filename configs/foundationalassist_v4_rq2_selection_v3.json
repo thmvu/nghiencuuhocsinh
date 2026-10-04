@@ -1,0 +1,34 @@
+{
+  "version": "foundationalassist-v4-rq2-selection-v3-final-development",
+  "stage": "validation_development_not_lock_c",
+  "test_access": false,
+  "phase": "study",
+  "agent": {
+    "model": "qwen2.5:1.5b",
+    "temperature": 0,
+    "num_ctx": 8192,
+    "num_predict": 512,
+    "template_token_reserve": 1024,
+    "timeout_seconds": 90
+  },
+  "expected_ollama_version": "0.35.1",
+  "model_digest": "65ec06548149b04c096a120e4a6da9d4017ea809c91734ea5631e89f96ddc57b",
+  "reason_max_chars": 360,
+  "diagnostic_caps": [
+    360,
+    600
+  ],
+  "diagnostic_calls": 48,
+  "arm_order": "360 then 600 for even case indices; reversed for odd; same request except maxLength",
+  "new_students": 40,
+  "selection_seed": 20261005,
+  "rubric_seed": 20261006,
+  "repeat_seed": 20261007,
+  "enum_seed": 241002,
+  "planned_probe_calls": 4,
+  "planned_study_calls": 240,
+  "planned_repeat_calls": 36,
+  "rubric_status": "human_rater_not_identified; no automatic semantic score",
+  "stop_rule": "one final version; no further prompt/model/contract changes after v3; TEST remains closed",
+  "diagnostic_summary_sha256": "88eab636724854c75ed68e7b7e35746abbb7ce8f08036f0aab6a45fa0e52df31"
+}
