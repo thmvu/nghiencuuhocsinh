@@ -45,6 +45,12 @@ Secondary:
 
 Agreement với B+ là supplementary. Luật B+ ưu tiên weak source liên kết weak target, gần TRAIN success rate 0,7, support rồi ID; đó là một heuristic cụ thể, không phải đáp án vàng. Không dùng disagreement làm lỗi hoặc bằng chứng kém sư phạm.
 
+Lưu ý diễn giải trước inference v2: prompt Agent yêu cầu cân nhắc kỹ năng yếu, trong khi B+ chỉ ưu tiên nguồn yếu khi có liên kết tới đích yếu được trình bày; nếu không, B+ ưu tiên TRAIN success rate gần 0,7. Vì hai policy có mục tiêu khác nhau, Agent có hạng mastery thấp hơn B+ chỉ thể hiện xu hướng lựa chọn theo mục tiêu prompt, không chứng minh tốt hơn. Nếu mỗi ứng viên thuộc một skill khác nhau, ID-stable và skill-stable trùng nhau; hai metric chỉ bổ sung thông tin khi có nhiều bài cùng skill.
+
+Random dùng chung lần bốc theo seed/scenario/repetition giữa hai graph variant trên cùng membership, nên graph sensitivity bằng 0 theo thiết kế; always-first cũng không đọc graph. Các giá trị 0 này là kiểm tra đối chứng bất biến, không phải mức phản ứng graph tối ưu để Agent phải vượt. So có/không cạnh ở đây chỉ là thay thông tin cạnh trong đầu vào policy trên cùng candidate set, không phải loại graph khỏi toàn bộ hệ thống sinh ứng viên.
+
+Enum permutation được tạo có seed nhưng không ép cân bằng vị trí trên mẫu hữu hạn. Always-first hiện chọn enum 0 ở 16,7% (pilot) và 19,4% (challenge); mức này không tự chứng minh toàn bộ enum bị lệch hoặc Agent có thiên lệch. Báo tỷ lệ enum của Agent cạnh các baseline trên cùng permutation và kỳ vọng uniform 1/8, không thay kỳ vọng lý thuyết bằng một baseline như đáp án vàng. Mỗi ô chỉ 12 học sinh/36 lượt; các chênh lệch quan sát được chỉ mô tả, chưa là kiểm định hoặc bằng chứng sư phạm.
+
 Khi có CI/thử nghiệm xác nhận, phải bootstrap paired theo học sinh, giữ các repetition/variant của cùng học sinh cùng cluster; không coi 144 calls là 144 học sinh độc lập. Chưa có CI tự động trong runner chuẩn bị này. Trước Lock C phải khóa estimator, seed, số bootstrap và cách xử lý failure.
 
 ## Rà soát lời giải thích riêng biệt

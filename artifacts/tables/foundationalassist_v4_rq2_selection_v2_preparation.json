@@ -38,7 +38,7 @@
     "scripts/prepare_foundational_rq2_selection_v2.py": "28912671c52137873a22ea272a90f425c2584378c5ffe71aa10bee67fce7cdb7",
     "src/rq2/runtime_journal.py": "c950014628843b8f978c4d338f5efd791e9dd0f2e7c4e03e3cbf7b94165f4f9d",
     "src/rq2/selection_agent_v2.py": "c671483d0fcf37f02001694aabbb357231d21609e6e7409e2f0fbba58e925888",
-    "reports/rq2_selection_protocol_v2.md": "817958948e46fa1eadaeb83a9b583d9b7d1d0ab09cc61cd9711e588899cdf7ec"
+    "reports/rq2_selection_protocol_v2.md": "e76d784a624dbbbbfcd4ad13ae6dada8b6ecd92d8db305987aa4e65a3446af83"
   },
   "new_calls_planned": 144,
   "model_calls_completed": 0,
@@ -46,7 +46,7 @@
   "claims": "operational metadata selection only; no learning gain, verified mastery or educational-quality claim",
   "schedule_sha256": "3e1a275c467f59c9ab828c5532bd39547dd76b6831b30b3e67d8111b22dbb473",
   "baseline_reference_sha256": "0a4865ee8a76d680d928e54c2be31dafbf57e04049c18d1c6a0da8826518997e",
-  "baseline_runs_sha256": "938ba3b7dbaaef34a069e28af156ad6e57a3a1ce1bbd4f197b07b8b39cd88daf",
+  "baseline_runs_sha256": "d45b96f6197c91281e6612dbb9b93a6992d64af657e3aeb335c1f42ba67148c4",
   "baseline_metrics": {
     "B+": {
       "representative": {
@@ -104,7 +104,7 @@
             "lowest_mastery_skill_probability_mean": 0.125,
             "each_position_probability_mean": 0.125
           },
-          "latency_seconds_mean_all_calls": 0.0002023083332889857,
+          "latency_seconds_mean_all_calls": 0.00021746944445213658,
           "latency_scope": "local_policy_computation_only",
           "error_stage_counts": {}
         },
@@ -162,7 +162,7 @@
             "lowest_mastery_skill_probability_mean": 0.125,
             "each_position_probability_mean": 0.125
           },
-          "latency_seconds_mean_all_calls": 0.00018204444443704738,
+          "latency_seconds_mean_all_calls": 0.00020537222221466637,
           "latency_scope": "local_policy_computation_only",
           "error_stage_counts": {}
         },
@@ -227,7 +227,7 @@
             "lowest_mastery_skill_probability_mean": 0.14583333333333334,
             "each_position_probability_mean": 0.125
           },
-          "latency_seconds_mean_all_calls": 0.0002298805555180176,
+          "latency_seconds_mean_all_calls": 0.00022880833329155494,
           "latency_scope": "local_policy_computation_only",
           "error_stage_counts": {}
         },
@@ -285,7 +285,7 @@
             "lowest_mastery_skill_probability_mean": 0.14583333333333334,
             "each_position_probability_mean": 0.125
           },
-          "latency_seconds_mean_all_calls": 0.0001953694444915123,
+          "latency_seconds_mean_all_calls": 0.00021234722222137256,
           "latency_scope": "local_policy_computation_only",
           "error_stage_counts": {}
         },
@@ -353,7 +353,7 @@
             "lowest_mastery_skill_probability_mean": 0.125,
             "each_position_probability_mean": 0.125
           },
-          "latency_seconds_mean_all_calls": 6.712222221317966e-05,
+          "latency_seconds_mean_all_calls": 9.220277776320372e-05,
           "latency_scope": "local_policy_computation_only",
           "error_stage_counts": {}
         },
@@ -411,7 +411,7 @@
             "lowest_mastery_skill_probability_mean": 0.125,
             "each_position_probability_mean": 0.125
           },
-          "latency_seconds_mean_all_calls": 6.713888891833146e-05,
+          "latency_seconds_mean_all_calls": 8.255555554923275e-05,
           "latency_scope": "local_policy_computation_only",
           "error_stage_counts": {}
         },
@@ -477,7 +477,7 @@
             "lowest_mastery_skill_probability_mean": 0.14583333333333334,
             "each_position_probability_mean": 0.125
           },
-          "latency_seconds_mean_all_calls": 8.215277781194648e-05,
+          "latency_seconds_mean_all_calls": 8.603055558372337e-05,
           "latency_scope": "local_policy_computation_only",
           "error_stage_counts": {}
         },
@@ -535,7 +535,7 @@
             "lowest_mastery_skill_probability_mean": 0.14583333333333334,
             "each_position_probability_mean": 0.125
           },
-          "latency_seconds_mean_all_calls": 8.109999997587793e-05,
+          "latency_seconds_mean_all_calls": 9.498333329500181e-05,
           "latency_scope": "local_policy_computation_only",
           "error_stage_counts": {}
         },
@@ -596,7 +596,7 @@
             "lowest_mastery_skill_probability_mean": 0.125,
             "each_position_probability_mean": 0.125
           },
-          "latency_seconds_mean_all_calls": 2.444444488800299e-07,
+          "latency_seconds_mean_all_calls": 2.999999853475149e-07,
           "latency_scope": "local_policy_computation_only",
           "error_stage_counts": {}
         },
@@ -647,7 +647,7 @@
             "lowest_mastery_skill_probability_mean": 0.125,
             "each_position_probability_mean": 0.125
           },
-          "latency_seconds_mean_all_calls": 2.111111269995389e-07,
+          "latency_seconds_mean_all_calls": 3.083333568712179e-07,
           "latency_scope": "local_policy_computation_only",
           "error_stage_counts": {}
         },
@@ -706,7 +706,7 @@
             "lowest_mastery_skill_probability_mean": 0.14583333333333334,
             "each_position_probability_mean": 0.125
           },
-          "latency_seconds_mean_all_calls": 2.7222221079783696e-07,
+          "latency_seconds_mean_all_calls": 3.500000502754119e-07,
           "latency_scope": "local_policy_computation_only",
           "error_stage_counts": {}
         },
@@ -757,7 +757,7 @@
             "lowest_mastery_skill_probability_mean": 0.14583333333333334,
             "each_position_probability_mean": 0.125
           },
-          "latency_seconds_mean_all_calls": 2.749999844632435e-07,
+          "latency_seconds_mean_all_calls": 3.4999998711605764e-07,
           "latency_scope": "local_policy_computation_only",
           "error_stage_counts": {}
         },
