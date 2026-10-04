@@ -1,0 +1,29 @@
+{
+  "phase": "study",
+  "test_opened": false,
+  "new_model_calls": 0,
+  "call_accounting_verified": {
+    "probe": {
+      "attempts": 4,
+      "transport": 4,
+      "responses": 4
+    },
+    "study": {
+      "attempts": 240,
+      "transport": 240,
+      "responses": 240
+    },
+    "repeat": {
+      "attempts": 36,
+      "transport": 36,
+      "responses": 36
+    }
+  },
+  "requests_responses_hashes_metrics_verified": true,
+  "runtime_identity_verified": true,
+  "stop_or_contract_decision_verified": true,
+  "reason_semantically_verified": false,
+  "lock_c_authorized": false,
+  "summary_sha256": "960239929a8ee3fc11a202a80792f26f319aa765775bcce30085bfcea4dbf1ab",
+  "auditor_sha256": "49dce4b6f2b74b21f530ff124c6389c2477792fd0257963bda3fbf35b965f6e1"
+}

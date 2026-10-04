@@ -1,0 +1,684 @@
+{
+  "stage": "validation_development_not_lock_c",
+  "phase": "study",
+  "status": "completed_validation_not_test",
+  "test_opened": false,
+  "lock_commit_before_calls": "00d9adddd692797709da1b6a4b8b1f39f739840b",
+  "input_sha256": {
+    "artifacts/models/foundationalassist_v4/BKT.joblib": "b462d50b366d42760c9dff6645bae1525413fdb3a73e1f47a6ab9768b0a31004",
+    "data/processed/foundationalassist_v4/train.parquet": "06489c9b00b8d9750c085223a4ed884238fc63bd9be963b659e883f9d0301209",
+    "data/processed/foundationalassist_v4/validation.parquet": "49a1264aecfc88d95330c8ff8c329c9d861823c3555640cfc437830958112820",
+    "data/processed/foundationalassist_v4/student_split.json": "54ba8a52d2e6bc039f8c13178f67cd5d05016050953b09fa78e8d8645928ae96",
+    "src/models/bkt.py": "25835a925bc75944f9116823bc206b13a5c4a38eadee60485eae25a1c26dc7ef",
+    "configs/foundationalassist_v4_rq2_validation.json": "e03200c9eb6ad3fd4826adb6a3cdabab35a4884851f9fcb6a1e148fe8f36f913",
+    "configs/foundationalassist_v4_rq2_curriculum_graph.json": "eb34a1055153f68214f720e642e62948c34daf2db232225466597a94c1d78841",
+    "configs/foundationalassist_v4_rq2_metadata_candidates.json": "6eabc29418f10376c139762df8df87e2656149915f015b6c23980d69aaf9e13b",
+    "data/processed/foundationalassist_v4/rq2_content_review.json": "aabb3efd4d09b0ecec6807c3d3c92a1c09b7dfbaa69554a85a0bbf100762184d",
+    "configs/foundationalassist_v4_rq1_final.json": "0b7a12866b08c6a24e97e09bb4d661d863115c76bd0c6f171ee0b73a0aaf0b05",
+    "configs/foundationalassist_v4_preprocessing.json": "0ae994a4520bc62b618e076f49716cdd9af4ffbe9522cf7361da8d41de184503",
+    "scripts/prepare_foundational_rq2_validation.py": "30f80026087256343dd23ae1851b06f9689497071ffd7c4b5cba16cf15e62266",
+    "src/rq2/foundational_validation.py": "7f1bedffe7c919931811eeae6d914c055058de4913d137dc1002e63ac1ad606e",
+    "src/rq2/state.py": "24b0cea4f3edc9019125ff2e9c94a44a9e9f976c12237125a9a63ac2edab714b",
+    "src/rq2/scenarios.py": "5b116c5ec3e0b80ac62137d259927598138674ae4fbcdf9b109a9fbe8c63371f",
+    "src/rq2/candidates.py": "92ed4898088f1931e1367c3e16d8259a3d625272b339e27aa7772ed6f758ca8c",
+    "src/rq2/agent.py": "df5ebe6e982cd3930ba4425b1f3d2fd49a46fdef37dc3f767f5b1abce4e32ff4",
+    "src/rq2/curriculum_graph.py": "58ed36ac9f1136953285dcb601e893bc2b1fd58ab8ddf43d02d44f9d5e4aa674",
+    "data/processed/foundationalassist_v4/rq2_validation/challenge/scenarios.json": "18f2f2aa3badd0efa9a55c99255f95628cc131e9839383dea97d7416687fe69a",
+    "data/processed/foundationalassist_v4/rq2_validation/scenarios.json": "e7d55164ec324cb97b6eae3f7268b8967e523a4020dd1087bd620bfe2c390edb",
+    "configs/foundationalassist_v4_rq2_selection_v3.json": "087ab16009b6f31f035c97be988f1c8e270a9de7d45f2dec34d3e7f8f0e7dcdf",
+    "configs/foundationalassist_v4_rq2_selection_v3_diagnostic.json": "5d00a427351f04e7be05d0d9274856249a7e7a8a71115e5b50f988047f22bed4",
+    "scripts/run_foundational_rq2_selection_v3.py": "068dc6d7adc17eaa80ffdf36b3ea61f8fcbc0fa20f87d092b423d87c74b1ddf0",
+    "src/rq2/selection_agent_v3.py": "ed6d33f6f8b1367f9c7b669983ad95e81b0e4d4abbe047a5c4ca6a04aa61f264",
+    "src/rq2/runtime_journal.py": "c950014628843b8f978c4d338f5efd791e9dd0f2e7c4e03e3cbf7b94165f4f9d",
+    "src/rq2/selection_agent_v2.py": "c671483d0fcf37f02001694aabbb357231d21609e6e7409e2f0fbba58e925888",
+    "scripts/prepare_foundational_rq2_selection_v2.py": "28912671c52137873a22ea272a90f425c2584378c5ffe71aa10bee67fce7cdb7",
+    "reports/rq2_selection_protocol_v3.md": "372adfe73be91b45a22ef12f53c0e48410712ae6ff662b35c4031d31cf868c79",
+    "artifacts/tables/foundationalassist_v4_rq2_selection_v3_diagnostic.json": "88eab636724854c75ed68e7b7e35746abbb7ce8f08036f0aab6a45fa0e52df31"
+  },
+  "schedule_sha256": "bf8ada106f6868c099443f94f9fed57bd69b3bfae628111c00beaa6e9d5267ad",
+  "rubric_status": "not_evaluated",
+  "reason_semantically_verified": false,
+  "lock_c_authorized": false,
+  "cohort": {
+    "new_students": 40,
+    "excluded_previous_students": 81,
+    "new_challenge_eligible": 0,
+    "graph_activation_coverage": {
+      "n_scenarios": 40,
+      "scenarios_with_any_weak_source": 17,
+      "scenarios_with_represented_weak_graph_target": 10,
+      "scenarios_with_relevant_weak_source": 1,
+      "scenarios_with_relevant_source_candidate": 1
+    }
+  },
+  "repeat_schedule_sha256": "081515c301a062292dba5c432e8f7bca6bfb217cd3dc1ab93783adf898b98ad0",
+  "baseline_runs_sha256": "806986ceaeddf75553f8e5d4830ef5fb2aed36a88d01040b9a7a676e8b4be0d5",
+  "baselines": {
+    "B+": {
+      "representative": {
+        "curriculum_edges": {
+          "planned_calls": 120,
+          "completed_calls": 120,
+          "valid_selections": 120,
+          "valid_selection_fraction_all_planned_calls": 1.0,
+          "planned_students": 40,
+          "complete_valid_triplets": 40,
+          "id_stable_students": 40,
+          "id_stable_fraction_complete_triplets": 1.0,
+          "skill_stable_students": 40,
+          "skill_stable_fraction_complete_triplets": 1.0,
+          "variable_students_among_complete_valid_triplets": 0,
+          "incomplete_valid_triplets": 0,
+          "display_position_counts_valid": {
+            "1": 16,
+            "3": 18,
+            "4": 10,
+            "6": 17,
+            "5": 17,
+            "0": 13,
+            "2": 14,
+            "7": 15
+          },
+          "enum_position_counts_valid": {
+            "6": 21,
+            "3": 18,
+            "5": 16,
+            "1": 11,
+            "0": 16,
+            "4": 8,
+            "2": 19,
+            "7": 11
+          },
+          "first_display_position_fraction_valid": 0.10833333333333334,
+          "first_enum_position_fraction_valid": 0.13333333333333333,
+          "agreement_with_bplus_count_supplementary": 120,
+          "reference_soft_remediation_count_descriptive": 3,
+          "selected_mastery_mean_descriptive": 0.6850138914646198,
+          "selected_train_success_rate_mean_descriptive": 0.6809679056870095,
+          "selected_support_mean_descriptive": 532.675,
+          "mastery_rank_mean_valid_defined": 0.5821428571428571,
+          "mastery_rank_defined_valid_calls": 120,
+          "mastery_rank_excluded_single_skill_valid_calls": 0,
+          "mastery_rank_coverage_all_planned_calls": 1.0,
+          "lowest_mastery_skill_count_valid": 0,
+          "lowest_mastery_skill_fraction_valid": 0.0,
+          "random_analytic_reference": {
+            "id_stable_probability_mean": 0.015625,
+            "skill_stable_probability_mean": 0.015625,
+            "mastery_rank_mean_defined": 0.5,
+            "rank_defined_planned_calls": 120,
+            "lowest_mastery_skill_probability_mean": 0.125,
+            "each_position_probability_mean": 0.125
+          },
+          "latency_seconds_mean_all_calls": 0.00018875249988923316,
+          "latency_scope": "local_policy_computation_only",
+          "error_stage_counts": {}
+        },
+        "no_edges": {
+          "planned_calls": 120,
+          "completed_calls": 120,
+          "valid_selections": 120,
+          "valid_selection_fraction_all_planned_calls": 1.0,
+          "planned_students": 40,
+          "complete_valid_triplets": 40,
+          "id_stable_students": 40,
+          "id_stable_fraction_complete_triplets": 1.0,
+          "skill_stable_students": 40,
+          "skill_stable_fraction_complete_triplets": 1.0,
+          "variable_students_among_complete_valid_triplets": 0,
+          "incomplete_valid_triplets": 0,
+          "display_position_counts_valid": {
+            "1": 15,
+            "3": 18,
+            "4": 10,
+            "6": 17,
+            "5": 18,
+            "0": 12,
+            "2": 15,
+            "7": 15
+          },
+          "enum_position_counts_valid": {
+            "6": 21,
+            "3": 17,
+            "5": 17,
+            "1": 10,
+            "0": 17,
+            "4": 8,
+            "2": 20,
+            "7": 10
+          },
+          "first_display_position_fraction_valid": 0.1,
+          "first_enum_position_fraction_valid": 0.14166666666666666,
+          "agreement_with_bplus_count_supplementary": 120,
+          "reference_soft_remediation_count_descriptive": 0,
+          "selected_mastery_mean_descriptive": 0.6959158642119704,
+          "selected_train_success_rate_mean_descriptive": 0.6916975436960592,
+          "selected_support_mean_descriptive": 533.5,
+          "mastery_rank_mean_valid_defined": 0.6,
+          "mastery_rank_defined_valid_calls": 120,
+          "mastery_rank_excluded_single_skill_valid_calls": 0,
+          "mastery_rank_coverage_all_planned_calls": 1.0,
+          "lowest_mastery_skill_count_valid": 0,
+          "lowest_mastery_skill_fraction_valid": 0.0,
+          "random_analytic_reference": {
+            "id_stable_probability_mean": 0.015625,
+            "skill_stable_probability_mean": 0.015625,
+            "mastery_rank_mean_defined": 0.5,
+            "rank_defined_planned_calls": 120,
+            "lowest_mastery_skill_probability_mean": 0.125,
+            "each_position_probability_mean": 0.125
+          },
+          "latency_seconds_mean_all_calls": 0.00017629249996389262,
+          "latency_scope": "local_policy_computation_only",
+          "error_stage_counts": {}
+        },
+        "paired_graph_sensitivity_descriptive": {
+          "planned_pairs": 120,
+          "valid_pairs": 120,
+          "incomplete_valid_pairs": 0,
+          "changed_choice_count": 3
+        }
+      }
+    },
+    "random": {
+      "representative": {
+        "curriculum_edges": {
+          "planned_calls": 120,
+          "completed_calls": 120,
+          "valid_selections": 120,
+          "valid_selection_fraction_all_planned_calls": 1.0,
+          "planned_students": 40,
+          "complete_valid_triplets": 40,
+          "id_stable_students": 0,
+          "id_stable_fraction_complete_triplets": 0.0,
+          "skill_stable_students": 0,
+          "skill_stable_fraction_complete_triplets": 0.0,
+          "variable_students_among_complete_valid_triplets": 40,
+          "incomplete_valid_triplets": 0,
+          "display_position_counts_valid": {
+            "3": 13,
+            "5": 14,
+            "0": 20,
+            "1": 16,
+            "2": 19,
+            "4": 14,
+            "6": 14,
+            "7": 10
+          },
+          "enum_position_counts_valid": {
+            "0": 18,
+            "1": 8,
+            "6": 15,
+            "4": 16,
+            "3": 10,
+            "7": 16,
+            "2": 22,
+            "5": 15
+          },
+          "first_display_position_fraction_valid": 0.16666666666666666,
+          "first_enum_position_fraction_valid": 0.15,
+          "agreement_with_bplus_count_supplementary": 18,
+          "reference_soft_remediation_count_descriptive": 0,
+          "selected_mastery_mean_descriptive": 0.6776172027442259,
+          "selected_train_success_rate_mean_descriptive": 0.6705770878941131,
+          "selected_support_mean_descriptive": 565.6583333333333,
+          "mastery_rank_mean_valid_defined": 0.49166666666666664,
+          "mastery_rank_defined_valid_calls": 120,
+          "mastery_rank_excluded_single_skill_valid_calls": 0,
+          "mastery_rank_coverage_all_planned_calls": 1.0,
+          "lowest_mastery_skill_count_valid": 12,
+          "lowest_mastery_skill_fraction_valid": 0.1,
+          "random_analytic_reference": {
+            "id_stable_probability_mean": 0.015625,
+            "skill_stable_probability_mean": 0.015625,
+            "mastery_rank_mean_defined": 0.5,
+            "rank_defined_planned_calls": 120,
+            "lowest_mastery_skill_probability_mean": 0.125,
+            "each_position_probability_mean": 0.125
+          },
+          "latency_seconds_mean_all_calls": 5.545583326238557e-05,
+          "latency_scope": "local_policy_computation_only",
+          "error_stage_counts": {}
+        },
+        "no_edges": {
+          "planned_calls": 120,
+          "completed_calls": 120,
+          "valid_selections": 120,
+          "valid_selection_fraction_all_planned_calls": 1.0,
+          "planned_students": 40,
+          "complete_valid_triplets": 40,
+          "id_stable_students": 0,
+          "id_stable_fraction_complete_triplets": 0.0,
+          "skill_stable_students": 0,
+          "skill_stable_fraction_complete_triplets": 0.0,
+          "variable_students_among_complete_valid_triplets": 40,
+          "incomplete_valid_triplets": 0,
+          "display_position_counts_valid": {
+            "3": 13,
+            "5": 14,
+            "0": 20,
+            "1": 16,
+            "2": 19,
+            "4": 14,
+            "6": 14,
+            "7": 10
+          },
+          "enum_position_counts_valid": {
+            "0": 18,
+            "1": 8,
+            "6": 15,
+            "4": 16,
+            "3": 10,
+            "7": 16,
+            "2": 22,
+            "5": 15
+          },
+          "first_display_position_fraction_valid": 0.16666666666666666,
+          "first_enum_position_fraction_valid": 0.15,
+          "agreement_with_bplus_count_supplementary": 18,
+          "reference_soft_remediation_count_descriptive": 0,
+          "selected_mastery_mean_descriptive": 0.6776172027442259,
+          "selected_train_success_rate_mean_descriptive": 0.6705770878941131,
+          "selected_support_mean_descriptive": 565.6583333333333,
+          "mastery_rank_mean_valid_defined": 0.49166666666666664,
+          "mastery_rank_defined_valid_calls": 120,
+          "mastery_rank_excluded_single_skill_valid_calls": 0,
+          "mastery_rank_coverage_all_planned_calls": 1.0,
+          "lowest_mastery_skill_count_valid": 12,
+          "lowest_mastery_skill_fraction_valid": 0.1,
+          "random_analytic_reference": {
+            "id_stable_probability_mean": 0.015625,
+            "skill_stable_probability_mean": 0.015625,
+            "mastery_rank_mean_defined": 0.5,
+            "rank_defined_planned_calls": 120,
+            "lowest_mastery_skill_probability_mean": 0.125,
+            "each_position_probability_mean": 0.125
+          },
+          "latency_seconds_mean_all_calls": 5.4959166709522834e-05,
+          "latency_scope": "local_policy_computation_only",
+          "error_stage_counts": {}
+        },
+        "paired_graph_sensitivity_descriptive": {
+          "planned_pairs": 120,
+          "valid_pairs": 120,
+          "incomplete_valid_pairs": 0,
+          "changed_choice_count": 0
+        }
+      }
+    },
+    "always_first": {
+      "representative": {
+        "curriculum_edges": {
+          "planned_calls": 120,
+          "completed_calls": 120,
+          "valid_selections": 120,
+          "valid_selection_fraction_all_planned_calls": 1.0,
+          "planned_students": 40,
+          "complete_valid_triplets": 40,
+          "id_stable_students": 0,
+          "id_stable_fraction_complete_triplets": 0.0,
+          "skill_stable_students": 0,
+          "skill_stable_fraction_complete_triplets": 0.0,
+          "variable_students_among_complete_valid_triplets": 40,
+          "incomplete_valid_triplets": 0,
+          "display_position_counts_valid": {
+            "0": 120
+          },
+          "enum_position_counts_valid": {
+            "1": 21,
+            "6": 10,
+            "4": 14,
+            "0": 16,
+            "3": 17,
+            "5": 14,
+            "7": 11,
+            "2": 17
+          },
+          "first_display_position_fraction_valid": 1.0,
+          "first_enum_position_fraction_valid": 0.13333333333333333,
+          "agreement_with_bplus_count_supplementary": 13,
+          "reference_soft_remediation_count_descriptive": 1,
+          "selected_mastery_mean_descriptive": 0.6689709979770508,
+          "selected_train_success_rate_mean_descriptive": 0.6603368257257493,
+          "selected_support_mean_descriptive": 535.3916666666667,
+          "mastery_rank_mean_valid_defined": 0.4523809523809524,
+          "mastery_rank_defined_valid_calls": 120,
+          "mastery_rank_excluded_single_skill_valid_calls": 0,
+          "mastery_rank_coverage_all_planned_calls": 1.0,
+          "lowest_mastery_skill_count_valid": 19,
+          "lowest_mastery_skill_fraction_valid": 0.15833333333333333,
+          "random_analytic_reference": {
+            "id_stable_probability_mean": 0.015625,
+            "skill_stable_probability_mean": 0.015625,
+            "mastery_rank_mean_defined": 0.5,
+            "rank_defined_planned_calls": 120,
+            "lowest_mastery_skill_probability_mean": 0.125,
+            "each_position_probability_mean": 0.125
+          },
+          "latency_seconds_mean_all_calls": 3.258333284369049e-07,
+          "latency_scope": "local_policy_computation_only",
+          "error_stage_counts": {}
+        },
+        "no_edges": {
+          "planned_calls": 120,
+          "completed_calls": 120,
+          "valid_selections": 120,
+          "valid_selection_fraction_all_planned_calls": 1.0,
+          "planned_students": 40,
+          "complete_valid_triplets": 40,
+          "id_stable_students": 0,
+          "id_stable_fraction_complete_triplets": 0.0,
+          "skill_stable_students": 0,
+          "skill_stable_fraction_complete_triplets": 0.0,
+          "variable_students_among_complete_valid_triplets": 40,
+          "incomplete_valid_triplets": 0,
+          "display_position_counts_valid": {
+            "0": 120
+          },
+          "enum_position_counts_valid": {
+            "1": 21,
+            "6": 10,
+            "4": 14,
+            "0": 16,
+            "3": 17,
+            "5": 14,
+            "7": 11,
+            "2": 17
+          },
+          "first_display_position_fraction_valid": 1.0,
+          "first_enum_position_fraction_valid": 0.13333333333333333,
+          "agreement_with_bplus_count_supplementary": 12,
+          "reference_soft_remediation_count_descriptive": 1,
+          "selected_mastery_mean_descriptive": 0.6689709979770508,
+          "selected_train_success_rate_mean_descriptive": 0.6603368257257493,
+          "selected_support_mean_descriptive": 535.3916666666667,
+          "mastery_rank_mean_valid_defined": 0.4523809523809524,
+          "mastery_rank_defined_valid_calls": 120,
+          "mastery_rank_excluded_single_skill_valid_calls": 0,
+          "mastery_rank_coverage_all_planned_calls": 1.0,
+          "lowest_mastery_skill_count_valid": 19,
+          "lowest_mastery_skill_fraction_valid": 0.15833333333333333,
+          "random_analytic_reference": {
+            "id_stable_probability_mean": 0.015625,
+            "skill_stable_probability_mean": 0.015625,
+            "mastery_rank_mean_defined": 0.5,
+            "rank_defined_planned_calls": 120,
+            "lowest_mastery_skill_probability_mean": 0.125,
+            "each_position_probability_mean": 0.125
+          },
+          "latency_seconds_mean_all_calls": 3.158334645074016e-07,
+          "latency_scope": "local_policy_computation_only",
+          "error_stage_counts": {}
+        },
+        "paired_graph_sensitivity_descriptive": {
+          "planned_pairs": 120,
+          "valid_pairs": 120,
+          "incomplete_valid_pairs": 0,
+          "changed_choice_count": 0
+        }
+      }
+    }
+  },
+  "runs_sha256": "80ed2e1fae4c45e40ad7e1a19630d25740f458d5f62c2b7ee325116e74432906",
+  "journal_sha256": "932a2a6ddeb7c3f80b567208a98b4dd10c4e245baee6bdd0e47d9d630ed44a57",
+  "call_accounting": {
+    "probe": {
+      "attempts": 4,
+      "transport": 4,
+      "responses": 4
+    },
+    "study": {
+      "attempts": 240,
+      "transport": 240,
+      "responses": 240
+    },
+    "repeat": {
+      "attempts": 36,
+      "transport": 36,
+      "responses": 36
+    }
+  },
+  "context_probes": [
+    {
+      "variant": "curriculum_edges",
+      "prompt_eval_count": 1870,
+      "double_context_prompt_eval_count": 1870
+    },
+    {
+      "variant": "no_edges",
+      "prompt_eval_count": 1647,
+      "double_context_prompt_eval_count": 1647
+    }
+  ],
+  "runtime_identity_verified": true,
+  "metrics": {
+    "representative": {
+      "curriculum_edges": {
+        "planned_calls": 120,
+        "completed_calls": 120,
+        "valid_selections": 120,
+        "valid_selection_fraction_all_planned_calls": 1.0,
+        "planned_students": 40,
+        "complete_valid_triplets": 40,
+        "id_stable_students": 5,
+        "id_stable_fraction_complete_triplets": 0.125,
+        "skill_stable_students": 5,
+        "skill_stable_fraction_complete_triplets": 0.125,
+        "variable_students_among_complete_valid_triplets": 35,
+        "incomplete_valid_triplets": 0,
+        "display_position_counts_valid": {
+          "1": 39,
+          "3": 14,
+          "2": 15,
+          "6": 7,
+          "4": 10,
+          "0": 27,
+          "5": 5,
+          "7": 3
+        },
+        "enum_position_counts_valid": {
+          "6": 21,
+          "3": 14,
+          "2": 17,
+          "1": 14,
+          "4": 11,
+          "0": 14,
+          "7": 13,
+          "5": 16
+        },
+        "first_display_position_fraction_valid": 0.225,
+        "first_enum_position_fraction_valid": 0.11666666666666667,
+        "agreement_with_bplus_count_supplementary": 19,
+        "reference_soft_remediation_count_descriptive": 0,
+        "selected_mastery_mean_descriptive": 0.7308350690164455,
+        "selected_train_success_rate_mean_descriptive": 0.7100175723280511,
+        "selected_support_mean_descriptive": 786.3833333333333,
+        "mastery_rank_mean_valid_defined": 0.5928571428571429,
+        "mastery_rank_defined_valid_calls": 120,
+        "mastery_rank_excluded_single_skill_valid_calls": 0,
+        "mastery_rank_coverage_all_planned_calls": 1.0,
+        "lowest_mastery_skill_count_valid": 11,
+        "lowest_mastery_skill_fraction_valid": 0.09166666666666666,
+        "random_analytic_reference": {
+          "id_stable_probability_mean": 0.015625,
+          "skill_stable_probability_mean": 0.015625,
+          "mastery_rank_mean_defined": 0.5,
+          "rank_defined_planned_calls": 120,
+          "lowest_mastery_skill_probability_mean": 0.125,
+          "each_position_probability_mean": 0.125
+        },
+        "latency_seconds_mean_all_calls": 0.9337018883334167,
+        "latency_scope": "agent_request_transport_and_validation_including_runtime_checks",
+        "error_stage_counts": {}
+      },
+      "no_edges": {
+        "planned_calls": 120,
+        "completed_calls": 120,
+        "valid_selections": 120,
+        "valid_selection_fraction_all_planned_calls": 1.0,
+        "planned_students": 40,
+        "complete_valid_triplets": 40,
+        "id_stable_students": 6,
+        "id_stable_fraction_complete_triplets": 0.15,
+        "skill_stable_students": 6,
+        "skill_stable_fraction_complete_triplets": 0.15,
+        "variable_students_among_complete_valid_triplets": 34,
+        "incomplete_valid_triplets": 0,
+        "display_position_counts_valid": {
+          "1": 37,
+          "3": 14,
+          "2": 12,
+          "6": 8,
+          "4": 16,
+          "5": 3,
+          "0": 26,
+          "7": 4
+        },
+        "enum_position_counts_valid": {
+          "6": 20,
+          "3": 14,
+          "2": 14,
+          "1": 14,
+          "0": 14,
+          "4": 16,
+          "7": 18,
+          "5": 10
+        },
+        "first_display_position_fraction_valid": 0.21666666666666667,
+        "first_enum_position_fraction_valid": 0.11666666666666667,
+        "agreement_with_bplus_count_supplementary": 19,
+        "reference_soft_remediation_count_descriptive": 0,
+        "selected_mastery_mean_descriptive": 0.7309475363227809,
+        "selected_train_success_rate_mean_descriptive": 0.7024464835520038,
+        "selected_support_mean_descriptive": 833.3583333333333,
+        "mastery_rank_mean_valid_defined": 0.594047619047619,
+        "mastery_rank_defined_valid_calls": 120,
+        "mastery_rank_excluded_single_skill_valid_calls": 0,
+        "mastery_rank_coverage_all_planned_calls": 1.0,
+        "lowest_mastery_skill_count_valid": 8,
+        "lowest_mastery_skill_fraction_valid": 0.06666666666666667,
+        "random_analytic_reference": {
+          "id_stable_probability_mean": 0.015625,
+          "skill_stable_probability_mean": 0.015625,
+          "mastery_rank_mean_defined": 0.5,
+          "rank_defined_planned_calls": 120,
+          "lowest_mastery_skill_probability_mean": 0.125,
+          "each_position_probability_mean": 0.125
+        },
+        "latency_seconds_mean_all_calls": 0.7297891883333857,
+        "latency_scope": "agent_request_transport_and_validation_including_runtime_checks",
+        "error_stage_counts": {}
+      },
+      "paired_graph_sensitivity_descriptive": {
+        "planned_pairs": 120,
+        "valid_pairs": 120,
+        "incomplete_valid_pairs": 0,
+        "changed_choice_count": 27
+      }
+    }
+  },
+  "rationale_flags": {
+    "observed_cjk_ideograph": {
+      "count": 240,
+      "fraction_all_planned": 1.0
+    },
+    "observed_cjk_punctuation": {
+      "count": 240,
+      "fraction_all_planned": 1.0
+    },
+    "observed_length_cap": {
+      "count": 0,
+      "fraction_all_planned": 0.0
+    },
+    "observed_no_terminal_punctuation": {
+      "count": 240,
+      "fraction_all_planned": 1.0
+    },
+    "numeric_mismatch": {
+      "count": 88,
+      "fraction_all_planned": 0.36666666666666664
+    },
+    "unknown_id": {
+      "count": 0,
+      "fraction_all_planned": 0.0
+    },
+    "reason_unavailable": {
+      "count": 0,
+      "fraction_all_planned": 0.0
+    },
+    "budget_cjk_ideograph": {
+      "count": 240,
+      "fraction_all_planned": 1.0
+    },
+    "budget_length_cap": {
+      "count": 0,
+      "fraction_all_planned": 0.0
+    },
+    "budget_no_terminal_punctuation": {
+      "count": 240,
+      "fraction_all_planned": 1.0
+    }
+  },
+  "stop_decision": {
+    "technical_pass": true,
+    "stability_pass": false,
+    "rationale_flags_pass": false,
+    "rubric": {
+      "status": "not_evaluated",
+      "unconditional_mean": null,
+      "pass": false
+    },
+    "all_operational_requirements_met": false,
+    "lock_c_authorized": false,
+    "further_prompt_model_contract_changes": false
+  },
+  "identical_request_reference": {
+    "planned_requests": 12,
+    "valid_id_stable_four_calls": 11
+  },
+  "repeat_runs_sha256": "2659bb9135500f1dc8930efb9e25002b079255ad78034126f9c3a97204aedc8a",
+  "rubric_packet_sha256": "392d0194258c3767c83ff68fa2fcd70290ef61e306c70a1d6fdab4871299cdb0",
+  "repeat_output_flags": {
+    "observed_cjk_ideograph": {
+      "count": 36,
+      "fraction_all_planned": 1.0
+    },
+    "observed_cjk_punctuation": {
+      "count": 36,
+      "fraction_all_planned": 1.0
+    },
+    "observed_length_cap": {
+      "count": 3,
+      "fraction_all_planned": 0.08333333333333333
+    },
+    "observed_no_terminal_punctuation": {
+      "count": 36,
+      "fraction_all_planned": 1.0
+    },
+    "numeric_mismatch": {
+      "count": 11,
+      "fraction_all_planned": 0.3055555555555556
+    },
+    "unknown_id": {
+      "count": 0,
+      "fraction_all_planned": 0.0
+    },
+    "reason_unavailable": {
+      "count": 0,
+      "fraction_all_planned": 0.0
+    },
+    "budget_cjk_ideograph": {
+      "count": 36,
+      "fraction_all_planned": 1.0
+    },
+    "budget_length_cap": {
+      "count": 3,
+      "fraction_all_planned": 0.08333333333333333
+    },
+    "budget_no_terminal_punctuation": {
+      "count": 36,
+      "fraction_all_planned": 1.0
+    }
+  },
+  "rubric_sample_size": 40
+}
