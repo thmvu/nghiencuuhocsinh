@@ -1,7 +1,7 @@
 {
   "stage": "validation_development_not_lock_c",
   "test_opened": false,
-  "agent_status": "prepared_no_llm",
+  "agent_status": "completed_validation_not_test",
   "version": "foundationalassist-v4-rq2-independent-selection-v2",
   "input_sha256": {
     "configs/foundationalassist_v4_rq2_agent_revision1.json": "06398df73fe24b6fc1db74f8ebf5c452eb723539a9c218ef8b31da369059ac17",
@@ -41,12 +41,12 @@
     "reports/rq2_selection_protocol_v2.md": "e76d784a624dbbbbfcd4ad13ae6dada8b6ecd92d8db305987aa4e65a3446af83"
   },
   "new_calls_planned": 144,
-  "model_calls_completed": 0,
-  "study_rows_recorded": 0,
+  "model_calls_completed": 144,
+  "study_rows_recorded": 144,
   "claims": "operational metadata selection only; no learning gain, verified mastery or educational-quality claim",
   "schedule_sha256": "3e1a275c467f59c9ab828c5532bd39547dd76b6831b30b3e67d8111b22dbb473",
   "baseline_reference_sha256": "0a4865ee8a76d680d928e54c2be31dafbf57e04049c18d1c6a0da8826518997e",
-  "baseline_runs_sha256": "d45b96f6197c91281e6612dbb9b93a6992d64af657e3aeb335c1f42ba67148c4",
+  "baseline_runs_sha256": "163f6ba9f53ff00ee0401f687115713ecd29f76b25142645783d0e41f9870854",
   "baseline_metrics": {
     "B+": {
       "representative": {
@@ -104,7 +104,7 @@
             "lowest_mastery_skill_probability_mean": 0.125,
             "each_position_probability_mean": 0.125
           },
-          "latency_seconds_mean_all_calls": 0.00021746944445213658,
+          "latency_seconds_mean_all_calls": 0.0002226583333392935,
           "latency_scope": "local_policy_computation_only",
           "error_stage_counts": {}
         },
@@ -162,7 +162,7 @@
             "lowest_mastery_skill_probability_mean": 0.125,
             "each_position_probability_mean": 0.125
           },
-          "latency_seconds_mean_all_calls": 0.00020537222221466637,
+          "latency_seconds_mean_all_calls": 0.0002012472221950803,
           "latency_scope": "local_policy_computation_only",
           "error_stage_counts": {}
         },
@@ -227,7 +227,7 @@
             "lowest_mastery_skill_probability_mean": 0.14583333333333334,
             "each_position_probability_mean": 0.125
           },
-          "latency_seconds_mean_all_calls": 0.00022880833329155494,
+          "latency_seconds_mean_all_calls": 0.00019939166662020903,
           "latency_scope": "local_policy_computation_only",
           "error_stage_counts": {}
         },
@@ -285,7 +285,7 @@
             "lowest_mastery_skill_probability_mean": 0.14583333333333334,
             "each_position_probability_mean": 0.125
           },
-          "latency_seconds_mean_all_calls": 0.00021234722222137256,
+          "latency_seconds_mean_all_calls": 0.00017197500000697296,
           "latency_scope": "local_policy_computation_only",
           "error_stage_counts": {}
         },
@@ -353,7 +353,7 @@
             "lowest_mastery_skill_probability_mean": 0.125,
             "each_position_probability_mean": 0.125
           },
-          "latency_seconds_mean_all_calls": 9.220277776320372e-05,
+          "latency_seconds_mean_all_calls": 8.053888884913047e-05,
           "latency_scope": "local_policy_computation_only",
           "error_stage_counts": {}
         },
@@ -411,7 +411,7 @@
             "lowest_mastery_skill_probability_mean": 0.125,
             "each_position_probability_mean": 0.125
           },
-          "latency_seconds_mean_all_calls": 8.255555554923275e-05,
+          "latency_seconds_mean_all_calls": 8.838888891204988e-05,
           "latency_scope": "local_policy_computation_only",
           "error_stage_counts": {}
         },
@@ -477,7 +477,7 @@
             "lowest_mastery_skill_probability_mean": 0.14583333333333334,
             "each_position_probability_mean": 0.125
           },
-          "latency_seconds_mean_all_calls": 8.603055558372337e-05,
+          "latency_seconds_mean_all_calls": 6.155277779069163e-05,
           "latency_scope": "local_policy_computation_only",
           "error_stage_counts": {}
         },
@@ -535,7 +535,7 @@
             "lowest_mastery_skill_probability_mean": 0.14583333333333334,
             "each_position_probability_mean": 0.125
           },
-          "latency_seconds_mean_all_calls": 9.498333329500181e-05,
+          "latency_seconds_mean_all_calls": 6.0455555575976585e-05,
           "latency_scope": "local_policy_computation_only",
           "error_stage_counts": {}
         },
@@ -596,7 +596,7 @@
             "lowest_mastery_skill_probability_mean": 0.125,
             "each_position_probability_mean": 0.125
           },
-          "latency_seconds_mean_all_calls": 2.999999853475149e-07,
+          "latency_seconds_mean_all_calls": 2.861110791248696e-07,
           "latency_scope": "local_policy_computation_only",
           "error_stage_counts": {}
         },
@@ -647,7 +647,7 @@
             "lowest_mastery_skill_probability_mean": 0.125,
             "each_position_probability_mean": 0.125
           },
-          "latency_seconds_mean_all_calls": 3.083333568712179e-07,
+          "latency_seconds_mean_all_calls": 3.055555832058114e-07,
           "latency_scope": "local_policy_computation_only",
           "error_stage_counts": {}
         },
@@ -706,7 +706,7 @@
             "lowest_mastery_skill_probability_mean": 0.14583333333333334,
             "each_position_probability_mean": 0.125
           },
-          "latency_seconds_mean_all_calls": 3.500000502754119e-07,
+          "latency_seconds_mean_all_calls": 2.4444441098441734e-07,
           "latency_scope": "local_policy_computation_only",
           "error_stage_counts": {}
         },
@@ -757,7 +757,7 @@
             "lowest_mastery_skill_probability_mean": 0.14583333333333334,
             "each_position_probability_mean": 0.125
           },
-          "latency_seconds_mean_all_calls": 3.4999998711605764e-07,
+          "latency_seconds_mean_all_calls": 2.1666663643473942e-07,
           "latency_scope": "local_policy_computation_only",
           "error_stage_counts": {}
         },
@@ -774,14 +774,14 @@
   "planned_study_calls": 144,
   "call_accounting": {
     "probe": {
-      "attempts_started": 0,
-      "transport_calls": 0,
-      "responses_received": 0
+      "attempts_started": 4,
+      "transport_calls": 4,
+      "responses_received": 4
     },
     "study": {
-      "attempts_started": 0,
-      "transport_calls": 0,
-      "responses_received": 0
+      "attempts_started": 144,
+      "transport_calls": 144,
+      "responses_received": 144
     }
   },
   "cohort_planned_students": {
@@ -789,5 +789,267 @@
     "challenge": 12
   },
   "agreement_is_gold_label": false,
-  "reason_semantically_verified": false
+  "reason_semantically_verified": false,
+  "context_probes": [
+    {
+      "graph_variant": "curriculum_edges",
+      "prompt_eval_count": 1777,
+      "double_context_prompt_eval_count": 1777
+    },
+    {
+      "graph_variant": "no_edges",
+      "prompt_eval_count": 1554,
+      "double_context_prompt_eval_count": 1554
+    }
+  ],
+  "probe_calls_not_study": 4,
+  "cohorts": {
+    "representative": {
+      "curriculum_edges": {
+        "planned_calls": 36,
+        "completed_calls": 36,
+        "valid_selections": 36,
+        "valid_selection_fraction_all_planned_calls": 1.0,
+        "planned_students": 12,
+        "complete_valid_triplets": 12,
+        "id_stable_students": 2,
+        "id_stable_fraction_complete_triplets": 0.16666666666666666,
+        "skill_stable_students": 2,
+        "skill_stable_fraction_complete_triplets": 0.16666666666666666,
+        "variable_students_among_complete_valid_triplets": 10,
+        "incomplete_valid_triplets": 0,
+        "display_position_counts_valid": {
+          "4": 3,
+          "1": 11,
+          "0": 8,
+          "2": 4,
+          "3": 6,
+          "6": 1,
+          "5": 3
+        },
+        "enum_position_counts_valid": {
+          "5": 4,
+          "4": 4,
+          "3": 7,
+          "2": 5,
+          "7": 6,
+          "6": 4,
+          "1": 4,
+          "0": 2
+        },
+        "first_display_position_fraction_valid": 0.2222222222222222,
+        "first_enum_position_fraction_valid": 0.05555555555555555,
+        "agreement_with_bplus_count_supplementary": 0,
+        "reference_soft_remediation_count_descriptive": 0,
+        "selected_mastery_mean_descriptive": 0.8203367262260938,
+        "selected_train_success_rate_mean_descriptive": 0.7725142654722795,
+        "selected_support_mean_descriptive": 735.25,
+        "mastery_rank_mean_valid_defined": 0.7579365079365079,
+        "mastery_rank_defined_valid_calls": 36,
+        "mastery_rank_excluded_single_skill_valid_calls": 0,
+        "mastery_rank_coverage_all_planned_calls": 1.0,
+        "lowest_mastery_skill_count_valid": 0,
+        "lowest_mastery_skill_fraction_valid": 0.0,
+        "random_analytic_reference": {
+          "id_stable_probability_mean": 0.015625,
+          "skill_stable_probability_mean": 0.015625,
+          "mastery_rank_mean_defined": 0.5,
+          "rank_defined_planned_calls": 36,
+          "lowest_mastery_skill_probability_mean": 0.125,
+          "each_position_probability_mean": 0.125
+        },
+        "latency_seconds_mean_all_calls": 1.0682337638888586,
+        "latency_scope": "agent_request_transport_and_validation_including_runtime_checks",
+        "error_stage_counts": {}
+      },
+      "no_edges": {
+        "planned_calls": 36,
+        "completed_calls": 36,
+        "valid_selections": 36,
+        "valid_selection_fraction_all_planned_calls": 1.0,
+        "planned_students": 12,
+        "complete_valid_triplets": 12,
+        "id_stable_students": 3,
+        "id_stable_fraction_complete_triplets": 0.25,
+        "skill_stable_students": 3,
+        "skill_stable_fraction_complete_triplets": 0.25,
+        "variable_students_among_complete_valid_triplets": 9,
+        "incomplete_valid_triplets": 0,
+        "display_position_counts_valid": {
+          "4": 3,
+          "3": 9,
+          "0": 7,
+          "1": 11,
+          "2": 3,
+          "6": 1,
+          "5": 2
+        },
+        "enum_position_counts_valid": {
+          "5": 5,
+          "1": 7,
+          "3": 6,
+          "2": 5,
+          "7": 5,
+          "4": 2,
+          "6": 4,
+          "0": 2
+        },
+        "first_display_position_fraction_valid": 0.19444444444444445,
+        "first_enum_position_fraction_valid": 0.05555555555555555,
+        "agreement_with_bplus_count_supplementary": 0,
+        "reference_soft_remediation_count_descriptive": 0,
+        "selected_mastery_mean_descriptive": 0.821004145741999,
+        "selected_train_success_rate_mean_descriptive": 0.7716938019303817,
+        "selected_support_mean_descriptive": 703.3055555555555,
+        "mastery_rank_mean_valid_defined": 0.753968253968254,
+        "mastery_rank_defined_valid_calls": 36,
+        "mastery_rank_excluded_single_skill_valid_calls": 0,
+        "mastery_rank_coverage_all_planned_calls": 1.0,
+        "lowest_mastery_skill_count_valid": 0,
+        "lowest_mastery_skill_fraction_valid": 0.0,
+        "random_analytic_reference": {
+          "id_stable_probability_mean": 0.015625,
+          "skill_stable_probability_mean": 0.015625,
+          "mastery_rank_mean_defined": 0.5,
+          "rank_defined_planned_calls": 36,
+          "lowest_mastery_skill_probability_mean": 0.125,
+          "each_position_probability_mean": 0.125
+        },
+        "latency_seconds_mean_all_calls": 0.9173604138888878,
+        "latency_scope": "agent_request_transport_and_validation_including_runtime_checks",
+        "error_stage_counts": {}
+      },
+      "paired_graph_sensitivity_descriptive": {
+        "planned_pairs": 36,
+        "valid_pairs": 36,
+        "incomplete_valid_pairs": 0,
+        "changed_choice_count": 5
+      }
+    },
+    "challenge": {
+      "curriculum_edges": {
+        "planned_calls": 36,
+        "completed_calls": 36,
+        "valid_selections": 36,
+        "valid_selection_fraction_all_planned_calls": 1.0,
+        "planned_students": 12,
+        "complete_valid_triplets": 12,
+        "id_stable_students": 2,
+        "id_stable_fraction_complete_triplets": 0.16666666666666666,
+        "skill_stable_students": 2,
+        "skill_stable_fraction_complete_triplets": 0.16666666666666666,
+        "variable_students_among_complete_valid_triplets": 10,
+        "incomplete_valid_triplets": 0,
+        "display_position_counts_valid": {
+          "6": 2,
+          "2": 3,
+          "4": 2,
+          "1": 6,
+          "0": 18,
+          "3": 5
+        },
+        "enum_position_counts_valid": {
+          "5": 5,
+          "6": 1,
+          "3": 5,
+          "4": 7,
+          "2": 7,
+          "0": 4,
+          "1": 4,
+          "7": 3
+        },
+        "first_display_position_fraction_valid": 0.5,
+        "first_enum_position_fraction_valid": 0.1111111111111111,
+        "agreement_with_bplus_count_supplementary": 3,
+        "reference_soft_remediation_count_descriptive": 3,
+        "selected_mastery_mean_descriptive": 0.5549393740767442,
+        "selected_train_success_rate_mean_descriptive": 0.6098178546455169,
+        "selected_support_mean_descriptive": 781.6666666666666,
+        "mastery_rank_mean_valid_defined": 0.5271164021164021,
+        "mastery_rank_defined_valid_calls": 36,
+        "mastery_rank_excluded_single_skill_valid_calls": 0,
+        "mastery_rank_coverage_all_planned_calls": 1.0,
+        "lowest_mastery_skill_count_valid": 4,
+        "lowest_mastery_skill_fraction_valid": 0.1111111111111111,
+        "random_analytic_reference": {
+          "id_stable_probability_mean": 0.015625,
+          "skill_stable_probability_mean": 0.0234375,
+          "mastery_rank_mean_defined": 0.4704861111111111,
+          "rank_defined_planned_calls": 36,
+          "lowest_mastery_skill_probability_mean": 0.14583333333333334,
+          "each_position_probability_mean": 0.125
+        },
+        "latency_seconds_mean_all_calls": 0.9536499555555843,
+        "latency_scope": "agent_request_transport_and_validation_including_runtime_checks",
+        "error_stage_counts": {}
+      },
+      "no_edges": {
+        "planned_calls": 36,
+        "completed_calls": 36,
+        "valid_selections": 36,
+        "valid_selection_fraction_all_planned_calls": 1.0,
+        "planned_students": 12,
+        "complete_valid_triplets": 12,
+        "id_stable_students": 1,
+        "id_stable_fraction_complete_triplets": 0.08333333333333333,
+        "skill_stable_students": 1,
+        "skill_stable_fraction_complete_triplets": 0.08333333333333333,
+        "variable_students_among_complete_valid_triplets": 11,
+        "incomplete_valid_triplets": 0,
+        "display_position_counts_valid": {
+          "2": 3,
+          "3": 7,
+          "4": 2,
+          "5": 2,
+          "0": 16,
+          "1": 4,
+          "6": 1,
+          "7": 1
+        },
+        "enum_position_counts_valid": {
+          "4": 7,
+          "2": 9,
+          "3": 2,
+          "5": 4,
+          "0": 6,
+          "1": 3,
+          "6": 1,
+          "7": 4
+        },
+        "first_display_position_fraction_valid": 0.4444444444444444,
+        "first_enum_position_fraction_valid": 0.16666666666666666,
+        "agreement_with_bplus_count_supplementary": 6,
+        "reference_soft_remediation_count_descriptive": 1,
+        "selected_mastery_mean_descriptive": 0.561411911021652,
+        "selected_train_success_rate_mean_descriptive": 0.6039235205195692,
+        "selected_support_mean_descriptive": 658.7777777777778,
+        "mastery_rank_mean_valid_defined": 0.548941798941799,
+        "mastery_rank_defined_valid_calls": 36,
+        "mastery_rank_excluded_single_skill_valid_calls": 0,
+        "mastery_rank_coverage_all_planned_calls": 1.0,
+        "lowest_mastery_skill_count_valid": 3,
+        "lowest_mastery_skill_fraction_valid": 0.08333333333333333,
+        "random_analytic_reference": {
+          "id_stable_probability_mean": 0.015625,
+          "skill_stable_probability_mean": 0.0234375,
+          "mastery_rank_mean_defined": 0.4704861111111111,
+          "rank_defined_planned_calls": 36,
+          "lowest_mastery_skill_probability_mean": 0.14583333333333334,
+          "each_position_probability_mean": 0.125
+        },
+        "latency_seconds_mean_all_calls": 1.0149139388888797,
+        "latency_scope": "agent_request_transport_and_validation_including_runtime_checks",
+        "error_stage_counts": {}
+      },
+      "paired_graph_sensitivity_descriptive": {
+        "planned_pairs": 36,
+        "valid_pairs": 36,
+        "incomplete_valid_pairs": 0,
+        "changed_choice_count": 10
+      }
+    }
+  },
+  "private_runs_sha256": "64bd79b0278696e53275405600b08ebfa0f59b53daf359d53362a8db47988729",
+  "journal_sha256": "181df1b4c7bdd690ffd78fdf639857058e781e77da75330075a645cf58942f60",
+  "runtime_identity_unchanged": true
 }

@@ -1,0 +1,26 @@
+{
+  "stage": "selection_v2_completed_validation_audit",
+  "test_opened": false,
+  "new_model_calls": 0,
+  "study_calls_verified": 144,
+  "valid_selections_verified": 144,
+  "call_accounting_verified": {
+    "probe": {
+      "attempts_started": 4,
+      "transport_calls": 4,
+      "responses_received": 4
+    },
+    "study": {
+      "attempts_started": 144,
+      "transport_calls": 144,
+      "responses_received": 144
+    }
+  },
+  "inputs_requests_responses_metrics_verified": true,
+  "baseline_replay_verified": true,
+  "runtime_identity_verified": true,
+  "reason_semantically_verified": false,
+  "lock_c_authorized": false,
+  "summary_sha256": "39ab734ebb3fd8bd5d58fe5d5ae5715d609699567be34ff96b1e88df58622ebd",
+  "auditor_sha256": "58f7b556d54f6d15dca71fcd877fb23ae4d9f0b6f5606f3cfdd4fd1df4349ff5"
+}
