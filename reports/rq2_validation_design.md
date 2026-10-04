@@ -1,6 +1,6 @@
 # RQ2 development design (validation only)
 
-Current direction, 2026-10-03: B+ makes the decision; the local Agent explains supplied evidence. The new protocol is in `reports/rq2_grounded_explanation_design.md`. Independent Agent selection trials remain development reference results, including their negative outcomes; this change does not establish that independent selection was repaired. Lock C and RQ2 TEST remain closed. Free drafts are not automatically semantically verified or displayed; controlled rendering uses checked catalog facts.
+Current direction, 2026-10-04: independent Agent selection is the primary RQ2 development branch again; B+ is a rule-based baseline, not a gold label. See `reports/rq2_selection_protocol_v2.md` for the bounded preparation and separate operational/rationale evaluation. The 2026-10-03 B+ selection/grounded explanation branch remains secondary historical evidence, with its frozen artifacts unchanged. No new inference has been performed for selection v2. Lock C and RQ2 TEST remain closed; explanation drafts are not semantically verified.
 
 The selection design documented below compares a deterministic policy (B+) with a local LLM policy under identical inputs: one BKT latent-mastery snapshot, the same prerequisite graph, and the same candidate problems. In the metadata-only design, this is an operational selection/ranking comparison, not a measure of pedagogical quality or learning gain.
 

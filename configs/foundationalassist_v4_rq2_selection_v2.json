@@ -1,0 +1,17 @@
+{
+  "version": "foundationalassist-v4-rq2-independent-selection-v2",
+  "stage": "validation_development_not_lock_c",
+  "test_access": false,
+  "design_status": "prepared_not_executed_not_lock_c",
+  "new_calls_planned": 144,
+  "expected_ollama_version": "0.35.1",
+  "model_digest": "65ec06548149b04c096a120e4a6da9d4017ea809c91734ea5631e89f96ddc57b",
+  "agent": {"model": "qwen2.5:1.5b", "temperature": 0, "num_ctx": 8192, "num_predict": 512, "template_token_reserve": 1024, "timeout_seconds": 90},
+  "reason_max_chars": 360,
+  "primary_metric": "valid completed candidate-selection fraction across all planned study calls on a batch with verified runtime integrity",
+  "secondary_metrics": ["within-student selection variability across permutations with incomplete triplets reported", "first display and enum position counts", "latency including failures", "selected estimated mastery and TRAIN statistics", "soft source-remediation against the same author-proposed reference graph"],
+  "supplementary_metric": "agreement with B+; disagreement is not an error or proof of inferior pedagogy",
+  "reason_review": "separate blinded metadata rationale rubric; no automatic semantic or pedagogical quality score",
+  "claims": "operational metadata selection only; no learning gain, verified mastery or educational-quality claim",
+  "limit": "one predeclared development batch on previously inspected scenarios; no model/prompt sweep or TEST access"
+}

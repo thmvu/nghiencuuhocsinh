@@ -1,0 +1,67 @@
+# RQ2: Agent chọn bài độc lập — protocol phát triển v2
+
+Ngày 04/10/2026. Trạng thái: chuẩn bị VALIDATION, chưa thực thi batch mới, chưa Lock C, không truy cập TEST. RQ1 và split đã khóa giữ nguyên.
+
+## Câu hỏi và vai trò
+
+Nhánh chính trở lại mục tiêu ban đầu: BKT ước lượng trạng thái kỹ năng → tạo danh sách ứng viên từ TRAIN → Agent chọn một bài và giải thích ngắn. Agent được cân nhắc các tín hiệu đầu vào, không phải sao chép thứ tự chấm điểm của B+. B+ là baseline theo luật; random-uniform-by-ID và always-first là hai baseline đơn giản. Cả bốn dùng cùng trạng thái, membership, graph variant và thứ tự trình bày.
+
+Nhánh B+ chọn/Agent giải thích ngày 03/10 giữ làm kết quả phụ và lịch sử. Kết quả 21/144 là vượt toàn bộ hợp đồng dẫn chứng; 132/144 (91,67%) là xác định đúng yếu tố quyết định. Hai số này không phải điểm chất lượng ngữ nghĩa. Template đạt 144/144 theo thiết kế; renderer ghép catalog và không hiển thị draft Qwen, nên chưa chứng minh lời viết của AI hữu ích hơn template. Các model nhỏ đã thử chưa thực hiện luật tốt; điều đó không bác bỏ mọi Agent chọn độc lập.
+
+## Đầu vào và giới hạn kết luận
+
+Agent chỉ thấy estimated mastery, skill ID, curriculum links tùy biến thể, problem ID, TRAIN success rate và support. Không có đề bài, đáp án, nhãn tương lai, B+ winner, reference graph đánh giá hoặc ranking objective bắt buộc trong prompt. TRAIN success rate không phải xác suất đúng của học sinh cụ thể; BKT mastery không phải thiếu hụt kiến thức đã xác nhận.
+
+Graph vẫn author-proposed, chưa expert-validated, không có nghĩa quan hệ nhân quả. Nhiều ID cùng standard vẫn là các BKT state riêng; không tự gộp hoặc áp điều kiện AND. Biến thể no_edges loại mọi thông tin cạnh và thứ tự topo khỏi đầu vào theo compact graph contract đã kiểm thử.
+
+Metadata-only chỉ cho phép kết luận về hành vi lựa chọn vận hành. Muốn đánh giá phù hợp sư phạm phải review graph và nội dung các bài thực sự surfaced; muốn kết luận learning gain phải có thí nghiệm học tập khác. Không công khai student ID, đề bài hoặc output theo dòng.
+
+## Batch chuẩn bị
+
+Config: `configs/foundationalassist_v4_rq2_selection_v2.json`; entrypoint: `scripts/prepare_foundational_rq2_selection_v2.py`. Mặc định chỉ chuẩn bị, không gọi model. Cờ `--run-agent` dành cho bước thực thi tiếp theo.
+
+Tái sử dụng subset đã kiểm tra: 12 học sinh pilot và 12 học sinh challenge, ba permutation, hai graph variant, một arm độc lập: 144 study calls. Seed/display/enum order giữ như subset revision1; không thay membership để Agent dễ thành công. Baseline reference được tái sử dụng trên đúng các đầu vào đó. Challenge là cohort có điều kiện và được báo riêng; không gộp với pilot để suy rộng cho toàn bộ học sinh.
+
+Đây là các scenario VALIDATION đã được quan sát trong phát triển. Batch này là exploratory, không phải holdout mới hoặc đăng ký trước thí nghiệm xác nhận. Chỉ một batch đã định nghĩa, không sweep prompt/model. Model/runtime digest và input/source hashes được ghi; thay runtime phải xử lý bằng protocol mới thay vì bỏ qua mismatch.
+
+## Metric đã định nghĩa trước batch
+
+Primary: số lựa chọn hoàn tất, telemetry hợp lệ và ID thuộc candidate set chia cho toàn bộ study calls đã lên lịch, chỉ trên batch vượt runtime-integrity gate. Lựa chọn khác B+ vẫn hợp lệ. Không sửa ID, fallback hoặc retry để tăng tỷ lệ thành công. Batch lỗi integrity không nhận là kết quả hoàn tất; giữ log và số lượt đã nhận.
+
+Secondary được báo riêng theo cohort và graph variant:
+
+- Số complete valid triplets, incomplete triplets và số học sinh đổi lựa chọn qua ba permutation; không che lỗi bằng denominator chỉ gồm lượt thành công.
+- Phân bố vị trí display và enum trong các lựa chọn hợp lệ; hai thứ tự được ghi riêng.
+- Latency tất cả lượt gồm failures; failure stages và count rõ ràng.
+- Mastery ước lượng của skill được chọn, TRAIN success rate, support; đây là mô tả, không tự coi chọn mastery thấp nhất là tối ưu.
+- Soft source-remediation trên cùng full reference graph chỉ dành cho evaluator; graph không cạnh không được nhận reference này. Chỉ số là proxy dưới giả định tác giả.
+- Số cặp có/không cạnh đổi lựa chọn ở cùng học sinh và permutation, cùng số cặp đầy đủ/thiếu; phản ứng với graph không xác nhận graph đúng.
+
+Agreement với B+ là supplementary. Luật B+ ưu tiên weak source liên kết weak target, gần TRAIN success rate 0,7, support rồi ID; đó là một heuristic cụ thể, không phải đáp án vàng. Không dùng disagreement làm lỗi hoặc bằng chứng kém sư phạm.
+
+Khi có CI/thử nghiệm xác nhận, phải bootstrap paired theo học sinh, giữ các repetition/variant của cùng học sinh cùng cluster; không coi 144 calls là 144 học sinh độc lập. Chưa có CI tự động trong runner chuẩn bị này. Trước Lock C phải khóa estimator, seed, số bootstrap và cách xử lý failure.
+
+## Rà soát lời giải thích riêng biệt
+
+`reason_semantically_verified=false` cho output tự động. Schema/ID đúng không xác minh nội dung. Không yêu cầu một chuỗi citation literal để thay cho chấm ngữ nghĩa.
+
+Rubric dự kiến 0/1/2 cho từng chiều: 0 = sai/thiếu nghiêm trọng; 1 = một phần hoặc còn mơ hồ; 2 = đầy đủ theo đầu vào.
+
+| Chiều | Người chấm kiểm tra |
+|---|---|
+| Nhất quán bằng chứng | Số liệu, ID, quan hệ đúng với metadata được cung cấp, không bịa |
+| Liên quan lựa chọn | Lý do gắn với bài được chọn và giải thích tradeoff hợp lý |
+| Nhận biết giới hạn | Không đổi ước lượng thành sự thật; không nhận graph nhân quả hoặc learning gain |
+| Dễ hiểu | Diễn đạt rõ, đủ ngắn, giúp người đọc hiểu lựa chọn |
+
+Ẩn tên policy/model, xáo thứ tự bằng seed trước chấm; lý tưởng hai người độc lập. Ghi tỷ lệ đồng thuận và cách giải quyết bất đồng. Rationale chỉ được chấm ở lượt có output hợp lệ, đồng thời báo riêng tất cả lượt lỗi; không bỏ lỗi khỏi primary metric. Chưa có người chấm, chưa chạy rubric hoặc AI judge. AI critique nếu bổ sung phải báo riêng và không nhận là chuyên gia xác nhận. Đây là đánh giá lý do dựa metadata, không thay đánh giá đề bài/sư phạm. Chốt procedure, rater và sample trước Lock C.
+
+## Lưu log và bảo toàn nghiên cứu cũ
+
+Luồng mới ghi request và raw response bằng append/flush/fsync trước mọi truy vấn runtime sau call. Endpoint version lỗi sau khi nhận response vẫn giữ response. Mismatch runtime dừng batch, không fallback; journal tồn tại ngăn chạy lại âm thầm. HTTP error giữ body cho journal và caller.
+
+Các runner/source đã pin cho thí nghiệm cũ giữ nguyên để không làm sai provenance. Fix có hiệu lực ở entrypoint mới qua `src/rq2/runtime_journal.py`, không viết lại các kết quả cũ. Journal, schedule, baseline records và per-student outputs chỉ lưu trong đường dẫn ignored; Git chỉ lưu protocol/config/code và aggregate manifest.
+
+## Điều kiện bước tiếp theo
+
+Kiểm thử tích hợp và chuẩn bị manifest trước. Batch mới chưa là Lock C. Sau development phải chốt model/runtime/prompt, scenario rules, graph giả định, metrics/rubric, failure handling và CI; commit configuration trước bất kỳ TEST RQ2 nào. Không train lại RQ1 hoặc dùng TEST để điều chỉnh thiết kế.

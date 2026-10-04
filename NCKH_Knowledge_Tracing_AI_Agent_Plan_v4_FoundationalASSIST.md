@@ -6,7 +6,7 @@ FoundationalASSIST là dataset chính duy nhất. ASSIST09 chỉ là historical/
 
 Snapshot tải: `82b29188dffd2fd6bd3abc5a3de0db1ef1df12b9`. SHA-256 ba CSV trong `configs/foundationalassist_v4_preprocessing.json`. Counts được tính từ snapshot thực tế, có thể khác README. Không bù/xóa dữ liệu để khớp README.
 
-Trạng thái: RQ1 hoàn tất. Training Configuration và feature/code manifest đã commit `35e5c17` trước fit; Lock B v4 commit `30f8c92` trước one-shot TEST. Xem `reports/foundationalassist_v4_rq1_test.md`. RQ2 đang chuẩn bị inventory và graph giả định cho VALIDATION; chưa có TEST v4, content review còn chờ. Không chạy lại final TEST hoặc điều chỉnh mô hình theo TEST.
+Trạng thái: RQ1 hoàn tất. Training Configuration và feature/code manifest đã commit `35e5c17` trước fit; Lock B v4 commit `30f8c92` trước one-shot TEST. Xem `reports/foundationalassist_v4_rq1_test.md`. RQ2 đã chạy các nhánh phát triển VALIDATION; từ 04/10/2026 khôi phục Agent chọn độc lập làm hướng chính theo `reports/rq2_selection_protocol_v2.md`, batch mới chỉ chuẩn bị. Chưa có TEST v4, content review còn chờ. Không chạy lại final TEST hoặc điều chỉnh mô hình theo TEST.
 
 ## 2. RQ1
 
@@ -70,7 +70,7 @@ Review packet cục bộ ở `data/processed/foundationalassist_v4/rq2_content_r
 
 ## 7. Đánh giá và giới hạn
 
-Hướng tiếp tục từ 03/10/2026: B+ chọn bài, Agent giải thích bằng chứng đã cung cấp; xem `reports/rq2_grounded_explanation_design.md`. Đây là thay đổi vai trò/câu hỏi vận hành RQ2 sau kết quả âm của nhánh Agent chọn độc lập, không phải sửa thành công nhánh cũ. Nhánh chọn độc lập giữ làm development reference. Đo fixed-ID consistency, yếu tố quyết định, citation coverage, tỷ lệ giải thích đạt kiểm tra, latency và so với template. Renderer chỉ dựng câu từ catalog đã kiểm tra; raw draft chưa được xác minh ngữ nghĩa và không hiển thị. Chưa khóa Lock C hoặc mở TEST; không nhận công cải thiện lựa chọn hay chất lượng giáo dục cho Agent giải thích.
+Hướng chính từ 04/10/2026: BKT ước lượng kỹ năng → candidate set → Agent chọn độc lập, B+ là baseline; xem `reports/rq2_selection_protocol_v2.md`. Agreement với B+ chỉ là metric bổ sung, không phải chất lượng giáo dục. Nhánh 03/10 B+ chọn/Agent giải thích giữ làm kết quả phụ: 132/144 xác định đúng yếu tố quyết định và 21/144 đạt toàn bộ gate dẫn chứng, chưa phải điểm ngữ nghĩa. Renderer chỉ dựng câu từ catalog đã kiểm tra; raw draft chưa được xác minh ngữ nghĩa và không hiển thị. Luồng mới lưu response trước truy vấn runtime sau call, bảo toàn source đã pin của thí nghiệm cũ. Chuẩn bị một batch 144 calls VALIDATION trên scenario đã quan sát, chưa gọi model; không sweep, chưa Lock C hoặc TEST.
 
 RQ2 là exploratory recommendation study, đo vận hành và chất lượng dưới rubric nếu có người chấm. Quy trình human evaluation/prompt/model/rubric của ASSIST09 không tự động trở thành Lock C v4. Cần thiết kế và khóa riêng trước TEST v4. Không tuyên bố learning gain hoặc causal benefit nếu chưa có thử nghiệm học tập phù hợp.
 
@@ -93,6 +93,7 @@ Giới hạn phải báo: single-skill filtering, filtered sequences không cậ
 - [x] Thử calculator hữu hạn: 144 calls VALIDATION, parity B+ và hậu kiểm đạt, 160 tests PASS; xem `reports/foundationalassist_v4_rq2_agent_calculator.md`. Các giá trị tính sẵn chưa cải thiện nhất quán khả năng thực hiện luật/stability; giữ kết quả âm, không sweep thêm hoặc tự khóa C. Chuyển sang B+ chọn/Agent giải thích, nếu chọn hướng đó, là thay đổi RQ2 cần protocol riêng.
 - [x] Triển khai B+ chọn/Agent giải thích cùng template baseline và renderer có kiểm tra. 171 tests PASS; lượt đầu giữ archive do runtime drift, replication 144 calls trên Ollama 0.35.1 có request giống hệt và hậu kiểm đạt. Chỉ 21/144 lời giải thích đạt toàn bộ gate, chưa đặt Agent mặc định. Xem `reports/foundationalassist_v4_rq2_explanation.md`; raw draft chưa review ngữ nghĩa, Lock C/TEST vẫn đóng.
 - [ ] Hoàn thành rà soát nội dung để bật eligibility cho problem bank RQ2.
+- [x] Khôi phục Agent chọn độc lập làm nhánh chính; chuẩn bị protocol v2 và 144 calls VALIDATION, chưa inference. Thêm journal bền vững trước post-call runtime query, 181 tests PASS; các runner/artifacts đã pin giữ nguyên. Xem `reports/rq2_selection_protocol_v2.md`.
 - [x] Khóa features/models/evaluation và kiểm thử đường chạy RQ1 v4.
 - [x] Train/VALIDATION RQ1; Lock B v4; one-shot TEST.
 - [ ] Graph, B+, Agent development; Lock C v4; one-shot TEST RQ2.
