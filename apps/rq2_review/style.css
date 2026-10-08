@@ -4,3 +4,6 @@
 @media(max-width:760px){body{display:block}aside{padding:20px}.legend{display:none}aside nav{display:flex;gap:20px}aside .step{padding:0}main{padding:24px 16px}.brand{font-size:16px}.brand strong{font-size:22px}.local-note{margin:0}.rubric{grid-template-columns:1fr}.edge-list{columns:1}h1{font-size:26px}.sheet{padding:16px}.actions{flex-wrap:wrap}}
 .sr-name{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+
+.candidate-table th{white-space:normal}.candidate-table td:nth-child(2){min-width:200px}
+@media(max-width:1100px){.candidate-table,.candidate-table tbody{display:block}.candidate-table thead{display:none}.candidate-table tr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--line);border-radius:6px;margin-bottom:14px;padding:8px}.candidate-table td{border:0;padding:8px}.candidate-table td:nth-child(1),.candidate-table td:nth-child(2){grid-column:1 / -1;min-width:0}.candidate-table td[data-label]::before{content:attr(data-label);display:block;font-size:12px;font-weight:400;color:var(--muted);margin-bottom:5px}.candidate-table td.number{font-size:18px;font-weight:600}}

@@ -10,20 +10,20 @@
 <body>
   <aside>
     <div class="brand">Sổ rà soát<br><strong>Gợi ý bài học</strong></div>
-    <p class="session">VALIDATION · Tác giả tự đánh giá</p>
+    <p class="session">40 tình huống · Bạn tự nhận xét</p>
     <label for="reviewer">Tên hoặc bí danh của bạn</label>
     <input id="reviewer" maxlength="100" placeholder="Nhập để lưu phiếu" autocomplete="off">
     <nav aria-label="Hai bước rà soát">
-      <div id="step-selection" class="step"><span>1</span><div>Chọn theo dữ liệu<small>Chưa xem lựa chọn của Agent</small></div></div>
+      <div id="step-selection" class="step"><span>1</span><div>Bạn chọn bài trước<small>Chưa xem AI chọn gì</small></div></div>
       <div id="step-rating" class="step"><span>2</span><div>Đọc và chấm lý do<small>Giữ nguyên lời giải thích gốc</small></div></div>
     </nav>
     <div class="progress-block"><p id="progress-label"></p><progress id="progress" max="40" value="0"></progress></div>
     <div class="legend">
       <h2>Đọc số liệu thế nào?</h2>
-      <p><b>Mastery BKT</b> là ước lượng nắm vững kỹ năng. Không phải xác suất làm đúng bài này hoặc thiếu hụt đã xác nhận.</p>
-      <p><b>Tỷ lệ đúng TRAIN</b> càng cao, bài càng dễ với nhóm TRAIN; không phải dự đoán riêng cho học sinh này.</p>
-      <p><b>Support</b> là số tương tác TRAIN của bài, không phải số lần học sinh này luyện.</p>
-      <p>Không có nội dung đề bài trong phiếu. Chỉ nhận xét lựa chọn dựa metadata.</p>
+      <p><b>Mức nắm vững ước tính:</b> số thấp nghĩa là hệ thống ước tính học sinh còn yếu ở kỹ năng đó. Đây là ước tính, có thể sai; không phải khả năng làm đúng bài cụ thể.</p>
+      <p><b>Tỷ lệ làm đúng của nhóm tham khảo:</b> 80% nghĩa là khoảng 80 trong 100 lượt làm bài được ghi nhận là đúng. Số cao thường gợi ý bài dễ hơn với nhóm đó.</p>
+      <p><b>Số lượt làm bài tham khảo:</b> số lượt dùng để tính tỷ lệ bên cạnh. Đây không phải số lần học sinh trong phiếu đã luyện bài này.</p>
+      <p>Bạn chỉ có các số liệu, chưa có đề bài hay đáp án. Nếu chưa đủ thông tin, bạn có thể chọn “Không đủ căn cứ”.</p>
     </div>
     <button id="summary-button" class="secondary">Xem tiến độ chấm</button>
     <p class="local-note">Lưu trên máy của bạn.<br>Không gọi AI, không gửi dữ liệu lên mạng.</p>
